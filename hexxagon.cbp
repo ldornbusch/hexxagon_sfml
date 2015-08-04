@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Hexxagon" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/hexxagon" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/hexxagon" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-DSFML_STATIC" />
+		</Compiler>
+		<Linker>
+			<Add library="X:\owncreations\coding\source\cpp\__code_blox\_ownlibs\libs\libpng.a" />
+			<Add library="X:\owncreations\coding\source\cpp\__code_blox\_ownlibs\libs\libzlib.lib.a" />
+			<Add library="..\SFML-2.2\lib\libsfml-network-s.a" />
+			<Add library="..\SFML-2.2\lib\libsfml-graphics-s.a" />
+			<Add library="..\SFML-2.2\lib\libsfml-audio-s.a" />
+			<Add library="..\SFML-2.2\lib\libsfml-window-s.a" />
+			<Add library="..\SFML-2.2\lib\libsfml-system-s.a" />
+			<Add library="..\SFML-2.2\lib\libfreetype.a" />
+			<Add library="..\SFML-2.2\lib\libopenal32.a" />
+			<Add library="..\SFML-2.2\lib\libsndfile.a" />
+			<Add library="..\SFML-2.2\lib\libglew.a" />
+			<Add library="..\SFML-2.2\lib\libjpeg.a" />
+			<Add library="D:\programs\CodeBlocks\MinGW\lib\libopengl32.a" />
+			<Add library="D:\programs\CodeBlocks\MinGW\lib\libwinmm.a" />
+			<Add directory="../SFML-2.2/lib" />
+		</Linker>
+		<Unit filename="src/All2DEngine/All2D/All2D_Base/Image.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Base/Image.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Base/ImageText.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Base/ImageText.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Base/ScrollMap.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Base/ScrollMap.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Base/xContainer.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Base/xContainer.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Base/xElement.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Base/xElement.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Events/Event.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Events/Event.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Events/MessageManager.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Events/MessageManager.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_HAL/All2D_WinInterface.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_HAL/All2dwin.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_HAL/All2dwin.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_HAL/Bitmap.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_HAL/Bitmap.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_HAL/PicLoader.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_HAL/PicLoader.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_HAL/drawableElement.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_HAL/drawableElement.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_HAL/jpeg/JPEGFILE.CPP" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/Music.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/Sample.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/Sound.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/SoundEngine.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/SoundFactory.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/SoundFactory.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/null/NullMusic.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/null/NullMusic.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/null/NullSample.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/null/NullSample.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/null/NullSoundEngine.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/null/NullSoundEngine.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/std/StandardSample.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/std/StandardSample.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/std/StandardSoundEngine.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/std/StandardSoundEngine.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/wm/WMSample.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/wm/WMSample.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/wm/WMSoundEngine.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/wm/WMSoundEngine.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/wm/WaveMix.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/utils/wav/WAVE.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/utils/wav/WAVE.H" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/Anim.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/Anim.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/AnimFrame.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/AnimFrame.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/AnimManager.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/AnimManager.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/SpriteEntry.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/SpriteEntry.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/SpriteManager.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/SpriteManager.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/UIElement.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/UIElement.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/UIMovableSprite.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/UIMovableSprite.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/UISprite.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sprites/UISprite.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_System.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_System.h" />
+		<Unit filename="src/All2DEngine/All2D/AppGameController.cpp" />
+		<Unit filename="src/All2DEngine/All2D/AppGameController.h" />
+		<Unit filename="src/All2DEngine/All2D/includes/blitmodes.h" />
+		<Unit filename="src/All2DEngine/All2D/includes/gameMessages.h" />
+		<Unit filename="src/All2DEngine/All2D/includes/resource.h" />
+		<Unit filename="src/All2DEngine/All2D/resources/resource.h" />
+		<Unit filename="src/All2DEngine/Gui/MouseMover.cpp" />
+		<Unit filename="src/All2DEngine/Gui/MouseMover.h" />
+		<Unit filename="src/All2DEngine/Gui/UIButton.cpp" />
+		<Unit filename="src/All2DEngine/Gui/UIButton.h" />
+		<Unit filename="src/All2DEngine/Gui/UICheckBox.cpp" />
+		<Unit filename="src/All2DEngine/Gui/UICheckBox.h" />
+		<Unit filename="src/All2DEngine/Gui/UIDragableSprite.cpp" />
+		<Unit filename="src/All2DEngine/Gui/UIDragableSprite.h" />
+		<Unit filename="src/All2DEngine/Gui/UIHoverButton.cpp" />
+		<Unit filename="src/All2DEngine/Gui/UIHoverButton.h" />
+		<Unit filename="src/All2DEngine/Gui/UIKeyRecorder.cpp" />
+		<Unit filename="src/All2DEngine/Gui/UIKeyRecorder.h" />
+		<Unit filename="src/All2DEngine/Gui/UILayouter.cpp" />
+		<Unit filename="src/All2DEngine/Gui/UILayouter.h" />
+		<Unit filename="src/All2DEngine/Gui/UIRadioButton.cpp" />
+		<Unit filename="src/All2DEngine/Gui/UIRadioButton.h" />
+		<Unit filename="src/All2DEngine/Gui/UIScrollArea.cpp" />
+		<Unit filename="src/All2DEngine/Gui/UIScrollArea.h" />
+		<Unit filename="src/All2DEngine/Gui/UIScrollBar.cpp" />
+		<Unit filename="src/All2DEngine/Gui/UIScrollBar.h" />
+		<Unit filename="src/All2DEngine/Gui/UITextField.cpp" />
+		<Unit filename="src/All2DEngine/Gui/UITextField.h" />
+		<Unit filename="src/All2DEngine/Gui/XMLDialogSystem.cpp" />
+		<Unit filename="src/All2DEngine/Gui/XMLDialogSystem.h" />
+		<Unit filename="src/All2DEngine/Gui/hasValue.h" />
+		<Unit filename="src/All2DEngine/Utils/Grid.cpp" />
+		<Unit filename="src/All2DEngine/Utils/Grid.h" />
+		<Unit filename="src/All2DEngine/Utils/GridAlign.cpp" />
+		<Unit filename="src/All2DEngine/Utils/GridAlign.h" />
+		<Unit filename="src/All2DEngine/Utils/Line.cpp" />
+		<Unit filename="src/All2DEngine/Utils/Line.h" />
+		<Unit filename="src/All2DEngine/Utils/POINT.CPP" />
+		<Unit filename="src/All2DEngine/Utils/POINT.H" />
+		<Unit filename="src/All2DEngine/Utils/Rect.cpp" />
+		<Unit filename="src/All2DEngine/Utils/Rect.h" />
+		<Unit filename="src/All2DEngine/Utils/Vector.cpp" />
+		<Unit filename="src/All2DEngine/Utils/Vector.h" />
+		<Unit filename="src/All2DEngine/Utils/xRegistry.cpp" />
+		<Unit filename="src/All2DEngine/Utils/xRegistry.h" />
+		<Unit filename="src/All2DEngine/Utils/xml/tinystr.cpp" />
+		<Unit filename="src/All2DEngine/Utils/xml/tinystr.h" />
+		<Unit filename="src/All2DEngine/Utils/xml/tinyxml.cpp" />
+		<Unit filename="src/All2DEngine/Utils/xml/tinyxml.h" />
+		<Unit filename="src/All2DEngine/Utils/xml/tinyxmlerror.cpp" />
+		<Unit filename="src/All2DEngine/Utils/xml/tinyxmlparser.cpp" />
+		<Unit filename="src/All2DEngine/Utils/xzip/xZip.cpp" />
+		<Unit filename="src/All2DEngine/Utils/xzip/xZip.h" />
+		<Unit filename="src/Game/CreditsText.h" />
+		<Unit filename="src/Game/GameBossScreen.cpp" />
+		<Unit filename="src/Game/GameBossScreen.h" />
+		<Unit filename="src/Game/GameHighScore.cpp" />
+		<Unit filename="src/Game/GameHighScore.h" />
+		<Unit filename="src/Game/GameImageCloner.cpp" />
+		<Unit filename="src/Game/GameImageCloner.h" />
+		<Unit filename="src/Game/GameInstructions.cpp" />
+		<Unit filename="src/Game/GameInstructions.h" />
+		<Unit filename="src/Game/GameMessageBox.cpp" />
+		<Unit filename="src/Game/GameMessageBox.h" />
+		<Unit filename="src/Game/GameTextScreen.cpp" />
+		<Unit filename="src/Game/GameTextScreen.h" />
+		<Unit filename="src/Game/KeyboardNavigator.cpp" />
+		<Unit filename="src/Game/KeyboardNavigator.h" />
+		<Unit filename="src/Game/helpText.h" />
+		<Unit filename="src/HexxagonMain.cpp" />
+		<Unit filename="src/Hexxagon/AIController.cpp" />
+		<Unit filename="src/Hexxagon/AIController.h" />
+		<Unit filename="src/Hexxagon/ControllerAdapter.h" />
+		<Unit filename="src/Hexxagon/Hexxagon3DPlayer.cpp" />
+		<Unit filename="src/Hexxagon/Hexxagon3DPlayer.h" />
+		<Unit filename="src/Hexxagon/HexxagonAIPlayer.cpp" />
+		<Unit filename="src/Hexxagon/HexxagonAIPlayer.h" />
+		<Unit filename="src/Hexxagon/HexxagonBoard.cpp" />
+		<Unit filename="src/Hexxagon/HexxagonBoard.h" />
+		<Unit filename="src/Hexxagon/HexxagonConstants.h" />
+		<Unit filename="src/Hexxagon/HexxagonGame.cpp" />
+		<Unit filename="src/Hexxagon/HexxagonGame.h" />
+		<Unit filename="src/Hexxagon/HexxagonGameController.cpp" />
+		<Unit filename="src/Hexxagon/HexxagonGameController.h" />
+		<Unit filename="src/Hexxagon/HexxagonMouseMover.cpp" />
+		<Unit filename="src/Hexxagon/HexxagonMouseMover.h" />
+		<Unit filename="src/Hexxagon/HexxagonMove.cpp" />
+		<Unit filename="src/Hexxagon/HexxagonMove.h" />
+		<Unit filename="src/Hexxagon/HexxagonState.cpp" />
+		<Unit filename="src/Hexxagon/HexxagonState.h" />
+		<Unit filename="src/Hexxagon/HexxagonStone.cpp" />
+		<Unit filename="src/Hexxagon/HexxagonStone.h" />
+		<Unit filename="src/Hexxagon/KeyController.cpp" />
+		<Unit filename="src/Hexxagon/KeyController.h" />
+		<Unit filename="src/Hexxagon/MouseController.cpp" />
+		<Unit filename="src/Hexxagon/MouseController.h" />
+		<Unit filename="src/Hexxagon/StonePositioner.cpp" />
+		<Unit filename="src/Hexxagon/StonePositioner.h" />
+		<Unit filename="src/Hexxagon/hexxagonScore.cpp" />
+		<Unit filename="src/Hexxagon/hexxagonScore.h" />
+		<Unit filename="src/Hexxagon/hexxagon_messages.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

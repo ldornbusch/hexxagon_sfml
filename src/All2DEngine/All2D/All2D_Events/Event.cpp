@@ -1,0 +1,22 @@
+// Event.cpp: Implementierung der Klasse Event.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "Event.h"
+#include "../All2D_System.h"
+//////////////////////////////////////////////////////////////////////
+// Konstruktion/Destruktion
+//////////////////////////////////////////////////////////////////////
+
+Event::Event(unsigned int type,unsigned int wDat, long lDat)
+{
+	Type=type;
+	wData=wDat;
+	lData=lDat;
+	iTimeCode=All2D_System::getTime();
+}
+
+Event::~Event()
+{
+
+}

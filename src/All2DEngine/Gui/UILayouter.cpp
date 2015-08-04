@@ -1,0 +1,155 @@
+// UILayouter.cpp: Implementierung der Klasse UILayouter.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "UILayouter.h"
+
+//////////////////////////////////////////////////////////////////////
+// Konstruktion/Destruktion
+//////////////////////////////////////////////////////////////////////
+
+UILayouter::UILayouter():xContainer("Layouter")
+{
+	setLayoutMode(LAYOUT_LEFT_RIGHT);
+	setBorders();
+}
+
+UILayouter::~UILayouter()
+{
+
+}
+int UILayouter::add(UIElement&comp, int insertAt)
+{
+	return xContainer::add(comp, insertAt);
+}
+int UILayouter::add(UIElement& comp, bool insertAtEnd)
+{
+	return xContainer::add(comp, insertAtEnd);
+}			
+void UILayouter::remove(UIElement& component)
+{
+	xContainer::remove(component);
+}							
+void UILayouter::remove(int compHandle)
+{
+	xContainer::remove(compHandle);
+}
+void UILayouter::layout()
+{
+	int xco=0,yco=0;	//Coordinaten
+	int xpri=0,ypri=0;	// Primary Offsets
+	int xsec=0,ysec=0;	// sekundary offsets
+	switch(iPrimaryMode){
+		case LAYOUT_LEFT_RIGHT:
+			xco=0;yco=0;
+			xpri=+1;ypri=0;
+			break;
+		case LAYOUT_RIGHT_LEFT:
+			xco=rctLayoutPosition.x2;yco=0;
+			xpri=-1;ypri=0;
+			break;
+		case LAYOUT_UP_DOWN:
+			xco=0;yco=0;
+			xpri=0;ypri=+1;
+			break;
+		case LAYOUT_DOWN_UP:
+			xco=0;yco=rctLayoutPosition.y2;
+			xpri=0;ypri=-1;
+			break;
+	}
+	switch(iSecondaryMode){
+		case LAYOUT_LEFT_RIGHT:
+			xco=0;
+			xsec=+1;ysec=0;
+			break;
+		case LAYOUT_RIGHT_LEFT:
+			xco=rctLayoutPosition.x2;
+			xsec=-1;ysec=0;
+			break;
+		case LAYOUT_UP_DOWN:
+			yco=0;
+			xsec=0;ysec=1;
+			break;
+		case LAYOUT_DOWN_UP:
+			yco=rctLayoutPosition.y2;
+			xsec=0;ysec=-1;
+			break;
+	}
+
+	for (int x=0;x<modules.size();x++)
+	{
+		UIElement* UIObj=(UIElement*)modules[x];
+		Rect rctPos=UIObj->getPosition();
+		if ((rctPos.y1==RECT_INVALID && rctPos.x1==RECT_INVALID) ||
+			(rctPos.y1==0 && rctPos.x1==0))
+		{
+			UIObj->setPosition( rctLayoutPosition.x1+xco,
+								rctLayoutPosition.y1+yco);
+			xco+=(xpri*UIObj->getPosition().x2);	// Breite des Obj addieren
+			yco+=(ypri*UIObj->getPosition().y2);	// Hoehe des Obj addieren
+		}
+		if (xco>rctLayoutPosition.x2)	// Wenn breite ueberscritten wird..
+		{
+			xco=0;
+			yco+=(ysec*UIObj->getPosition().y2);
+		}
+		if (xco<0)	// Wenn breite unterscritten wird..(von rechts kommend)
+		{
+			xco=rctLayoutPosition.x2;
+			yco+=(ysec*UIObj->getPosition().y2);
+		}
+		if (yco>rctLayoutPosition.y2)	// Wenn breite ueberscritten wird..
+		{
+			xco+=(xsec*UIObj->getPosition().x2);;
+			yco=0;
+		}
+		if (yco<0)	// Wenn breite unterscritten wird..(von rechts kommend)
+		{
+			yco=rctLayoutPosition.y2;
+			xco+=(xsec*UIObj->getPosition().x2);
+		}
+	}
+}
+void UILayouter::setLayoutMode(int Primary, int Secondary)
+{
+	iPrimaryMode=Primary;
+	if (Secondary!=-1)
+		iSecondaryMode=Secondary;
+	else
+		iSecondaryMode=(iPrimaryMode==LAYOUT_LEFT_RIGHT || iPrimaryMode==LAYOUT_RIGHT_LEFT)?
+							LAYOUT_UP_DOWN:LAYOUT_LEFT_RIGHT;
+}
+void UILayouter::setBorders(int horizontal, int vertical)
+{
+	iHorizontalBorder=horizontal;
+	iVerticalBorder=vertical;
+}
+void UILayouter::setPosition(Rect rctPos)
+{
+	rctLayoutPosition=rctPos;
+}
+
+UIElement* UILayouter::getElement(string strName)
+{
+	UIElement* retVal=NULL;
+	for (int x=0;x<xContainer::modules.size();x++)
+	{
+		if (xContainer::modules[x]->getName()==strName)
+		{
+			retVal=(UIElement*)xContainer::modules[x];
+			break;
+		}
+	}
+	return retVal;
+}
+
+bool UILayouter::paint(Image &imgBackBuffer)
+{
+	sprtBackGround.show(imgBackBuffer);
+	return 	xContainer::paint(imgBackBuffer);
+}
+
+void UILayouter::setBackground(UISprite &addi)
+{
+	sprtBackGround=addi;
+}

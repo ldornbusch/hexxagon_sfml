@@ -1,0 +1,234 @@
+<xml>
+	<dialog name="standard" parent="" position="200,180,20,320">
+		<label name="logo" srcrect="0,450,595,165" position="22,0,595,165"/>
+		<background srcrect="16,0,32,32" position="200,180,192,192" blitmode="half"/>
+		<button name="continue" function="escape"     srcrect="192, 64,192,32" />
+		<button name="btngame"    target="dlggame"    srcrect="192, 96,192,32" />
+		<button name="btnoptions" target="dlgoptions" srcrect="192,128,192,32" />
+		<button name="btnhelp"    target="help1"      srcrect="192,160,192,32" />
+		<button name="btncredits" target="dlgcredits" srcrect="192,192,192,32" />
+		<button name="btnexit"               srcrect="192,224,192,32" />
+	</dialog>
+
+	<dialog name="dlgcredits" parent="standard" position="200,180,20,320">
+		<label name="logo" srcrect="0,450,595,165" position="22,0,595,165"/>
+		<label name="text" srcrect="0,615,595,260" position="22,170,595,260" blitmode="half"/>
+		<button name="btnok"     function="escape" srcrect="352,0,96,32" position="272,435,96,32"/>
+	</dialog>
+
+	<dialog name="dlggame" parent="standard" position="200,180,20,320">
+		<label name="logo" srcrect="0,450,595,165" position="22,0,595,165"/>
+		<background srcrect="16,0,32,32" position="200,180,192,192" blitmode="half"/>
+		<button name="btnundo"        								srcrect="384, 64,192,32" />
+		<button name="btnsuggest"    									srcrect="384, 96,192,32" />
+		<button name="btnnew"    	      							srcrect="384,128,192,32" />
+		<button name="btnload" 		target="dlgload"    srcrect="384,160,192,32" />
+		<button name="btnsave"    target="dlgsave"    srcrect="384,192,192,32" />
+		<button name="btnback"    function="escape" 	srcrect="352,32,96,32" />
+	</dialog>
+
+	<dialog name="dlgoptions" parent="standard" position="200,180,130,320">
+		<label name="logo" srcrect="0,450,595,165" position="22,0,595,165"/>
+		<background srcrect="16,0,32,32" position="200,180,208,192" blitmode="half"/>
+		<button name="btnplayer"   		target="dlgplayer_a"  srcrect="192,256,224,32" />
+		<button name="btncontrols"  	target="dlgcontrol_a" srcrect="192,288,224,32" />
+		<check  name="chkfullscreen" 	position="0,0,16,16"/>
+		<label name="fullscreen" srcrect="192,320,160,16" position="0,0,128,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,160,16"/>
+
+		<label name="beginner" srcrect="192,336,160,16" position="0,0,160,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,160,8"/>
+
+		<radio  name="rdored" checked="true" group="1" position="0,0,16,16" offset="0,0"/>
+		<label name="dark" srcrect="192,384,144,32" position="0,0,72,16" />
+		<radio  name="rdoblue" group="1" position="0,0,16,16" offset="0,0"/>
+		<label name="bright" srcrect="192,352,144,32" position="0,0,72,16" />
+		<label name="space" srcrect="0,0,0,0" position="0,0,160,16"/>
+
+		<button name="btnback"     function="escape" srcrect="352,32,96,32" />
+	</dialog>
+
+	<dialog name="dlgcontrol_a" parent="dlgoptions" position="205,180,230,320">
+		<label name="logo" srcrect="0,450,595,165" position="22,0,595,165"/>
+		<background srcrect="16,0,32,32" position="200,180,288,192" blitmode="half"/>
+		<label srcrect="192,288,224,32" blitmode="add"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,32,26"/>
+
+		<label name="Keys1" srcrect="416,256,184,32" position="0,0,92,16" blitmode="add"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,64,16"/>
+		<button name="Keys2" srcrect="416,288,184,32" position="0,0,92,16" target="dlgcontrol_b" blitmode="half" hoverblitmode="trans"/>
+
+		<label text="LEFT :" blitmode="half"/>
+		<keyrecorder value="A" name="key_1_left" position="0,0,16,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
+
+		<label text="RIGHT:" blitmode="half"/>
+		<keyrecorder value="D" name="key_1_right" position="0,0,16,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
+
+		<label text="UP   :" blitmode="half"/>
+		<keyrecorder value="W" name="key_1_up" position="0,0,16,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
+
+		<label text="DOWN :" blitmode="half"/>
+		<keyrecorder value="S" name="key_1_down" position="0,0,16,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
+
+		<label text="FIRE :" blitmode="half"/>
+		<keyrecorder value=" " name="key_1_fire" position="0,0,16,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,130,16"/>
+		<button name="btnok"     function="escape" srcrect="352,0,96,32" />
+	</dialog>
+
+	<dialog name="dlgcontrol_b" parent="dlgoptions" position="205,180,230,320">
+		<label name="logo" srcrect="0,450,595,165" position="22,0,595,165"/>
+		<background srcrect="16,0,32,32" position="200,180,288,192" blitmode="half"/>
+		<label srcrect="192,288,224,32" blitmode="add"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,32,26"/>
+
+		<button name="Keys1" srcrect="416,256,184,32" position="0,0,92,16" target="dlgcontrol_a" blitmode="half" hoverblitmode="trans"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,64,16"/>
+		<label name="Keys2" srcrect="416,288,184,32" position="0,0,92,16" blitmode="add"/>
+
+		<label text="LEFT :" blitmode="half"/>
+		<keyrecorder value="d" name="key_2_left" position="0,0,16,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
+
+		<label text="RIGHT:" blitmode="half"/>
+		<keyrecorder value="f" name="key_2_right" position="0,0,16,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
+
+		<label text="UP   :" blitmode="half"/>
+		<keyrecorder value="h" name="key_2_up" position="0,0,16,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
+
+		<label text="DOWN :" blitmode="half"/>
+		<keyrecorder value="b" name="key_2_down" position="0,0,16,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
+
+		<label text="FIRE :" blitmode="half"/>
+		<keyrecorder value="`" name="key_2_fire" position="0,0,16,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,130,16"/>
+
+		<button name="btnok"     function="escape" srcrect="352,0,96,32" />
+	</dialog>
+
+
+	<dialog name="dlgplayer_a" parent="dlgoptions" position="200,180,224,320">
+		<label name="logo" srcrect="0,450,595,165" position="22,0,595,165"/>
+		<background srcrect="336,384,8,8" position="200,212,360,220" blitmode="half"/>
+		<label name="lblpage_b" srcrect="192,384,144,32" blitmode="half" />
+		<button name="btnpage_a" target="dlgplayer_b" srcrect="192,352,144,32" />
+		<textfield name="txtplayer_a" position="0,0,160,16" maxlength="10" value="PLAYER A" background="665500" inactivebackground="332200" blinkfreq="333" Cursor="ff8800"  blitmode="add"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,150,16"/>
+
+		<radio  group="2" name="mouse_a" checked="true" position="0,0,16,16" offset="0,8"/>
+		<label name="mouse" srcrect="416,224,208,32"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,150,32"/>
+
+		<radio  group="2" name="keyset_1_a" position="0,0,16,16" offset="0,8"/>
+		<label name="Keys1" srcrect="416,256,208,32"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,150,32"/>
+
+		<radio  group="2" name="keyset_2_a" position="0,0,16,16" offset="0,8"/>
+		<label name="Keys2" srcrect="416,288,208,32"/>
+		<button name="btnconfigkeys_a" srcrect="416,416,128,32" offset="0,-16" target="dlgcontrol_a"/>
+
+		<radio  group="2" name="computer_a" position="0,0,16,16" offset="0,8"/>
+		<label name="AI_A" srcrect="416,320,224,32"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,96,16"/>
+		<scrollbar name="difficult_a" type="horizontal" min="1" max="5" value="3" position="0,0,150,16"/>
+
+		<radio  group="2" name="network_a" position="0,0,16,16" offset="0,8"/>
+		<label name="network" srcrect="416,384,198,32"/>
+		<button name="btnconfignet_a"  srcrect="416,416,128,32" />
+		<button name="btnok"     function="escape" srcrect="352,0,96,32" />
+	</dialog>
+
+	<dialog name="dlgplayer_b" parent="dlgoptions" position="210,184,224,320">
+		<label name="logo" srcrect="0,450,595,165" position="22,0,595,165"/>
+		<background srcrect="80,0,8,8" position="200,212,360,225" blitmode="half"/>
+		<button name="btnpage_b" target="dlgplayer_a" offset="-10,-4" srcrect="192,384,144,32" />
+		<label name="lblpage_a" srcrect="192,352,144,32" offset="-10,-4" blitmode="half"/>
+		<textfield name="txtplayer_b" position="0,0,160,16" maxlength="10" value="PLAYER B" background="004466" inactivebackground="000044" blinkfreq="333" Cursor="0088FF" blitmode="add"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,150,16"/>
+
+		<radio  group="3" name="mouse_b" checked="true" position="0,0,16,16" offset="0,8"/>
+		<label name="mouse" srcrect="416,224,192,32"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,150,32"/>
+
+		<radio  group="3" name="keyset_1_b" position="0,0,16,16" offset="0,8"/>
+		<label name="Keys1" srcrect="416,256,208,32"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,150,32"/>
+
+		<radio  group="3" name="keyset_2_b" position="0,0,16,16" offset="0,8"/>
+		<label name="Keys2" srcrect="416,288,208,32"/>
+		<button name="btnconfigkeys_b" srcrect="416,416,128,32" offset="0,-16" target="dlgcontrol_a"/>
+
+		<radio  group="3" name="computer_b" position="0,0,16,16" offset="0,8"/>
+		<label name="AI_B" srcrect="416,320,224,32"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,96,16"/>
+		<scrollbar name="difficult_b" type="horizontal" min="1" max="5" value="3" position="0,0,150,16"/>
+
+		<radio  group="3" name="network_b" position="0,0,16,16" offset="0,8"/>
+		<label name="network" srcrect="416,384,198,32"/>
+		<button name="btnconfignet_b "  srcrect="416,416,128,32" />
+
+		<button name="btnok"     function="escape" srcrect="352,0,96,32" />
+	</dialog>
+
+	<dialog name="dlgload" parent="dlggame">
+		<label name="logo" srcrect="0,450,595,165" position="22,0,595,165"/>
+	</dialog>
+
+	<dialog name="dlgsave" parent="dlggame">
+		<label name="logo" srcrect="0,450,595,165" position="22,0,595,165"/>
+	</dialog>
+
+
+	<dialog name="help1" parent="standard">
+	<label name="tubeckOL" srcrect="0,336,16,16" position="14,318,8,8"/>
+	<label name="tubeRohrO" srcrect="16,336,16,16" position="22,318,598,8"/>
+	<label name="tubeckOR" srcrect="32,336,16,16" position="620,318,8,8"/>
+	<label name="tubeRohrL" srcrect="0,352,16,16" position="14,326,8,144"/>
+	<label name="tubeRohrR" srcrect="32,352,16,16" position="620,326,8,144"/>
+	<label name="tubeckUL" srcrect="0,368,16,16" position="14,470,8,8"/>
+	<label name="tubeRohrU" srcrect="16,368,16,16" position="22,470,598,8"/>
+	<label name="tubeckUR" srcrect="32,368,16,16" position="620,470,8,8"/>
+	<label name="halfbrite" srcrect="0,615,16,16" position="22,326,598,144" blitmode="half"/>
+	<scrollarea>
+	<headline>1. GOAL</headline>
+	The goal of Hexxagon is to own more fields than your opponent.
+	You reach your goal by moving your stones by jumping or morphing
+	and conquering your opponents fields.
+	</scrollarea>
+	</dialog>
+
+	<dialog name="help2" parent="standard">
+	<headline>2. JUMPING</headline>
+	Your stone can jump over 1 field to reach a far adjacent field.
+	Fields which are available for jumping are colored blue.
+	</dialog>
+
+	<dialog name="help3" parent="standard">
+	<headline>3. MORPHING</headline>
+	If you move your stone into an adjacent field, it will morph,
+	which means your stone will double itself and occupy both
+	fields, source and target. Fields which are available for
+	morphing are colored yellow.
+	</dialog>
+
+	<dialog name="help4" parent="standard">
+	<headline>4. CONQUER</headline>
+	When your stone moves to a field adjacent to an opponents field,
+	you will conquer this field, means the opponents field changes its
+	color to your color.
+	</dialog>
+
+	<dialog name="help5" parent="standard">
+	<headline>5. STRATEGIC HINT</headline>
+	Try to bring your opponent into a situation where he cannot move anymore.
+	You will get all remaining fields and the game ends.
+	</dialog>
+
+</xml>
