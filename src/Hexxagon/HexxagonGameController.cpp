@@ -79,8 +79,8 @@ void HexxagonGameController::init()
 	vecCtrlAdapter.push_back(ctrlKey2);		//	index 2= Keyset 2
 	vecCtrlAdapter.push_back(ctrlAI);		//	index 3= Player A AI
 	vecCtrlAdapter.push_back(ctrlAI2);		//	index 4= Player B AI
-//	vecCtrlAdapter.push_back(ctrlTCP1);		//	index 5= Player A Network
-//	vecCtrlAdapter.push_back(ctrlTCP2);		//	index 6= Player B Network
+	vecCtrlAdapter.push_back(ctrlAI);		//	index 5= Player A Network
+	vecCtrlAdapter.push_back(ctrlAI2);		//	index 6= Player B Network
 
 	setSettings();
 	mouse.setDefault(ctrlMouse);
