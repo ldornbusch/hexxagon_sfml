@@ -50,6 +50,9 @@
 			<Add library="D:\programs\CodeBlocks\MinGW\lib\libwinmm.a" />
 			<Add directory="../SFML-2.2/lib" />
 		</Linker>
+		<Unit filename="data/All2D_UI.png" />
+		<Unit filename="data/dialog.xml" />
+		<Unit filename="data/elements.png" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Base/Image.cpp" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Base/Image.h" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Base/ImageText.cpp" />
