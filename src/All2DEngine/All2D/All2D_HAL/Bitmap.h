@@ -121,11 +121,11 @@ public:
 	void Fluid(CBitMap* Source , CBitMap* FluidMap);
 
 	inline int getPixel(unsigned int x, unsigned int y);
-	unsigned int getPitch();
-	unsigned int CalcPixPerRow();		//Calculates the Bytes per Row and sets BytesPerPixel
+	int getPitch();
+	int CalcPixPerRow();		//Calculates the Bytes per Row and sets BytesPerPixel
 	inline unsigned int getBytesPerRow(){return ((Pitch+Width)*BytesPerPixel) ;}
-	unsigned int getHeight(){	return Height; }
-	unsigned int getWidth() {	return Width ; }
+	int getHeight(){	return Height; }
+	int getWidth() {	return Width ; }
 	PIXEL* getBitmap();
 
 	inline float SubPixel(float x);

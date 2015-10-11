@@ -237,7 +237,7 @@ void CBitMap::Poly (Point *vertex, int n, PIXEL Col)			// A simple Polygon
 
 }
 
-unsigned int CBitMap::CalcPixPerRow()
+int CBitMap::CalcPixPerRow()
 {
 	switch (Depth)
 		{
@@ -263,7 +263,7 @@ unsigned int CBitMap::CalcPixPerRow()
 	return BytesPerPixel*(Width+Pitch);
 }
 
-unsigned int CBitMap::getPitch()
+int CBitMap::getPitch()
 {
 	return Pitch ;
 }
