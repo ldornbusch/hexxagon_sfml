@@ -4,8 +4,7 @@
 
 #include "MessageManager.h"
 #include "../All2D_System.h"
-
-All2D_WinInterface* MessageManager::ptrWinInterface=NULL;
+All2D_WinInterface* MessageManager::ptrWinInterface = NULL;
 AppGameController* MessageManager::MainView=NULL;
 Image MessageManager::backBufferImage;
 vector<Event*> MessageManager::vecEvents;
@@ -28,14 +27,13 @@ MessageManager::~MessageManager()
 // This Messages will be recorded, and stored, for Help-System
 bool MessageManager::handleOSMessages(Event *evt)
 {
-	if (evt->Type==MM_KEYDOWN)
-		keys[(char)evt->wData]=true;
-	if (evt->Type==MM_KEYUP)
-		keys[(char)evt->wData]=false;
+/* 	if (evt->Type==MM_KEYDOWN)
+ * 		keys[(char)evt->wData]=true;
+ * 	if (evt->Type==MM_KEYUP)
+ * 		keys[(char)evt->wData]=false;
+ */
 
 	return handleEvent(evt);
-
-	return true;
 }
 
 // adds an Event into the stack
@@ -92,8 +90,9 @@ void MessageManager::processEvents()
 		for (vector<Event*>::iterator x=myVec.begin(); x!=myVec.end(); x++)
 			if ((*x)->Type==MM_SETFULLSCREEN)
 			{	// Here are the All2D-WindowCommands implemented.. 2Do: make it nicer
-				//if (ptrWinInterface)
-				//	ptrWinInterface->setFullscreen((bool)(*x)->wData);
+				if (ptrWinInterface){
+					ptrWinInterface->setFullscreen((bool)(*x)->wData);
+				}
 
 			}else
 				MainView->handleEvent((*x));
@@ -104,8 +103,6 @@ void MessageManager::processEvents()
 		myVec.clear();
 	}
 }
-
-void MessageManager::setInterface(All2D_WinInterface *ptrWindow)
-{
-	ptrWinInterface=ptrWindow;
+void MessageManager::setInterface(All2D_WinInterface* view){
+    MessageManager::ptrWinInterface = view;
 }

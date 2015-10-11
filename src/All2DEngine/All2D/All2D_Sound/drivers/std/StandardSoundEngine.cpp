@@ -29,12 +29,12 @@ Music* StandardSoundEngine::loadMusic(char* filename)
 	return new NullMusic();
 }
 
-void StandardSoundEngine::playSample(int id)
+void StandardSoundEngine::playSample(unsigned int id)
 {
 	if (id<samples.size()) samples[id]->play();
 }
 
-void StandardSoundEngine::playMusic(int id)
+void StandardSoundEngine::playMusic(unsigned int id)
 {
 }
 
@@ -68,20 +68,20 @@ void StandardSoundEngine::free()
 {
   sndPlaySound( NULL, 0 );
 
-	for (int i=0; i<samples.size(); i++) {
+	for (unsigned int i=0; i<samples.size(); i++) {
 		samples[i]->stop();
 		samples[i]->free();
 	}
 	samples.clear();
 
-	for (int i=0; i<tracks.size(); i++) {
+	for (unsigned int i=0; i<tracks.size(); i++) {
 		tracks[i]->stop();
 		tracks[i]->free();
 	}
 	tracks.clear();
 }
 
-char* StandardSoundEngine::getDriverInfo() {
+const char* StandardSoundEngine::getDriverInfo() {
   return "StandardSoundEngine";
 }
 

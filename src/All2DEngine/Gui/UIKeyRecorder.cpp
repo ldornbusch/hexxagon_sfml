@@ -49,10 +49,10 @@ bool UIKeyRecorder::handleEvent(Event *evt)
 {
 	bool retVal=true;
 	//UIButton::handleEvent(evt);
-	if (evt->Type==MM_KEYRECORDERACTIVE && evt->lData!=getID())	// if one KeyRecorder is Active, any other should be inactive
+	if (evt->Type==MM_KEYRECORDERACTIVE && (unsigned int)evt->lData!=getID())	// if one KeyRecorder is Active, any other should be inactive
 		setActive(false);
 
-	if (evt->Type==MM_KEYRECORDERSET && evt->lData!=getID() && evt->wData==evtRecordedKey.wData)	// if another KeyRecorder has the same Key, delete it here..
+	if (evt->Type==MM_KEYRECORDERSET && (unsigned int)evt->lData!=getID() && evt->wData==evtRecordedKey.wData)	// if another KeyRecorder has the same Key, delete it here..
 		deleteKey();
 
 	if (blnActive)
@@ -77,7 +77,7 @@ bool UIKeyRecorder::handleEvent(Event *evt)
 		}
 	}
 	UIHoverButton::handleEvent(evt);
-	return true;
+	return retVal;
 }
 // sets Active(Record)
 void UIKeyRecorder::setActive(bool blnFlag)
@@ -172,16 +172,21 @@ void UIKeyRecorder::leftClick()
 string UIKeyRecorder::translateMessage2KeyName(int wData)
 {
 	string retVal="";
-	retVal+=(char)wData;
+	if (wData>=sf::Keyboard::A && wData<=sf::Keyboard::Z){
+        retVal=((unsigned char)'A')+wData;
+	}
+	if (wData>=sf::Keyboard::Num0 && wData<=sf::Keyboard::Num9){
+        retVal=((unsigned char)'0')+wData;
+	}
 	switch(wData)
 	{
-		case VK_SPACE:
+		case sf::Keyboard::Space:
 			retVal="[SPACE]";
 			break;
-		case VK_RETURN:
+		case sf::Keyboard::Return:
 			retVal="[RETURN]";
 			break;
-		case VK_TAB:
+		case sf::Keyboard::Tab:
 			retVal="[TAB]";
 			break;
 		case VK_SCROLL:
@@ -190,143 +195,145 @@ string UIKeyRecorder::translateMessage2KeyName(int wData)
 		case VK_NUMLOCK:
 			retVal="[NUM LOCK]";
 			break;
-		case VK_PAUSE:
+		case sf::Keyboard::Pause:
 			retVal="[PAUSE]";
 			break;
-		case VK_BACK:
+		case sf::Keyboard::BackSpace:
 			retVal="[BACK]";
 			break;
 
-		case VK_UP:
+		case sf::Keyboard::Up:
 			retVal="[UP]";
 			break;
-		case VK_DOWN:
+		case sf::Keyboard::Down:
 			retVal="[DOWN]";
 			break;
-		case VK_LEFT:
+		case sf::Keyboard::Left:
 			retVal="[LEFT]";
 			break;
-		case VK_RIGHT:
+		case sf::Keyboard::Right:
 			retVal="[RIGHT]";
 			break;
-		case VK_ESCAPE:
+		case sf::Keyboard::Escape:
 			retVal="[ESC]";
 			break;
-
-		case VK_INSERT:
+		case sf::Keyboard::Insert:
 			retVal="[INS]";
 			break;
-		case VK_DELETE:
+		case sf::Keyboard::Delete:
 			retVal="[DEL]";
 			break;
-		case VK_HOME:
+		case sf::Keyboard::Home:
 			retVal="[HOME]";
 			break;
-		case VK_END:
+		case sf::Keyboard::End:
 			retVal="[END]";
 			break;
-		case VK_PRIOR :
+		case sf::Keyboard::PageUp:
 			retVal="[PAGE UP]";
 			break;
-		case VK_NEXT :
+		case sf::Keyboard::PageDown:
 			retVal="[PAGE DOWN]";
 			break;
 
-		case VK_MENU :
+		case sf::Keyboard::LAlt:
+		case sf::Keyboard::RAlt:
 			retVal="[ALT]";
 			break;
-		case VK_SHIFT :
+		case sf::Keyboard::LShift:
+		case sf::Keyboard::RShift:
 			retVal="[SHIFT]";
 			break;
 		case VK_CAPITAL :
 			retVal="[CAPS LOCK]";
 			break;
-		case VK_CONTROL  :
+		case sf::Keyboard::LControl:
+		case sf::Keyboard::RControl:
 			retVal="[CTRL]";
 			break;
 
-		case VK_NUMPAD0:
+		case sf::Keyboard::Numpad0:
 			retVal="[NUM 0]";
 			break;
-		case VK_NUMPAD1:
+		case sf::Keyboard::Numpad1:
 			retVal="[NUM 1]";
 			break;
-		case VK_NUMPAD2:
+		case sf::Keyboard::Numpad2:
 			retVal="[NUM 2]";
 			break;
-		case VK_NUMPAD3:
+		case sf::Keyboard::Numpad3:
 			retVal="[NUM 3]";
 			break;
-		case VK_NUMPAD4:
+		case sf::Keyboard::Numpad4:
 			retVal="[NUM 4]";
 			break;
-		case VK_NUMPAD5:
+		case sf::Keyboard::Numpad5:
 			retVal="[NUM 5]";
 			break;
-		case VK_NUMPAD6:
+		case sf::Keyboard::Numpad6:
 			retVal="[NUM 6]";
 			break;
-		case VK_NUMPAD7:
+		case sf::Keyboard::Numpad7:
 			retVal="[NUM 7]";
 			break;
-		case VK_NUMPAD8:
+		case sf::Keyboard::Numpad8:
 			retVal="[NUM 8]";
 			break;
-		case VK_NUMPAD9:
+		case sf::Keyboard::Numpad9:
 			retVal="[NUM 9]";
 			break;
-		case VK_MULTIPLY:
+		case sf::Keyboard::Multiply:
 			retVal="[NUM *]";
 			break;
-		case VK_ADD:
+		case sf::Keyboard::Add:
 			retVal="[NUM +]";
 			break;
 /*		case VK_SEPARATOR:
 			retVal="[NUM ,]";
 			break;
-*/		case VK_SUBTRACT:
+*/		case sf::Keyboard::Subtract:
 			retVal="[NUM -]";
 			break;
-		case VK_DECIMAL:
+		case sf::Keyboard::Period:
 			retVal="[NUM ,]";
 			break;
-		case VK_DIVIDE:
+		case sf::Keyboard::Divide:
 			retVal="[NUM /]";
 			break;
-		case VK_F1:
+		case sf::Keyboard::F1:
 			retVal="[F1]";
 			break;
-		case VK_F2:
+		case sf::Keyboard::F2:
 			retVal="[F2]";
 			break;
-		case VK_F3:
+		case sf::Keyboard::F3:
 			retVal="[F3]";
 			break;
-		case VK_F4:
+		case sf::Keyboard::F4:
 			retVal="[F4]";
 			break;
-		case VK_F5:
+		case sf::Keyboard::F5:
 			retVal="[F5]";
 			break;
-		case VK_F6:
+		case sf::Keyboard::F6:
 			retVal="[F6]";
 			break;
-		case VK_F7:
+		case sf::Keyboard::F7:
 			retVal="[F7]";
 			break;
-		case VK_F8:
+		case sf::Keyboard::F8:
 			retVal="[F8]";
 			break;
-		case VK_F9:
+		case sf::Keyboard::F9:
 			retVal="[F9]";
 			break;
-		case VK_F10:
+		case sf::Keyboard::F10:
 			retVal="[F10]";
 			break;
-		case VK_F11:
+		case sf::Keyboard::F11:
 			retVal="[F11]";
 			break;
-		case VK_F12:
+		case sf::Keyboard::F12:
 			retVal="[F12]";
 			break;
 	}

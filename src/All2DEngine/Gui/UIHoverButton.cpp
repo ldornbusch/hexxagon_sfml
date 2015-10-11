@@ -1,5 +1,5 @@
 // UIHoverButton.cpp: Implementierung der Klasse UIHoverButton.
-// Erzeugt einen Button der beim Überfahren mit der Maus ein Hovereffekt 
+// Erzeugt einen Button der beim Überfahren mit der Maus ein Hovereffekt
 // Darstellt.. dies kann ein anderer BlitMode, oder ein anderes Bild sein
 //////////////////////////////////////////////////////////////////////
 
@@ -31,7 +31,7 @@ bool UIHoverButton::handleEvent(Event *evt)
 				case MM_MOUSEMOVE:
 					// set mouseIn according to focus, check if it is relative, or absolute positioned
 					p=All2D_System::getMouseCoords(evt);
-					if ( isInside(p.x,p.y) ) 
+					if ( isInside(p.x,p.y) )
 					{
 	//					needUpdate=true;
 						isHover=true;
@@ -50,20 +50,20 @@ bool UIHoverButton::handleEvent(Event *evt)
 						if (mouseIn){
 							if (hoverFlag!=0)
 								MessageManager::handleEvent(new Event(hoverFlag,hoverWord, HOVER_OFF));
-							leave();	
+							leave();
 						}
 						mouseIn=false;
 					}
 					break;
 		}
-	}	
+	}
 	return UIButton::handleEvent(evt);
 
 }
 
 bool UIHoverButton::paint(Image& Backbuffer)
 {
-	if (bVisible)
+	if (bVisible){
 		if (isHover)
 		{
 			HoverImage.setPosition(getPosition().x1,getPosition().y1,getPosition().x2,getPosition().y2);
@@ -71,6 +71,7 @@ bool UIHoverButton::paint(Image& Backbuffer)
 		}else{
 			UISprite::paint(Backbuffer);
 		}
+    }
 	return true;
 }
 // Diese Werte werden gesendet, wenn  die Maus in den Hoverbereich eintritt.

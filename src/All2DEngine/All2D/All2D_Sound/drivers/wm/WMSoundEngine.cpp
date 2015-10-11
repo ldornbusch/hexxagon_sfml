@@ -31,7 +31,7 @@ Sample* WMSoundEngine::loadSample(char* filename)
 	return smp;
 }
 
-void WMSoundEngine::playSample(int id)
+void WMSoundEngine::playSample(unsigned int id)
 {
 	if (id<samples.size()) samples[id]->play();
 }
@@ -41,7 +41,7 @@ Music* WMSoundEngine::loadMusic(char* filename)
 	return new NullMusic();
 }
 
-void WMSoundEngine::playMusic(int id)
+void WMSoundEngine::playMusic(unsigned int id)
 {
 }
 
@@ -66,27 +66,27 @@ int WMSoundEngine::loadedMusic()
 	}
 	return smp.getID();
 }
-
+*/
 	/**
 	 * Frees all the resources that are used by the sound representation.
 	 * This method is quite slow to execute and should preferrably be called upon
 	 * exiting the game or between level changes etc.
 	 */
 void WMSoundEngine::free(){
-	for (int i=0; i<samples.size(); i++) {
+	for (unsigned int i=0; i<samples.size(); i++) {
 		samples[i]->stop();
 		samples[i]->free();
 	}
 	samples.clear();
 
-	for (int i=0; i<tracks.size(); i++) {
+	for (unsigned int i=0; i<tracks.size(); i++) {
 		tracks[i]->stop();
 		tracks[i]->free();
 	}
 	tracks.clear();
 }
 
-char* WMSoundEngine::getDriverInfo() {
+const char* WMSoundEngine::getDriverInfo() {
 	return "WMSoundEngine 0.1 WaveMix32.dll";
 }
 

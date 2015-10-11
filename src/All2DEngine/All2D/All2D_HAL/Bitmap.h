@@ -107,7 +107,7 @@ public:
 	void Line(int x1, int y1, int x2, int y2, int col1, int col2);
     void LensFlare(CBitMap* Src,int LX, int LY, int sizeX=128, int sizeY=128);
     void BlendPixel(CBitMap* Src, CBitMap* Dest, CBitMap* Mask, unsigned int Counter);
-	CBitMap* Clone(int x=0, int y=0, int Wid=320, int Hei=320);
+	CBitMap* Clone(unsigned int x=0,unsigned  int y=0, int Wid=320, int Hei=320);
 	void Blend(CBitMap* Source, CBitMap* Dest, int Alpha);
 	void Blt(int Xco, int Yco, int Wid, int Hei, CBitMap *Dest, int XDest, int YDest, PIXEL transp=0);
 	void Blt(int Xco, int Yco, int Wid, int Hei, CBitMap *Dest, int XDest, int YDest, int DestWid, int DestHei, PIXEL transp=0); // BltStretch
@@ -126,17 +126,17 @@ public:
 	void Bump(CBitMap* Bump, CBitMap* Phong, int LX, int LY);
 	void Fluid(CBitMap* Source , CBitMap* FluidMap);
 
-	inline int getPixel(int x, int y);
-	int getPitch();
-	int CalcPixPerRow();		//Calculates the Bytes per Row and sets BytesPerPixel
-	inline int getBytesPerRow(){return ((Pitch+Width)*BytesPerPixel) ;}
-	int getHeight(){	return Height; }
-	int getWidth() {	return Width ; }
+	inline int getPixel(unsigned int x, unsigned int y);
+	unsigned int getPitch();
+	unsigned int CalcPixPerRow();		//Calculates the Bytes per Row and sets BytesPerPixel
+	inline unsigned int getBytesPerRow(){return ((Pitch+Width)*BytesPerPixel) ;}
+	unsigned int getHeight(){	return Height; }
+	unsigned int getWidth() {	return Width ; }
 	PIXEL* getBitmap();
 
 	inline float SubPixel(float x);
 	void Clear(int Col=0);
-	void Dot(int x, int y, PIXEL Col);
+	void Dot(unsigned int x, unsigned int y, PIXEL Col);
 
 	void LineTxt(int x1,int y1,int Wid, CBitMap* Source,int xt1,int yt1,int xt2,int yt2);
 	void PolyTxT(Point* vertex, int n, CBitMap* Texture);
@@ -152,7 +152,7 @@ public:
 
 	void XorPattern();
 
-	CBitMap(int Width, int Height);
+	CBitMap(unsigned int Width, unsigned int Height);
 	CBitMap(char* PCXFile);
 	CBitMap();
 	virtual ~CBitMap();
@@ -169,12 +169,12 @@ private:
 	int ABS(int arg);
 	unsigned char GetC(FILE *stream);
 
-	int BytesPerPixel;
+	unsigned int BytesPerPixel;
 	PIXEL* BMap;
-	int Pitch;		//Breite der Bitmap = Pitch + Width
-	int Width;
-	int Height;
-	int Depth;
+	unsigned int Pitch;		//Breite der Bitmap = Pitch + Width
+	unsigned int Width;
+	unsigned int Height;
+	unsigned int Depth;
 	char	Palette[1024];	//aarrggbb for Hermes compatibility
 
 protected:

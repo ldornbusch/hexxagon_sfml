@@ -106,7 +106,7 @@ bool GameMessageBox::handleEvent(Event *evt)
 			getMenuButton(KbdNavigator.getActualEntry()).setHoverStatus(false);
 			KbdNavigator.setActualEntry(evt->wData);
 		}
-		if (evt->Type==MM_FIRE||(evt->Type==MM_KEYDOWN && evt->wData==VK_RETURN))
+		if (evt->Type==MM_FIRE||(evt->Type==MM_KEYDOWN && evt->wData==sf::Keyboard::Return))
 			menuSelect();
 
 		if (btnYes.getStatus() || btnNo.getStatus())

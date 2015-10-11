@@ -11,7 +11,7 @@
 
 #include "../../Sample.h"
 
-class NullSample : public Sample  
+class NullSample : public Sample
 {
 public:
 	NullSample() {fVolume=1.0f;fPan=0.0f;}
@@ -23,7 +23,7 @@ public:
 	bool isPlaying(){return false;};
 	void free(){};
 	int getID(){return -1;};
-	char* getSource(){return "";};
+	const char* getSource(){return "";};
 	// sample
   void setVolume(float volume){fVolume=volume;};
   void setPan(float pan){fPan=pan;};

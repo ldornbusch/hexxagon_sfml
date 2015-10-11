@@ -13,7 +13,7 @@
 #include "NullSample.h"
 #include "NullMusic.h"
 
-class NullSoundEngine : public SoundEngine  
+class NullSoundEngine : public SoundEngine
 {
 public:
 	NullSoundEngine(){}
@@ -22,14 +22,14 @@ public:
 	void setDataSource(char* szPath){}
 	Sample* loadSample(char* filename){ return new NullSample(); }
 	Music* loadMusic(char* filename){ return new NullMusic(); }
-	void playSample(int id){};
-	void playMusic(int id){};
+	void playSample(unsigned int id){};
+	void playMusic(unsigned int id){};
 	int loadedSamples(){return 0;};
 	int loadedMusic(){return 0;};
 	void init(){}
 	void free(){}
 	void updateStatus(){}
-	char* getDriverInfo(){return "NullSoundEngine 0 NULL";}
+	const char* getDriverInfo(){return "NullSoundEngine 0 NULL";}
 
 };
 

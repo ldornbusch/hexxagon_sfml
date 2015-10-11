@@ -1,9 +1,9 @@
 // drawableElement.h: Schnittstelle für die Klasse drawableElement.
-// abstrakte Basisklasse um All2D Anwendungen auf den Bildschirm 
+// abstrakte Basisklasse um All2D Anwendungen auf den Bildschirm
 // zu bringen..
 // eine abgeleitete Klasse muss
-// paint (CBitMap* Buffer, int tics)	(Zeichnen des BildschirmInhalts) und 
-// handleEvent(Event* evt)				(Behandlung von WindowMessages)	
+// paint (CBitMap* Buffer, int tics)	(Zeichnen des BildschirmInhalts) und
+// handleEvent(Event* evt)				(Behandlung von WindowMessages)
 // definieren..
 //
 //////////////////////////////////////////////////////////////////////
@@ -25,7 +25,7 @@
 class drawableElement
 {
 public:
-	virtual int getID();
+	virtual unsigned int getID();
 	virtual void finish();
     virtual void init();
 	drawableElement();
@@ -33,7 +33,7 @@ public:
 private:
 	void getNewID();
 	static int uniqueIDCounter;
-	int uniqueID;
+	unsigned int uniqueID;
 protected:
 	bool isInitialized;
 };

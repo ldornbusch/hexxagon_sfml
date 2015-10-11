@@ -11,7 +11,7 @@
 
 #include "..\..\Sample.h"
 
-class WMSample : public Sample  
+class WMSample : public Sample
 {
 public:
 	WMSample();
@@ -25,8 +25,8 @@ public:
 	bool isPlaying();
 	void free();
 	int getID();
-	char* getSource();
-	
+	const char* getSource();
+
 	// sample
   void setVolume(float volume);
   void setPan(float pan);

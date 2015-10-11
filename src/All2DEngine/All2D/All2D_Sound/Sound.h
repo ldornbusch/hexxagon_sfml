@@ -24,14 +24,14 @@
  * @author dbug 20020130
  * @version SETest 0.1
  * @since SETest 0.1
- */    
-class Sound  
+ */
+class Sound
 {
 public:
-	
+
 	Sound(){};
 	virtual ~Sound(){};
-	
+
 	/**
 	 * Plays the sound once and then stops. If the sound is
 	 * already playing then it is stopped and restarted.
@@ -72,7 +72,7 @@ public:
 	/**
 	 * Returns the source (filename) of this sound
 	 */
-	virtual char* getSource()=0;
+	virtual const char* getSource()=0;
 };
 
 #endif // !defined(AFX_SOUND_H__5FD17F27_68E9_4DF6_86A4_61A1655EAAC4__INCLUDED_)

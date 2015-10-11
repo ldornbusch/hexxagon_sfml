@@ -48,7 +48,7 @@ bool UIDragableSprite::handleEvent(Event *evt)
 				setOffset(dragOffset.x,dragOffset.y);
 			break;
 		case MM_LBUTTONUP:
-			if (drag)
+			if (drag){
 				if(hasMoved)
 				{
 					drop();
@@ -58,13 +58,15 @@ bool UIDragableSprite::handleEvent(Event *evt)
 					setPosition(p.x,p.y);
 					retVal=false;// signal an aufrufer: sprite wurde gedropped
 				}
-				else	
+				else{
 					click();
+                }
+            }
 			drag=false;
 			break;
 	}
 
-	if (drag && hasMoved) 
+	if (drag && hasMoved)
 	{
 		if (!(rctClipRect==Rect()))
 			p=clipPosition(p);
@@ -98,7 +100,7 @@ Point UIDragableSprite::clipPosition(Point p)
 			p.x=rctClipRect.x1+rctClipRect.x2+getOffset().x;
 		if (p.y-getOffset().y>rctClipRect.y1+rctClipRect.y2)
 			p.y=rctClipRect.y1+rctClipRect.y2+getOffset().y;
-		
+
 	}
 	return p;
 }

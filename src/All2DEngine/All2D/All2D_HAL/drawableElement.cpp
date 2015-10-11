@@ -39,7 +39,7 @@ void drawableElement::finish()
 	isInitialized=false;
 }
 
-int drawableElement::getID()
+unsigned int drawableElement::getID()
 {
 	return uniqueID;
 }

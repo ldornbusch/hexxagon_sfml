@@ -336,7 +336,7 @@ float Anim::getActualTime()
 	} else
 	return -1.0;
 }
-void Anim::setActualFrame(int i)
+void Anim::setActualFrame(unsigned int i)
 {
 	if (i>vecIndexes.size())
 		i=vecIndexes.size();
@@ -420,7 +420,7 @@ void Anim::generateIndexList()
 
 void Anim::setOffset(int x, int y)
 {
-	for (int a=0; a<vecFrames.size();a++)
+	for (unsigned int a=0; a<vecFrames.size();a++)
 	{
 		vecFrames[a]->setOffset(x,y);
 	}
@@ -431,7 +431,7 @@ void Anim::setParent(xElement &Parent)
 	xEParent=&Parent;
 }
 
-AnimFrame* Anim::getFrame(int index)
+AnimFrame* Anim::getFrame(unsigned int index)
 {
 	if (index>=0 && index <vecFrames.size())
 	{

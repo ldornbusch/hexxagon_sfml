@@ -40,11 +40,11 @@ public:
 
 	int ActiveBackground;
 	int inActiveBackground;
-	int CursorColor;		
+	int CursorColor;
 	int BlinkFreq;
 protected:
 	void addChar(char a);
-	int	iSize;
+	unsigned int	iSize;
 	bool isActive;
 	string actualString;
 	int iTabOrder;

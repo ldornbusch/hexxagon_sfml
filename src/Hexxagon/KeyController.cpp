@@ -21,11 +21,11 @@ KeyController::KeyController()
 	iMouseX=All2D_System::fixedX / 2;
 	iMouseY=All2D_System::fixedY / 2;
 // Default Key Config...
-	iUp=VK_UP;
-	iDown=VK_DOWN;
-	iLeft=VK_LEFT;
-	iRight=VK_RIGHT;
-	iFire=VK_SPACE;
+	iUp=sf::Keyboard::Up;
+	iDown=sf::Keyboard::Down;
+	iLeft=sf::Keyboard::Left;
+	iRight=sf::Keyboard::Right;
+	iFire=sf::Keyboard::Space;
 
 	for (int x=0;x<4;x++)
 		myKeys[x].isDown=false;

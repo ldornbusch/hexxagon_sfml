@@ -40,7 +40,7 @@ HexxagonStone::~HexxagonStone()
 		imgStoneImages=NULL;
 	}
 }
-int HexxagonStone::getID()
+unsigned int HexxagonStone::getID()
 {
 	return ID;
 }

@@ -21,7 +21,7 @@ XMLDialogSystem::XMLDialogSystem(std::string fileName)
 XMLDialogSystem::~XMLDialogSystem()
 {
 	save();
-	for (int x=0; x<vecDialogs.size();x++)
+	for (unsigned int x=0; x<vecDialogs.size();x++)
 	{
 		vecDialogs[x]->deleteElements();
 		delete(vecDialogs[x]);
@@ -151,7 +151,7 @@ UIHoverButton* XMLDialogSystem::createButton(TiXmlElement* UINode)	// ToDo put t
 	{
 		string strFunction=UINode->Attribute("function");
 		if(strFunction=="escape")
-			retVal->setSendFlag(MM_KEYUP,VK_ESCAPE);
+			retVal->setSendFlag(MM_KEYUP,sf::Keyboard::Escape);
 	}
 
 	if (UINode->Attribute("target")!=NULL)
@@ -301,7 +301,6 @@ Rect XMLDialogSystem::ConvertXML2Rect(TiXmlElement* Node,string strAttr)
 Point XMLDialogSystem::ConvertXML2Point(TiXmlElement* Node,string strAttr)
 {
 	Point retVal;
-	int x=0,y=0;
 
 	if (Node->Attribute(strAttr.c_str())!=NULL)
 		sscanf(Node->Attribute(strAttr.c_str()),"%d,%d",&(retVal.x),&(retVal.y));
@@ -376,7 +375,7 @@ void XMLDialogSystem::setFont(ImageText &newFont)
 UIElement* XMLDialogSystem::getElement(std::string strName)
 {
 	UIElement*	retVal=NULL;
-	for (int x=0;x<vecDialogs.size();x++)
+	for (unsigned int x=0;x<vecDialogs.size();x++)
 	{
 		retVal=vecDialogs[x]->getElement(strName);
 		if(retVal!=NULL)
@@ -396,7 +395,7 @@ bool XMLDialogSystem::paint(Image& backBuffer)
 
 bool XMLDialogSystem::handleEvent(Event* evt)
 {
-	if (evt->Type==MM_KEYUP && evt->wData==VK_ESCAPE)	// Escape Key will toggle the Menu...or jumps one Level up
+	if (evt->Type==MM_KEYUP && evt->wData==sf::Keyboard::Escape)	// Escape Key will toggle the Menu...or jumps one Level up
 	{
 		if (iActiveDialog==-1)	// Bei Escape activiere das Menu
 		{
@@ -448,7 +447,7 @@ bool XMLDialogSystem::handleEvent(Event* evt)
 value XMLDialogSystem::getValue(std::string strName)
 {
 	value	retVal("",-1);
-	for (int x=0;x<vecValueObjs.size();x++)
+	for (unsigned int x=0;x<vecValueObjs.size();x++)
 	{
 		if (vecValueObjs[x]->getName()==strName)
 		{
@@ -460,7 +459,7 @@ value XMLDialogSystem::getValue(std::string strName)
 }
 void XMLDialogSystem::setValue(std::string strName, value val)
 {
-	for (int x=0;x<vecValueObjs.size();x++)
+	for (unsigned int x=0;x<vecValueObjs.size();x++)
 	{
 		if (vecValueObjs[x]->getName()==strName)
 		{
@@ -490,7 +489,7 @@ void XMLDialogSystem::save()
 	FILE* saveFile=fopen(strSaveFile.c_str(),"wb");
 	if(saveFile!=NULL)
 	{
-		for (int x=0;x<vecValueObjs.size();x++)
+		for (unsigned int x=0;x<vecValueObjs.size();x++)
 		{
 			value val=vecValueObjs[x]->getValue();
 			string strName=vecValueObjs[x]->getName();
@@ -525,7 +524,7 @@ bool XMLDialogSystem::readValue(FILE *stream)
 	bool retVal=false;	// if everything runs fine, return true
 	bool first,second, third;
 	value	myVal;
-	int iType=0, iSize=0;
+	unsigned int iType=0, iSize=0;
 	string strName;
 	char* cpMem=NULL;
 

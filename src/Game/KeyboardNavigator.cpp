@@ -9,7 +9,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-KeyboardNavigator::KeyboardNavigator() 
+KeyboardNavigator::KeyboardNavigator()
 {
 	iMinMenuEntry=1;
 	iMaxMenuEntry=1;
@@ -27,14 +27,14 @@ void KeyboardNavigator::menuUp()
 {
 	iLastMenuEntry=iActualMenuEntry;
 	iActualMenuEntry--;
-	if (iActualMenuEntry<iMinMenuEntry) 
+	if (iActualMenuEntry<iMinMenuEntry)
 		iActualMenuEntry=iMaxMenuEntry;
 }
 void KeyboardNavigator::menuDown()
 {
 	iLastMenuEntry=iActualMenuEntry;
 	iActualMenuEntry++;
-	if (iActualMenuEntry>iMaxMenuEntry) 
+	if (iActualMenuEntry>iMaxMenuEntry)
 		iActualMenuEntry=iMinMenuEntry;
 }
 void KeyboardNavigator::setActualEntry(int i)
@@ -80,11 +80,11 @@ bool KeyboardNavigator::handleEvent(Event *evt)
 			char a=(char)evt->wData;
 			if (blnUpDown){
 				switch (a) {
-					case VK_UP:
+ 					case sf::Keyboard::Up:
 						menuUp();
 						retVal=true;
 						break;
-					case VK_DOWN:
+					case sf::Keyboard::Down:
 						menuDown();
 						retVal=true;
 							break;
@@ -93,11 +93,11 @@ bool KeyboardNavigator::handleEvent(Event *evt)
 					}
 			} else {
 				switch (a) {
-					case VK_LEFT:
+					case sf::Keyboard::Left:
 						menuUp();
 						retVal=true;
 						break;
-					case VK_RIGHT:
+					case sf::Keyboard::Right:
 						menuDown();
 						retVal=true;
 							break;

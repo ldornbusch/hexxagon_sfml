@@ -25,7 +25,7 @@ using namespace std;
 #define	ANIM_ONCE				0x0020	//Einmal abspielen
 #define	ANIM_FLIP				0x0040	//Vor und Zurueck
 #define ANIM_STOP_IMMEDIATELY	0x0100	// Stoppt sofort
-#define ANIM_STOP_AT_END		0x0200	// Stoppt am Ende der Animation 
+#define ANIM_STOP_AT_END		0x0200	// Stoppt am Ende der Animation
 
 #if defined(DEMO)
 //#define ANIM_FPS				20
@@ -40,8 +40,8 @@ public:
 	float getActualTime();
 	void virtual setOffset(int x, int y);
 	int getFrameCount();
-	AnimFrame* getFrame(int index);
-	void setActualFrame(int i);
+	AnimFrame* getFrame(unsigned int index);
+	void setActualFrame(unsigned int i);
 	void setParent(xElement& Parent);
 	void setFrameBasedModus(bool mode=true);
 	void BuildSortTree();
@@ -76,7 +76,7 @@ private:
 	bool frameBased;			// Wenn true, dann wird jedes Frame gespielt(langsamer auf langsamen Rechner), wenn false, wird nach Zeit gespielt..
 	int startTime;				// Start der Animation
 	int animDuration;			// Dauer der Animation in ms
-	int actualIndex;			// Zeigt den aktiven Index aus vecIndexes an..
+	unsigned int actualIndex;			// Zeigt den aktiven Index aus vecIndexes an..
 	int requestedPlayMode;
 	int actualPlayMode;			// Here is either Forward or Backward and Loop, Flip or Once
 	int speed;

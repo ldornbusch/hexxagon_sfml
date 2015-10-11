@@ -1,7 +1,7 @@
 // UILayouter.h: Schnittstelle für die Klasse UILayouter.
 // UILayouter regelt die Positionierung von UIElementen.
-// Es wird ein Rechteck uebergeben, dass die Positionierung der 
-// UIElemente beeinflusst. 
+// Es wird ein Rechteck uebergeben, dass die Positionierung der
+// UIElemente beeinflusst.
 // Es gibt folgende Modi:
 // TOPDOWN
 // DOWNTOP
@@ -27,16 +27,16 @@
 #define LAYOUT_UP_DOWN		0x0003
 #define LAYOUT_DOWN_UP		0x0004
 
-class UILayouter : public xContainer  
+class UILayouter : public xContainer
 {
 public:
 	void setBackground(UISprite& addi);
 	virtual bool paint(Image& imgBackBuffer);
 	UIElement* getElement(string strName);
-	int add(UIElement&comp, int insertAt);
+	int add(UIElement&comp, unsigned int insertAt);
 	int add(UIElement& comp, bool insertAtEnd=true);			// Gives back the Handle of the added xModule
 	void remove(UIElement& component);							//This will be removed by Components Name
-	void remove(int compHandle);							//This will be removed by Components Handle
+	void remove(unsigned int compHandle);							//This will be removed by Components Handle
 	void layout();
 	void setLayoutMode(int Primary, int Secondary=-1);
 	void setBorders(int horizontal=0, int vertical=0);

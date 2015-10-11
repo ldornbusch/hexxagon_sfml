@@ -340,7 +340,7 @@ bool xZip::getFileInfo(XZFILEINFO &xzfInfo,std::string filename)
 
 	// file encoding ( text or binary )
 	xzfInfo.encoding = XZEncode_Binary;
-	if (file->Attribute("encoding") && file->Attribute("encoding") == "Text") {
+	if (file->Attribute("encoding") && strcmp(file->Attribute("encoding"),"Text")) {
 		xzfInfo.encoding = XZEncode_Text;
 	}
 

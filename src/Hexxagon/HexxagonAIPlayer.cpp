@@ -31,7 +31,7 @@ HexxagonMove HexxagonAIPlayer::getBestMove(int iPlayer, vector<HexxagonStone*> v
 	bestMove.moveType	= -1;
 
 	// loop through all stones
-	for ( int x=0;x<vecStones.size();x++) {
+	for (unsigned int x=0;x<vecStones.size();x++) {
 		// analyze stone if it belongs to current player
 		if ( vecStones[x]->getColor()==iCurrentPlayer) {
 			HexxagonMove aiMove = analyze(x,vecStones);
@@ -55,7 +55,7 @@ HexxagonMove HexxagonAIPlayer::analyze(int iIndex, vector<HexxagonStone*> vecSto
 {
   // create new move and set to color and given index
 	HexxagonMove ratedMove = HexxagonMove(vecStones[iIndex]->getColor(),iIndex,-1,-1,-1);
-	
+
 	// check all neighbouring stones
 	for (int x=0; x<HEX_NUM_STONE_NEIGHBOURS+HEX_NUM_STONE_DISTANT_NEIGHBOURS;x++) {
 		// get neighbour from current stone
@@ -69,7 +69,7 @@ HexxagonMove HexxagonAIPlayer::analyze(int iIndex, vector<HexxagonStone*> vecSto
 				// get close neighbour if it is valid
 				int iSubNeighbour = vecStones[iNeighbour]->getNeighbour(y);
 				// increment rate if field is sourrounded by enemy stones
-				if ( iSubNeighbour>=0 
+				if ( iSubNeighbour>=0
 					&& (vecStones[iSubNeighbour]->getColor() != iCurrentPlayer)
 					&& (vecStones[iSubNeighbour]->getColor() != 0))
 					iRate++;
@@ -83,7 +83,7 @@ HexxagonMove HexxagonAIPlayer::analyze(int iIndex, vector<HexxagonStone*> vecSto
 			}
 		}
 	}
-  
+
 	// pass best possible move back
 	return ratedMove;
 

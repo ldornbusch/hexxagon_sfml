@@ -2,8 +2,8 @@
 // Der GameController regelt den Ablauf eines Spiels mit verschiedenen Teilen:
 // z.B:
 // Selection-Screen, HighScore, Instruction, Configs usw.
-// Jedes Teil ist ein xContainer , der jeweils wieder in 
-// den GameController geAdded wird. 
+// Jedes Teil ist ein xContainer , der jeweils wieder in
+// den GameController geAdded wird.
 
 //////////////////////////////////////////////////////////////////////
 
@@ -38,14 +38,14 @@ private:
 	bool  masterPaint(Image& backBuffer);
 	Image imgFrameBuffer;
 
-// eigentlich wollte ich nur die beiden Functionen paint und handleEvent des MessageManagers 
-// zu friends machen gab aber immer einen No NameSpace Error.. deswegen die ganze class als friend :-(	
+// eigentlich wollte ich nur die beiden Functionen paint und handleEvent des MessageManagers
+// zu friends machen gab aber immer einen No NameSpace Error.. deswegen die ganze class als friend :-(
 	friend class MessageManager;//::paint(Image& backBuffer);
 protected:
-	int iLoadReadyFlag;
+	unsigned int iLoadReadyFlag;
 	// manage game flow
-	int		activeElement;
-	int		newActiveElement;
+	unsigned int		activeElement;
+	unsigned int		newActiveElement;
 	void	setActiveElement();
 
 	virtual bool paintLoadScreen(Image& backBuffer);

@@ -27,19 +27,19 @@ UIRadioButton::~UIRadioButton()
 
 }
 
-int UIRadioButton::getRadioID()
+unsigned int UIRadioButton::getRadioID()
 {
 	return iRadioID;
 }
-void UIRadioButton::setRadioID(int iID)
+void UIRadioButton::setRadioID(unsigned int iID)
 {
 	iRadioID=iID;
 }
-int UIRadioButton::getRadioGroup()
+unsigned int UIRadioButton::getRadioGroup()
 {
 	return iRadioGroup;
 }
-void UIRadioButton::setRadioGroup(int iGroup)
+void UIRadioButton::setRadioGroup(unsigned int iGroup)
 {
 	iRadioGroup=iGroup;
 }
@@ -53,7 +53,7 @@ void UIRadioButton::leftClick()
 
 bool UIRadioButton::handleEvent(Event *evt)
 {
-	if (evt->Type==MM_RADIO_SET_VALUE && 
+	if (evt->Type==MM_RADIO_SET_VALUE &&
 		evt->wData==getRadioGroup())
 		UICheckBox::setValue(value("",(evt->lData==getRadioID()?1:0)));
 	return UICheckBox::handleEvent(evt);

@@ -33,14 +33,14 @@ class xContainer : public xElement
 {
 public:
 	virtual void deleteElements();	// loescht die Elements und gibt den Speicher wieder frei
-	int add(xElement&comp, int insertAt);
+	int add(xElement&comp, unsigned int insertAt);
 	virtual void init();		// diese Methode wird benutzt, um ressourcen beim Picloader zu laden und zu initialisieren
 	virtual void finish();		// diese Methode wird benutzt, um Objecte zu deinitialisieren
 	virtual void requestLoad();		// diese Function wird benutzt, um Ressourcen beim PicLoader anzumelden
 	virtual bool paint(Image& img);				// And Calls this Paint with the Image backBufferImage
 	virtual bool handleEvent(Event * evt);
 	void remove(xElement& component);							//This will be removed by Components Name
-	void remove(int compHandle);							//This will be removed by Components Handle
+	void remove(unsigned int compHandle);							//This will be removed by Components Handle
 	int add(xElement& comp, bool insertAtEnd=true);			// Gives back the Handle of the added xModule
 // Construction/Destruction
 	xContainer(string n);

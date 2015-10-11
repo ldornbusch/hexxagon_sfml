@@ -26,7 +26,7 @@ int xContainer::add(xElement& comp, bool insertAtEnd)
 	return comp.getID();
 }
 
-int xContainer::add(xElement &comp, int insertAt)
+int xContainer::add(xElement &comp, unsigned int insertAt)
 {
 	if (insertAt<modules.size())
 	{
@@ -44,7 +44,7 @@ void xContainer::remove(xElement& compName)
 {
 	remove(compName.getID());
 }
-void xContainer::remove(int compHandle)
+void xContainer::remove(unsigned int compHandle)
 {
 	for (vector<xElement*>::iterator x=modules.begin(); x!=modules.end();x++)
 		if ((*x)->getID()==compHandle)

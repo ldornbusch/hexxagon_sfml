@@ -19,13 +19,13 @@ using namespace std;
 
 #define HIGH_SCORE_ENTRIES		10
 
-class GameHighScore : 
-	public UIElement, 
-	public GameImageCloner  
+class GameHighScore :
+	public UIElement,
+	public GameImageCloner
 {
 public:
-	void insert(string strName, int iPts);
-	int getPlace(int iPts);
+	void insert(string strName, long int iPts);
+	int getPlace(long int iPts);
 	void getGFX(Image& imgGFX);
 	void load();
 	void save();
@@ -35,7 +35,7 @@ public:
 private:
 	ImageText TextFont;
 	string strNames[HIGH_SCORE_ENTRIES];
-	int		iPoints[HIGH_SCORE_ENTRIES];
+	long int		iPoints[HIGH_SCORE_ENTRIES];
 };
 
 #endif // !defined(AFX_GAMEHIGHSCORE_H__24287676_E2D4_47C6_9EF5_31D4DCB80D42__INCLUDED_)

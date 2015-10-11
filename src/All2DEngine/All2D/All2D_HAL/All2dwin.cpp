@@ -52,6 +52,7 @@ All2DWin::All2DWin()//, bool Fullscr ,int winWidth, int winHeight)
 	bReady=false;
 	InitWindow();	// Make the Window
 	MessageManager::setInterface(this);
+
 }
 
 
@@ -103,9 +104,9 @@ void All2DWin::InitWindow()
 // This Method changes between Fullscreen and windowed mode..
 void All2DWin::ChangeCoopLevel()
 {
-//	bFullScreen=!bFullScreen;
-//    sfml_window.close();
-//    InitWindow();
+    bFullScreen=!bFullScreen;
+    sfml_window.close();
+    InitWindow();
 }
 
 
@@ -168,14 +169,17 @@ int All2DWin::MessageLoop()	//drawableElement.UpdateFrame () wird von Hier aufge
 
     CBitMap* surface=new CBitMap(640,480);
     surface->Clear(0xffff00ff);
- //   surface->Load("data/All2D_UI.png");
     sf::Image img;
     surface->returnImage(img);
-    //img.loadFromFile("data/All2d_UI.png");
     txt.loadFromImage(img);
     sf::Sprite sp(txt);
     sp.setPosition(0,0);
     sp.setScale(1.0f,1.0f);
+    int i=0xff000000;
+
+    sf::CircleShape shape(20.f);
+    shape.setFillColor(sf::Color::Cyan);
+
 
     while (sfml_window.isOpen()){
         sf::Event event;
@@ -183,12 +187,6 @@ int All2DWin::MessageLoop()	//drawableElement.UpdateFrame () wird von Hier aufge
         {
             if (event.type == sf::Event::Closed){
                 sfml_window.close();
-            }
-            if (event.type == sf::Event::LostFocus){
-                sfml_window.setTitle("LOST!");
-            }
-            if (event.type == sf::Event::GainedFocus){
-                sfml_window.setTitle("Focused!");
             }
 
             Event* HAL_Event = new Event(0,0,0);
@@ -201,12 +199,25 @@ int All2DWin::MessageLoop()	//drawableElement.UpdateFrame () wird von Hier aufge
                 HAL_Event->lData = event.mouseButton.y << 16 | event.mouseButton.x;
             }
 
+            if(event.type == sf::Event::KeyPressed){
+                HAL_Event->Type=MM_KEYDOWN;
+                HAL_Event->wData=event.key.code;
+            }
+            if(event.type == sf::Event::KeyReleased){
+                HAL_Event->Type=MM_KEYUP;
+                HAL_Event->wData=event.key.code;
+            }
+
             MessageManager::handleOSMessages(HAL_Event);
         }
         MessageManager::processEvents();
         bool isExit=MessageManager::paint(surface);
+        if (!isExit){
+            All2D_Exit();
+        }
         surface->returnImage(img);
         txt.loadFromImage(img);
+        sfml_window.clear();
         sfml_window.draw(sp);//,sf::BlendAdd);
         sfml_window.display();
     }

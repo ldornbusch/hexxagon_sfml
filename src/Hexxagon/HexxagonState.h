@@ -12,10 +12,10 @@
 #include<vector>
 #include<string>
 #include "HexxagonStone.h"
-
+typedef unsigned char BYTE;
 using namespace std;
 
-class HexxagonState  
+class HexxagonState
 {
 public:
 	void setState(vector<HexxagonStone*>& vec, BYTE Player);	// speichert den State in diesem Object

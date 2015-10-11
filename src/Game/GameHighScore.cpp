@@ -58,7 +58,7 @@ bool GameHighScore::paint(Image& backBuffer)
 	return true;
 }
 
-int GameHighScore::getPlace(int iPts)
+int GameHighScore::getPlace(long int iPts)
 {
 	if (iPts<iPoints[HIGH_SCORE_ENTRIES])
 		return -1;	// Keine Plazierung!
@@ -75,7 +75,7 @@ int GameHighScore::getPlace(int iPts)
 	return (x+1);
 }
 
-void GameHighScore::insert(string strName, int iPts)
+void GameHighScore::insert(string strName, long int iPts)
 {
 	int iPlace=getPlace(iPts);
 	if (iPlace>0)

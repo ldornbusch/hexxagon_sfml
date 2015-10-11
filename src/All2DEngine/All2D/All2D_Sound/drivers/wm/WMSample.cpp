@@ -38,7 +38,7 @@ void WMSample::stop(){}
 bool WMSample::isPlaying(){return false;}
 void WMSample::free(){}
 int WMSample::getID(){return -1;}
-char* WMSample::getSource(){return "";};
+const char* WMSample::getSource(){return "";};
 
 // sample
 void WMSample::setVolume(float volume){fVolume=volume;}

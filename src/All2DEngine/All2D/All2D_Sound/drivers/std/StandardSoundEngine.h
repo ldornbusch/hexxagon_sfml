@@ -14,7 +14,7 @@
 
 using namespace std;
 
-class StandardSoundEngine : public SoundEngine  
+class StandardSoundEngine : public SoundEngine
 {
 public:
   StandardSoundEngine();
@@ -22,14 +22,14 @@ public:
 	void setDataSource(char* szPath);
 	Sample* loadSample(char* filename);
 	Music* loadMusic(char* filename);
-	void playSample(int id);
-	void playMusic(int id);
+	void playSample(unsigned int id);
+	void playMusic(unsigned int id);
 	int loadedSamples();
 	int loadedMusic();
 	void updateStatus(){}
 	void init(){}
 	void free();
-	char* getDriverInfo();
+	const char* getDriverInfo();
 
 	vector<Sample*> samples;
 	vector<Music*> tracks;

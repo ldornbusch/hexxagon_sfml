@@ -158,7 +158,7 @@ void GridAlign::remove(int len)
 int GridAlign::find(int len)
 {
 	int retVal=-1;
-	for (int x=0;x<vecLengths.size();x++)
+	for (unsigned int x=0;x<vecLengths.size();x++)
 	{
 		if (vecLengths[x]==len)
 		{	retVal=x;

@@ -14,7 +14,7 @@
 
 using namespace std;
 
-class WMSoundEngine : public SoundEngine  
+class WMSoundEngine : public SoundEngine
 {
 public:
 	WMSoundEngine();
@@ -22,14 +22,14 @@ public:
 	void setDataSource(char* szPath);
 	Sample* loadSample(char* filename);
 	Music* loadMusic(char* filename);
-	void playSample(int id);
-	void playMusic(int id);
+	void playSample(unsigned int id);
+	void playMusic(unsigned int id);
 	int loadedSamples();
 	int loadedMusic();
 	void init(){}
 	void free();
 	void updateStatus(){}
-	char* getDriverInfo();
+	const char* getDriverInfo();
 
 private:
 	vector<Sample*> samples;

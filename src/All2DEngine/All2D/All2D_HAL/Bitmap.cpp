@@ -138,7 +138,7 @@ void CBitMap::returnImage(sf::Image& img){
         img.create(this->getWidth(), this->getHeight());
     }
     sf::Uint8* tmp = (sf::Uint8*) img.getPixelsPtr();
-	for(int x=0;x<Width*Height;++x){  // todo: include pitch in calculation
+	for(unsigned int x=0;x<Width*Height;++x){  // todo: include pitch in calculation
         PIXEL pix=BMap[x];
         BYTE r=(pix & RMASK) >> RSHIFT;
         BYTE g=(pix & GMASK) >> GSHIFT;
@@ -516,7 +516,7 @@ bool CBitMap::LoadPNG(FILE* infile)
 }
 
 ////////////////////////Leere Bitmap//////////////////////////
-CBitMap::CBitMap(int W, int H)
+CBitMap::CBitMap(unsigned int W, unsigned int H)
 {
 	BMap=NULL;
 	Width=W;
@@ -607,7 +607,7 @@ void CBitMap::Done()	//Deinitialisiert ein CBitmapObject, ohne die Ressourcen fr
 	bClone=false;
 }
 // Erstellt einen neuen Bitmap-Clone, mit derselben Bitmap des Ursprungs-Objects
-CBitMap* CBitMap::Clone(int x, int y, int Wid, int Hei)
+CBitMap* CBitMap::Clone(unsigned int x, unsigned int y, int Wid, int Hei)
 {
 	CBitMap*	Back;
 	int NewPitch, Offset;
@@ -625,7 +625,7 @@ CBitMap* CBitMap::Clone(int x, int y, int Wid, int Hei)
 	return Back;
 }
 
-int CBitMap::getPixel(int x, int y)		//VerySlow only for initialisations!!
+int CBitMap::getPixel(unsigned int x, unsigned int y)		//VerySlow only for initialisations!!
 {
 	int Offset;
 	while(x<0) x+=Width ;
@@ -636,7 +636,7 @@ int CBitMap::getPixel(int x, int y)		//VerySlow only for initialisations!!
 	return BMap[Offset];
 }
 
-void CBitMap::Dot(int x, int y, PIXEL Col)										// A simple Dot
+void CBitMap::Dot(unsigned int x, unsigned int y, PIXEL Col)										// A simple Dot
 {
 	int Offset;
 	if ((x<Width) && (x>0) && (y<Height) && (y>0))
@@ -658,7 +658,7 @@ void CBitMap::Poly (Point *vertex, int n, PIXEL Col)			// A simple Polygon
 }
 
 
-int CBitMap::CalcPixPerRow()
+unsigned int CBitMap::CalcPixPerRow()
 {
 	switch (Depth)
 		{
@@ -684,16 +684,17 @@ int CBitMap::CalcPixPerRow()
 	return BytesPerPixel*(Width+Pitch);
 }
 
-int CBitMap::getPitch()
+unsigned int CBitMap::getPitch()
 {
 	return Pitch ;
 }
 
 void CBitMap::InitDeltaMap()		//the Differences in X and Y for Fluid and BumpMapping WORKS ONLY IN 32 BIT!!!
 {
-	int x,y,dx,dy,left,right;
+	unsigned int x,y;
+	int dx,dy,left,right;
 	int Offset=0;
-	int Offset2=0;
+	//int Offset2=0;
 	PIXEL*	Dest;
 	if (Depth==32)
 	{
@@ -1118,7 +1119,7 @@ void CBitMap::BltHalfTrans(int Xco, int Yco, int Wid, int Hei, CBitMap *Dest, in
 	PIXEL* SrcBMap=BMap;
 	PIXEL* DstBMap=Dest->getBitmap();
 	int SrcPointer, DstPointer;
-	int actPix,DestPix,over,Pixel;
+	unsigned int actPix,DestPix,Pixel;//,over
 
 	if ((XDest+ABS(DestWid)>0) && (XDest<Dest->getWidth() ) &&
       (YDest+ABS(DestHei)>0) && (YDest<Dest->getHeight()))
@@ -1857,9 +1858,9 @@ void CBitMap::Blend(CBitMap *Source, CBitMap *Dest, int Alpha)	//Alpha 0..127 So
 	pSrc=(PIXEL*)Source->getBitmap();
 	pDest=(PIXEL*)Dest->getBitmap();
 	result=(PIXEL*) BMap;
-	for (int y=0;y<Source->getHeight();y++)
+	for (unsigned int y=0;y<Source->getHeight();y++)
 	{
-		for (int x=0;x<Source->getWidth();x++)
+		for (unsigned int x=0;x<Source->getWidth();x++)
 		{
 			tempPix=0;
 			tempSrc=*pSrc;
@@ -1891,9 +1892,9 @@ void CBitMap::BlendPixel(CBitMap *Source, CBitMap *Dest,CBitMap* Mask, unsigned 
 	pDest=Dest->getBitmap();
 	pMask=Mask->getBitmap();
 	pResult= BMap;
-	for (int y=0;y<Source->getHeight();y++)
+	for (unsigned int y=0;y<Source->getHeight();y++)
 	{
-		for (int x=0;x<Source->getWidth();x++)
+		for (unsigned int x=0;x<Source->getWidth();x++)
 		{
 			if ((*pMask&0xff)<Alpha)
 				*pResult = *pSrc;

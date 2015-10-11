@@ -24,10 +24,10 @@ bool ImageText::loadFont(string fileName)
 }
 void ImageText::cloneFont(ImageText& scrFont)
 {
-	Image::cloneImage(scrFont);		
+	Image::cloneImage(scrFont);
 	FontInit(scrFont.getFontWidth(),scrFont.getFontHeight(),scrFont.getCharPerRow(), scrFont.getTranslationTable());
 }
-void ImageText::FontInit(int charWidth, int charHeight, int charPerRow, char *translationTable)
+void ImageText::FontInit(int charWidth, int charHeight, int charPerRow, const char *translationTable)
 {
 	setFontWidth(charWidth);
 	setFontHeight(charHeight);
@@ -89,7 +89,7 @@ void ImageText::WriteString(Image& Dest,int x, int y, char *String,int bltMode, 
 
 
 // WriteScatter(Destination ,x,y,String, Scatter Factor,Length)
-// Schreibt einen Text verwackelt und additiv.. scatter Factor gibt die Verwackelung in Pixeln an.. 
+// Schreibt einen Text verwackelt und additiv.. scatter Factor gibt die Verwackelung in Pixeln an..
 void ImageText::WriteScatter(Image& Dest, int x, int y, char *String, int scatter, int bltMode, int Len)
 {
 	x=x+rand()%scatter-(scatter>>1);
@@ -106,7 +106,7 @@ bool ImageText::WriteChar(Image& Dest, int x, int y, char strChar, int bltMode, 
 	index=findChar(strChar);
 
 	if (index<0)
-		return false; 
+		return false;
 	yle=(int)(index/CharPerRow)*FontHeight;
 	xle= (index-((yle /FontHeight) * CharPerRow))*FontWidth;
 	setSrcRect(Rect(xle,yle,FontWidth, FontHeight));
@@ -121,10 +121,10 @@ int ImageText::findChar(char c2Find)
 {
 	int retVal=0;
 	while ((TranslationTable[retVal]!=c2Find)
-			&&TranslationTable[retVal]!=0) 
+			&&TranslationTable[retVal]!=0)
 		retVal++;
 	if (TranslationTable[retVal]!=0)
 		return retVal;
-	else 
+	else
 		return -1;
 }

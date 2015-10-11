@@ -18,19 +18,19 @@ UILayouter::~UILayouter()
 {
 
 }
-int UILayouter::add(UIElement&comp, int insertAt)
+int UILayouter::add(UIElement&comp, unsigned int insertAt)
 {
 	return xContainer::add(comp, insertAt);
 }
 int UILayouter::add(UIElement& comp, bool insertAtEnd)
 {
 	return xContainer::add(comp, insertAtEnd);
-}			
+}
 void UILayouter::remove(UIElement& component)
 {
 	xContainer::remove(component);
-}							
-void UILayouter::remove(int compHandle)
+}
+void UILayouter::remove(unsigned int compHandle)
 {
 	xContainer::remove(compHandle);
 }
@@ -76,7 +76,7 @@ void UILayouter::layout()
 			break;
 	}
 
-	for (int x=0;x<modules.size();x++)
+	for (unsigned int x=0;x<modules.size();x++)
 	{
 		UIElement* UIObj=(UIElement*)modules[x];
 		Rect rctPos=UIObj->getPosition();
@@ -132,7 +132,7 @@ void UILayouter::setPosition(Rect rctPos)
 UIElement* UILayouter::getElement(string strName)
 {
 	UIElement* retVal=NULL;
-	for (int x=0;x<xContainer::modules.size();x++)
+	for (unsigned int x=0;x<xContainer::modules.size();x++)
 	{
 		if (xContainer::modules[x]->getName()==strName)
 		{

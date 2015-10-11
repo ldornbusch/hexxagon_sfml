@@ -14,7 +14,7 @@
 #include "Hexxagon_messages.h"
 #include "..\ALL2DENGINE\ALL2D\ALL2D_SPRITES\UISprite.h"	// Added by ClassView
 
-class HexxagonStone : public UIHoverButton , GameImageCloner 
+class HexxagonStone : public UIHoverButton , GameImageCloner
 {
 public:
 	virtual bool handleEvent(Event* evt);
@@ -28,7 +28,7 @@ public:
 	void getGFX(Image& imgGFX);
 	HexxagonStone(int id);
 	virtual ~HexxagonStone();
-	int getID();
+	unsigned int getID();
 	int getColor();
 	void setColor(int iCol);
 	void reset();
@@ -36,7 +36,7 @@ private:
 	UISprite Hut;
 	static UISprite** imgStoneImages;
 	int Neighbours[HEX_NUM_STONE_NEIGHBOURS+HEX_NUM_STONE_DISTANT_NEIGHBOURS];
-	int ID;
+	unsigned int ID;
 	int iColor;
 	int	iButtonState;
 

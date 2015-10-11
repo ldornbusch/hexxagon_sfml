@@ -92,7 +92,7 @@ bool UITextField::paint(Image& img)
 					TextBuffer->box(2+actualString.length()*All2D_System::SystemFont.getFontWidth(), 2,
 									All2D_System::SystemFont.getFontWidth()-2, All2D_System::SystemFont.getFontHeight()-2,CursorColor,CursorColor);
 					if (All2D_System::getTime()-blinkTimer>2*BlinkFreq)
-						blinkTimer=All2D_System::getTime();	
+						blinkTimer=All2D_System::getTime();
 				}
 			}
 		}else
@@ -132,19 +132,26 @@ bool UITextField::handleEvent(Event* evt)
 			p=All2D_System::getMouseCoords(evt);
 			break;
 		case MM_CHAR:
+		case MM_KEYDOWN:
 			if (isActive) {
 				char a=(char)evt->wData;
+                if (evt->wData>=sf::Keyboard::A && evt->wData<=sf::Keyboard::Z){
+                    a=((unsigned char)'A')+evt->wData;
+                }
+                if (evt->wData>=sf::Keyboard::Num0 && evt->wData<=sf::Keyboard::Num9){
+                    a=((unsigned char)'0')+evt->wData;
+                }
 				switch (a) {
-					case VK_ESCAPE:
+					case sf::Keyboard::Escape:
 						setActive(false);
 						MessageManager::handleEvent(new Event(MM_LOST_FOCUS,iTabOrder,0));
 						break;
-					case VK_RETURN:
-					case VK_TAB:
+					case sf::Keyboard::Return:
+					case sf::Keyboard::Tab:
 						setActive(false);
 						MessageManager::handleEvent(new Event(MM_NEXT_FOCUS,iTabOrder,0));
 						break;
-					case VK_BACK:
+					case sf::Keyboard::BackSpace:
 						actualString = actualString.substr(0, actualString.size()-1);
 						break;
 					default:
@@ -155,9 +162,10 @@ bool UITextField::handleEvent(Event* evt)
 			break;
 	}
 	return true;
-
+/*
 	if (isActive){
 	}
+*/
 }
 
 void UITextField::initTextBuffer()
@@ -185,7 +193,7 @@ void UITextField::setPriority(int prio)
 	if (TextBuffer)
 		TextBuffer->setPriority(prio);
 	UISprite::setPriority(prio);
-	
+
 }
 
 void UITextField::finish()
@@ -209,7 +217,7 @@ int UITextField::getWidth()
 {
 	if (TextBuffer)
 		return TextBuffer->getWidth();
-	else 
+	else
 		return RECT_INVALID;
 }
 
@@ -217,6 +225,6 @@ int UITextField::getHeight()
 {
 	if (TextBuffer)
 		return TextBuffer->getHeight();
-	else 
+	else
 		return RECT_INVALID;
 }

@@ -221,9 +221,9 @@ bool HexxagonGameController::handleEvent(Event *evt)
 		hexGame.reset();
 	}
 
-	if (evt->Type==MM_KEYDOWN && evt->wData==VK_F7)
+	if (evt->Type==MM_KEYDOWN && evt->wData==sf::Keyboard::F7)
 		hexGame.save("data\\save1.sav");
-	if (evt->Type==MM_KEYDOWN && evt->wData==VK_F8)
+	if (evt->Type==MM_KEYDOWN && evt->wData==sf::Keyboard::F8)
 		hexGame.load("data\\save1.sav");
 
 	if (evt->Type==MM_BUTTON_CLICK && evt->wData==myMenu.getElement("chkfullscreen")->getID())
