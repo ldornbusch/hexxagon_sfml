@@ -31,12 +31,14 @@
 #define		MM_SETFULLSCREEN		8017			// SWITCHES TO FULLSCREEN OR BACK (wData is true(Fullscreen) or false(Window))
 #define		MM_CHANGE_FULLSCREEN	8018			// Notification FullscreenStatus is changed (wData contains blnIsFullscreen)
 
-#define		MN_ANIM_START			8019			// NOTIFY MESSAGES...ANIM HAS STARTED
-#define		MN_ANIM_RESTART			8020			// NOTIFY MESSAGES...ANIM HAS RESTARTED
-#define		MN_ANIM_STOP			8021			// NOTIFY MESSAGES...ANIM HAS STOPPED
+#define		MM_SETSMOOTH	    	8019			// CONTROLS Filtering of texture "FullScreen Antialasing
+
+#define		MN_ANIM_START			8020			// NOTIFY MESSAGES...ANIM HAS STARTED
+#define		MN_ANIM_RESTART			8021			// NOTIFY MESSAGES...ANIM HAS RESTARTED
+#define		MN_ANIM_STOP			8022			// NOTIFY MESSAGES...ANIM HAS STOPPED
 
 // Dies sind die Messages, um die Applikation zu steuern(Auswahl,Spiele,Ende)
-#define		MM_APP_QUIT				8222
+#define		MM_APP_QUIT				8223
 
 // default dialog
 #define		MM_NAVIGATION_HOVER		8203

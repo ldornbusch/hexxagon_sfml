@@ -229,6 +229,9 @@ bool HexxagonGameController::handleEvent(Event *evt)
 	if (evt->Type==MM_BUTTON_CLICK && evt->wData==myMenu.getElement("chkfullscreen")->getID())
 		MessageManager::handleEvent(new Event(MM_SETFULLSCREEN,myMenu.getValue("chkfullscreen").second,0));
 
+	if (evt->Type==MM_BUTTON_CLICK && evt->wData==myMenu.getElement("chksmooth")->getID())
+		MessageManager::handleEvent(new Event(MM_SETSMOOTH,myMenu.getValue("chksmooth").second,0));
+
 	if (evt->Type==MM_BUTTON_CLICK && evt->wData==myMenu.getElement("btnundo")->getID())
 	{
 		myMenu.displayDialog("");

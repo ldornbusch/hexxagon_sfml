@@ -34,7 +34,10 @@
 		<button name="btncontrols"  	target="dlgcontrol_a" srcrect="192,288,224,32" />
 		<check  name="chkfullscreen" 	position="0,0,16,16"/>
 		<label name="fullscreen" srcrect="192,320,160,16" position="0,0,128,16"/>
-		<label name="space" srcrect="0,0,0,0" position="0,0,160,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,160,4"/>
+		<check  name="chksmooth" 	position="0,0,16,16"/>
+		<label name="txtfiltering" srcrect="192,418,160,16" position="0,0,128,16"/>
+		<label name="space" srcrect="0,0,0,0" position="0,0,160,10"/>
 
 		<label name="beginner" srcrect="192,336,160,16" position="0,0,160,16"/>
 		<label name="space" srcrect="0,0,0,0" position="0,0,160,8"/>

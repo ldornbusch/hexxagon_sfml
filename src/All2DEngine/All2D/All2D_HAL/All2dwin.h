@@ -22,6 +22,7 @@ class All2DWin : public All2D_WinInterface
 public:
 	void All2D_Exit();
 	void setFullscreen(bool blnFlag);
+	void setSmooth(bool blnSmooth);
 	Rect getWindowPosition();
     void transformMouseCoords(Event *evt);
 	void init();
@@ -39,6 +40,7 @@ private:
 	int WindowY;
 	int DisplayDepht;
 	bool bFullScreen;
+	bool bSmooth;
 	bool bReady;
 	bool bActive;
 	string strTitle;

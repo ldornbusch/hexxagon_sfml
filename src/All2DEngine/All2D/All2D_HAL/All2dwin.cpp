@@ -17,6 +17,7 @@ All2DWin::All2DWin()//, bool Fullscr ,int winWidth, int winHeight)
 	strTitle=All2D_System::WinTitle;
 	DisplayDepht = WINPLANES;	// We want to have WINPLANES Bits per Pixel
 	bReady=false;
+	bSmooth=false;
 	InitWindow();	// Make the Window
 	MessageManager::setInterface(this);
 }
@@ -40,6 +41,10 @@ void All2DWin::setFullscreen(bool blnFlag)
 	if (bFullScreen!=blnFlag) {
 		ChangeCoopLevel();
 	}
+}
+void All2DWin::setSmooth(bool blnSmooth)
+{
+    bSmooth = blnSmooth;
 }
 
 void All2DWin::All2D_Exit()
@@ -144,6 +149,7 @@ int All2DWin::MessageLoop()	//drawableElement.UpdateFrame () wird von Hier aufge
         }
         surface->returnImage(img);
         txt.loadFromImage(img);
+        txt.setSmooth(bSmooth);
         sfml_window.clear();
         sfml_window.draw(sp);//,sf::BlendAdd);
         sfml_window.display();

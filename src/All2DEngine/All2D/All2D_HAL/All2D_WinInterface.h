@@ -16,6 +16,7 @@ public:
 	virtual	void init()=0;
 	virtual int startApp(AppGameController& dE)=0;
 	virtual void setFullscreen(bool blnFlag)=0;
+	virtual void setSmooth(bool blnSmooth)=0;
     virtual Rect getWindowPosition()=0;
     virtual void transformMouseCoords(Event *evt)=0;
 	virtual void All2D_Exit()=0;

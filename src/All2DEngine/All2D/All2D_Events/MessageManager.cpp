@@ -78,8 +78,13 @@ void MessageManager::processEvents()
 					ptrWinInterface->setFullscreen((bool)(*x)->wData);
 				}
 
-			}else
+			}else if ((*x)->Type==MM_SETSMOOTH){
+				if (ptrWinInterface){
+					ptrWinInterface->setSmooth((bool)(*x)->wData);
+				}
+			}else {
 				MainView->handleEvent((*x));
+			}
 
 		for (vector<Event*>::iterator x=myVec.begin(); x!=myVec.end(); x++)
 			delete (*x);
