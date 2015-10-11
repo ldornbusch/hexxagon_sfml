@@ -2,12 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_SOUND_H__5FD17F27_68E9_4DF6_86A4_61A1655EAAC4__INCLUDED_)
-#define AFX_SOUND_H__5FD17F27_68E9_4DF6_86A4_61A1655EAAC4__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
 
@@ -74,5 +69,3 @@ public:
 	 */
 	virtual const char* getSource()=0;
 };
-
-#endif // !defined(AFX_SOUND_H__5FD17F27_68E9_4DF6_86A4_61A1655EAAC4__INCLUDED_)

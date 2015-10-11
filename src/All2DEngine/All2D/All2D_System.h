@@ -3,12 +3,7 @@
 // haben sollen, wie SpriteManager, Sound, Registry usw
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_SYSTEM_H__30A6EDFF_FA51_45E4_AD1D_F013D21CA958__INCLUDED_)
-#define AFX_SYSTEM_H__30A6EDFF_FA51_45E4_AD1D_F013D21CA958__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "All2D_Sprites/SpriteManager.h"	// Hinzugefügt von der Klassenansicht
 #include "All2D_Base/ImageText.h"
@@ -61,5 +56,3 @@ public:
 
 private:
 };
-
-#endif // !defined(AFX_SYSTEM_H__30A6EDFF_FA51_45E4_AD1D_F013D21CA958__INCLUDED_)

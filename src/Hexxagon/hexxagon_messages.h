@@ -1,9 +1,7 @@
 // HexxagonStone.h: Schnittstelle für die Klasse HexxagonStone.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_HEXXAGONGAMEMESSAGES_INCLUDED_)
-#define AFX_HEXXAGONGAMEMESSAGES_INCLUDED_
+#pragma once
 
 #define HEX_RED_PLAYER 1
 #define HEX_EMPTY_STONE 0
@@ -27,11 +25,11 @@
 #define HEX_EE			 9  //SWW /|\  SEE
 #define HEX_SEE			10  // SSW SS SSE
 #define HEX_SSE			11
-#define HEX_SS			12  
-#define HEX_SSW			13  
-#define HEX_SWW			14  
-#define HEX_WW			15  
-#define HEX_NWW			16 
+#define HEX_SS			12
+#define HEX_SSW			13
+#define HEX_SWW			14
+#define HEX_WW			15
+#define HEX_NWW			16
 #define HEX_NNW			17
 
 #define HEX_WAIT_FOR_CLICK_1	0x0001
@@ -56,7 +54,7 @@
 #define HEX_NEAR_NEIGHBOUR	1
 #define HEX_FAR_NEIGHBOUR	2
 
-// Stati der Buttons 
+// Stati der Buttons
 #define HEX_STATE_NONE				0x00	// keine besondere Eigenschaft
 #define HEX_STATE_HOVER				0x01	// Maus ist darueber
 #define HEX_STATE_SELECT			0x02	// 1. Stein der ausgewaehlt wurde
@@ -68,5 +66,3 @@
 // Move Types
 #define HEX_MOVE_DOUBLE				0x01	// Der Stein verdoppelt sich in ein Nachbarfeld
 #define HEX_MOVE_JUMP				0x02	// Der Stein Springt in ein entferntes Nachbarfeld
-
-#endif // !defined(AFX_HEXXAGONGAMEMESSAGES_INCLUDED_)

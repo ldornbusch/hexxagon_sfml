@@ -1,13 +1,7 @@
 // AnimManager.h: Schnittstelle für die Klasse AnimManager.
 //
-//////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_ANIMMANAGER_H__ED431EA1_2D20_11D5_B046_00E098802DF2__INCLUDED_)
-#define AFX_ANIMMANAGER_H__ED431EA1_2D20_11D5_B046_00E098802DF2__INCLUDED_
-
-#if _MSC_VER > 1000
+//////////////////////////////////////////////////////////////////////#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "Anim.h"
 
@@ -49,5 +43,3 @@ private:
 protected:
 	map<string, Anim*> mapAnims;
 };
-
-#endif // !defined(AFX_ANIMMANAGER_H__ED431EA1_2D20_11D5_B046_00E098802DF2__INCLUDED_)

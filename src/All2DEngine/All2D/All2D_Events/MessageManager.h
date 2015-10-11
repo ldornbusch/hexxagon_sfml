@@ -6,12 +6,7 @@
 // Die Einzelnen Komponenten miteinander kommunizieren zu lassen..
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_MESSAGEMANAGER_H__343FC215_75C0_44F6_8BDF_A64756173867__INCLUDED_)
-#define AFX_MESSAGEMANAGER_H__343FC215_75C0_44F6_8BDF_A64756173867__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include <vector>
 using namespace std;
@@ -44,5 +39,3 @@ private:
 
 protected:
 };
-
-#endif // !defined(AFX_MESSAGEMANAGER_H__343FC215_75C0_44F6_8BDF_A64756173867__INCLUDED_)

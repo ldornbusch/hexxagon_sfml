@@ -1,18 +1,13 @@
 // UIMovableSprite.h: Schnittstelle für die Klasse UIMovableSprite.
 //
-// Ein Movable Sprite kann in einer bestimmten Zeit, oder in einer 
-// bestimmten Geschwindigkeit ein bestimmtes Ziel erreichen. Die aktuelle 
-// Position wird durch updatePosition() berechnet. Diese Funktion gibt 
+// Ein Movable Sprite kann in einer bestimmten Zeit, oder in einer
+// bestimmten Geschwindigkeit ein bestimmtes Ziel erreichen. Die aktuelle
+// Position wird durch updatePosition() berechnet. Diese Funktion gibt
 // genau dann true zurueck, wenn der Zielpunkt erreicht wurde. Falls updatePosition
 // dann nochmals aufgerufen wird, gibt sie aber wieder false zurück..
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_UIMOVABLESPRITE_H__F7823491_1A9D_4D92_B9E1_420546FB5F75__INCLUDED_)
-#define AFX_UIMOVABLESPRITE_H__F7823491_1A9D_4D92_B9E1_420546FB5F75__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "UISprite.h"
 #include "../../UTILS/POINT.H"	// Hinzugefügt von der Klassenansicht
@@ -22,7 +17,7 @@
 #define MOVETYPE_FIX_TIME  0x0002	// Der Sprite bewegt sich _immer_ in der selben Zeit zu einem gegebenen Punkt
 
 
-class UIMovableSprite : virtual public UISprite  
+class UIMovableSprite : virtual public UISprite
 {
 public:
 	virtual void stop();
@@ -54,5 +49,3 @@ private:
 	Point ptTarget;			// the TargetPoint to reach..
 	Point ptStart;			// We need the Start for FixTimeMovement Interpolation
 };
-
-#endif // !defined(AFX_UIMOVABLESPRITE_H__F7823491_1A9D_4D92_B9E1_420546FB5F75__INCLUDED_)

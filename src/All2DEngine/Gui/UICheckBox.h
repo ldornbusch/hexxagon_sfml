@@ -2,17 +2,12 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_UICHECKBOX_H__4FBEBA1C_4696_43C1_B2AE_EAE325F0225B__INCLUDED_)
-#define AFX_UICHECKBOX_H__4FBEBA1C_4696_43C1_B2AE_EAE325F0225B__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "..\..\ALL2DENGINE\GUI\UIHoverButton.h"
 #include "hasvalue.h"
 
-class UICheckBox : public UIHoverButton, public hasValue   
+class UICheckBox : public UIHoverButton, public hasValue
 {
 public:
 	string getName();
@@ -27,11 +22,9 @@ public:
 	UICheckBox();
 	UICheckBox(bool flag);
 	virtual ~UICheckBox();
-	
+
 private:
 	Rect rctCheckedArea;
 	Rect rctUncheckedArea;
 	bool blnChecked;
 };
-
-#endif // !defined(AFX_UICHECKBOX_H__4FBEBA1C_4696_43C1_B2AE_EAE325F0225B__INCLUDED_)

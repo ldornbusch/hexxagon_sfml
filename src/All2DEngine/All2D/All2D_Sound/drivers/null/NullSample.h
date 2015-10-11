@@ -1,13 +1,7 @@
 // NullSample.h: interface for the NullSample class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_NULLSAMPLE_H__558B7A19_2082_4A24_8B98_2E3DE6DF5EA4__INCLUDED_)
-#define AFX_NULLSAMPLE_H__558B7A19_2082_4A24_8B98_2E3DE6DF5EA4__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "../../Sample.h"
 
@@ -35,4 +29,3 @@ private:
 	float fPan;
 };
 
-#endif // !defined(AFX_NULLSAMPLE_H__558B7A19_2082_4A24_8B98_2E3DE6DF5EA4__INCLUDED_)

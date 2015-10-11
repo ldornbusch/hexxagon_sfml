@@ -1,13 +1,7 @@
 // NullSoundEngine.h: interface for the NullSoundEngine class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_NULLSOUNDENGINE_H__6606D7E0_3C0D_47D6_969B_4D8D20A58835__INCLUDED_)
-#define AFX_NULLSOUNDENGINE_H__6606D7E0_3C0D_47D6_969B_4D8D20A58835__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "../../SoundEngine.h"
 #include "NullSample.h"
@@ -32,5 +26,3 @@ public:
 	const char* getDriverInfo(){return "NullSoundEngine 0 NULL";}
 
 };
-
-#endif // !defined(AFX_NULLSOUNDENGINE_H__6606D7E0_3C0D_47D6_969B_4D8D20A58835__INCLUDED_)

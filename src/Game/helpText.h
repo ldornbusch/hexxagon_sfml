@@ -1,5 +1,4 @@
-#if !defined(COLUMNS_HELP_TEXT)
-#define COLUMNS_HELP_TEXT
+#pragma once
 
 char GameInstructions::HelpMessage[]=
 "TRY TO ARRANGE 3 OR MORE  "
@@ -19,5 +18,3 @@ char GameInstructions::HelpMessage[]=
 "                          "
 "                 GOOD LUCK"
 "                          " ;
-
-#endif

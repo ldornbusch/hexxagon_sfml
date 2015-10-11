@@ -1,13 +1,7 @@
 // xModule.h: Schnittstelle für die Klasse xModule.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_XMODULE_H__BD24C301_F92B_11D4_B046_00E098802DF2__INCLUDED_)
-#define AFX_XMODULE_H__BD24C301_F92B_11D4_B046_00E098802DF2__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "xElement.h"
 #include "Image.h"
@@ -48,5 +42,3 @@ public:
 protected:
 	vector<xElement*> modules;	// muss ein Zeiger sein, wg. virtuellen Funktionen
 };
-
-#endif // !defined(AFX_XMODULE_H__BD24C301_F92B_11D4_B046_00E098802DF2__INCLUDED_)

@@ -1,13 +1,7 @@
 // SoundEngine.h: interface for the SoundEngine class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_SOUNDENGINE_H__AC6FBB52_2B44_4DEB_B856_7C6615FF2491__INCLUDED_)
-#define AFX_SOUNDENGINE_H__AC6FBB52_2B44_4DEB_B856_7C6615FF2491__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "Sample.h"
 #include "Music.h"
@@ -104,4 +98,3 @@ public:
 
 };
 
-#endif // !defined(AFX_SOUNDENGINE_H__AC6FBB52_2B44_4DEB_B856_7C6615FF2491__INCLUDED_)

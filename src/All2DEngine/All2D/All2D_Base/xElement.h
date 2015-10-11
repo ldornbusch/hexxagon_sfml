@@ -6,13 +6,7 @@
 */
 
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_XELEMENT1_H__A7B2AB59_C506_4775_AC81_23F8ACB111C3__INCLUDED_)
-#define AFX_XELEMENT1_H__A7B2AB59_C506_4775_AC81_23F8ACB111C3__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "../ALL2D_HAL/drawableElement.h"
 #include "Image.h"
@@ -20,10 +14,10 @@
 // For Standard TemplateLibrary Support...
 using namespace std;
 
-class xElement : public drawableElement  
+class xElement : public drawableElement
 {
 public:
-	virtual bool paint(Image& img);				
+	virtual bool paint(Image& img);
 	virtual bool handleEvent(Event* evt);
 	virtual void requestLoad();		// diese Function wird benutzt, um Ressourcen beim PicLoader anzumelden
 	virtual void notify(Event evt);
@@ -36,5 +30,3 @@ private:
 	string name;
 protected:
 };
-
-#endif // !defined(AFX_XELEMENT1_H__A7B2AB59_C506_4775_AC81_23F8ACB111C3__INCLUDED_)

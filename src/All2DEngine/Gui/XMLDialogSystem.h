@@ -2,12 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_HEXXAGONMENU_H__7DD771C4_7A01_41E2_899D_12E4291F621B__INCLUDED_)
-#define AFX_HEXXAGONMENU_H__7DD771C4_7A01_41E2_899D_12E4291F621B__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "UILayouter.h"
 #include "UIRadioButton.h"
@@ -16,8 +11,8 @@
 #include "UIKeyRecorder.h"
 #include "hasValue.h"
 #include "../All2D/All2D_Base/ImageText.h"
-//#include <stdio.h>
 
+// TODO: create Enum
 #define VALUE_NAME		0xAAAAAAAA
 #define VALUE_STRING	0xFF00FF00
 #define VALUE_INT		0x00FF00FF
@@ -74,5 +69,3 @@ protected:
 	void writeValue(string strName, value val, FILE* stream);
 	string strFileName;
 };
-
-#endif // !defined(AFX_HEXXAGONMENU_H__7DD771C4_7A01_41E2_899D_12E4291F621B__INCLUDED_)

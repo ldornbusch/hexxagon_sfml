@@ -1,5 +1,4 @@
-#if !defined(COLUMNS_CREDIT_TEXT)
-#define COLUMNS_CREDIT_TEXT
+#pragma once
 
 char GameInstructions::CreditMessage[]=
 "         COLUMNS          "
@@ -22,4 +21,3 @@ char GameInstructions::CreditMessage[]=
 "                          "
 "                          " ;
 
-#endif

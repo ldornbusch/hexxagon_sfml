@@ -2,12 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_NULLMUSIC_H__1C1DCC07_C53A_4EFB_9C43_DF30DFDC1161__INCLUDED_)
-#define AFX_NULLMUSIC_H__1C1DCC07_C53A_4EFB_9C43_DF30DFDC1161__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "../../Music.h"
 
@@ -25,5 +20,3 @@ public:
 	int getID(){return -1;};
 	const char* getSource(){return "";};
 };
-
-#endif // !defined(AFX_NULLMUSIC_H__1C1DCC07_C53A_4EFB_9C43_DF30DFDC1161__INCLUDED_)

@@ -2,17 +2,15 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_XREGISTRY_H__0AC473F7_FD16_4283_B53A_E7E2EAD388A3__INCLUDED_)
-#define AFX_XREGISTRY_H__0AC473F7_FD16_4283_B53A_E7E2EAD388A3__INCLUDED_
 
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
+// TODO: Remove win-shit
 #include <windows.h>
 #include <string>
 
-class xRegistry  
+
+class xRegistry
 {
 public:
 
@@ -32,5 +30,3 @@ private:
 	std::string strKey;
 	HKEY hRoot;
 };
-
-#endif // !defined(AFX_XREGISTRY_H__0AC473F7_FD16_4283_B53A_E7E2EAD388A3__INCLUDED_)

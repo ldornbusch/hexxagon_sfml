@@ -146,12 +146,7 @@
 
 */
 
-#if !defined(AFX_XZIP_H__CF15B958_76FC_11D5_947E_00E0292B9289__INCLUDED_)
-#define AFX_XZIP_H__CF15B958_76FC_11D5_947E_00E0292B9289__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "../XML/tinyxml.h"
 #include <string>
@@ -223,5 +218,3 @@ private:
 	TiXmlElement* module;
 	TiXmlElement* file;
 };
-
-#endif // !defined(AFX_XZIP_H__CF15B958_76FC_11D5_947E_00E0292B9289__INCLUDED_)

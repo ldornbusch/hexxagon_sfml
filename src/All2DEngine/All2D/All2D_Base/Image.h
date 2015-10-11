@@ -1,21 +1,16 @@
 // Image.h: Schnittstelle für die Klasse Image.
 // Ein Image ist eine All2DBitmap  mit einem bestimmten Bildausschnitt
-// die als srcRect angegeben ist.. damit ist es z.B moeglich, auf einer 
+// die als srcRect angegeben ist.. damit ist es z.B moeglich, auf einer
 // Bitmap mehrere Animationsphasen abzubilden..
 // Ausserdem kann ein Image gestretcht/gespiegelt werden..
-// Image ist die Hardware Kapselung der Bitmap uns sollte alle Funktionen die auf 
-// Bitmapebene stattfinden bereitstellen..deswegen ist CBitMap auch private und 
+// Image ist die Hardware Kapselung der Bitmap uns sollte alle Funktionen die auf
+// Bitmapebene stattfinden bereitstellen..deswegen ist CBitMap auch private und
 // sollte/darf von keinem anderen Module benutzt werden
-// Im Gegensatz zu einem Sprite hat ein Image keine Position, Es kann jedoch 
+// Im Gegensatz zu einem Sprite hat ein Image keine Position, Es kann jedoch
 // auf eine bestimmte Position in einem anderen Image geblittet werden
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_IMAGE_H__BD24C302_F92B_11D4_B046_00E098802DF2__INCLUDED_)
-#define AFX_IMAGE_H__BD24C302_F92B_11D4_B046_00E098802DF2__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "../All2D_HAL/Bitmap.h"
 #include "../All2D_HAL/PicLoader.h" // Hinzugefügt von der Klassenansicht
@@ -26,7 +21,7 @@
 #include <string>
 using namespace std;
 
-class Image  
+class Image
 {
 public:
 	void setTransparentColor(int col);
@@ -61,7 +56,7 @@ public:
 	CBitMap* getBitMap();
 
 	void setBitMap(CBitMap* src);
-	
+
 protected:
 	Point offset;
 	Rect srcRect;
@@ -69,5 +64,3 @@ private:
 	int iTransparentCol;
 	CBitMap* BitMap;
 };
-
-#endif // !defined(AFX_IMAGE_H__BD24C302_F92B_11D4_B046_00E098802DF2__INCLUDED_)

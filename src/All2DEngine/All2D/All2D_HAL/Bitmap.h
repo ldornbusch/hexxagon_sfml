@@ -4,12 +4,7 @@
 // Sprites, und mehr zur Verfügung
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_BITMAP_H__FCDA7C53_685F_11D3_B889_0000E8699C86__INCLUDED_)
-#define AFX_BITMAP_H__FCDA7C53_685F_11D3_B889_0000E8699C86__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 //#define BYTE unsigned char
 #define _32BPP
@@ -193,5 +188,3 @@ protected:
 
     unsigned int * pPolyDest;
 };
-
-#endif // !defined(AFX_BITMAP_H__FCDA7C53_685F_11D3_B889_0000E8699C86__INCLUDED_)

@@ -7,12 +7,7 @@
 
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GAMECONTROLER_H__419AD0FA_19E0_41CC_BB50_BEB575371117__INCLUDED_)
-#define AFX_GAMECONTROLER_H__419AD0FA_19E0_41CC_BB50_BEB575371117__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "All2D_Base/xContainer.h"
 #include "All2D_Events/MessageManager.h"
@@ -56,5 +51,3 @@ protected:
 	virtual void  loadGameData();
 	virtual void  saveGameData();
 };
-
-#endif // !defined(AFX_GAMECONTROLER_H__419AD0FA_19E0_41CC_BB50_BEB575371117__INCLUDED_)

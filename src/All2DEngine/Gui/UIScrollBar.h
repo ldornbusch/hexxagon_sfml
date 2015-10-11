@@ -2,12 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_UISCROLLBAR_H__02798592_3CE8_42AD_910D_CD00F26A1824__INCLUDED_)
-#define AFX_UISCROLLBAR_H__02798592_3CE8_42AD_910D_CD00F26A1824__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "UIHoverButton.h"
 #include "UIDragableSprite.h"
@@ -16,7 +11,7 @@
 #define ALL2D_HORIZONTAL  0x0002
 #define ALL2D_VERTICAL	  0x0001
 
-class UIScrollBar : public UIHoverButton, public hasValue   
+class UIScrollBar : public UIHoverButton, public hasValue
 {
 public:
 	string getName();
@@ -45,5 +40,3 @@ private:
 	UIHoverButton btnUp, btnDown;
 	UIDragableSprite sprtSlider;
 };
-
-#endif // !defined(AFX_UISCROLLBAR_H__02798592_3CE8_42AD_910D_CD00F26A1824__INCLUDED_)

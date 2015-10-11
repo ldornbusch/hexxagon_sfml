@@ -1,25 +1,20 @@
 // UISprite.h: Schnittstelle für die Klasse UISprite.
 // Ein Sprite ist ein Image mit einer festen Position am Bildschirm
-// Ein Sprite hat zusätzlich einen Backbuffer, der den 
+// Ein Sprite hat zusätzlich einen Backbuffer, der den
 // Hintergrund  Sprites rettet					(implemented on 30.04.2001).
 // Ein Sprite kann mit anderen Sprites kollidieren 	(implemented on xx.xx.xxxx).
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_UISPRITE_H__027D85C2_3555_4E87_8991_6738CDBE2BC6__INCLUDED_)
-#define AFX_UISPRITE_H__027D85C2_3555_4E87_8991_6738CDBE2BC6__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "UIElement.h"
 #include "../All2D_Base/Image.h"
 #include "../../UTILS/Rect.h"	// Hinzugefügt von der Klassenansicht
 
 
-class UISprite : 
+class UISprite :
 	public virtual Image  ,
-	public virtual UIElement 
+	public virtual UIElement
 {
 public:
 	void setBlitMode(int bltMode);
@@ -48,10 +43,8 @@ protected:
 	bool bVisible;
 //	bool needUpdate;
 	Rect BufferPos1, BufferPos2;
-	Image* Buffer1, *Buffer2; // for doubleBuffering ~:-( 
+	Image* Buffer1, *Buffer2; // for doubleBuffering ~:-(
 	int Priority;
 	bool Buffering;
 	int iSpriteBltMode;
 };
-
-#endif // !defined(AFX_UISPRITE_H__027D85C2_3555_4E87_8991_6738CDBE2BC6__INCLUDED_)

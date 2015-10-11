@@ -1,13 +1,7 @@
 // ImageText.h: Schnittstelle für die Klasse ImageText.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_IMAGETEXT_H__EC7BC929_C165_40C1_AC5D_9AEBE8F054F8__INCLUDED_)
-#define AFX_IMAGETEXT_H__EC7BC929_C165_40C1_AC5D_9AEBE8F054F8__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "Image.h" // Hinzugefügt von der Klassenansicht
 
@@ -59,5 +53,3 @@ private:
 protected:
   bool WriteChar(Image& Dest, int x, int y, char strChar, int bltMode=IMAGE_BLTMODE_TRANS, int xStretch=0,int yStretch=0);
 };
-
-#endif // !defined(AFX_IMAGETEXT_H__EC7BC929_C165_40C1_AC5D_9AEBE8F054F8__INCLUDED_)

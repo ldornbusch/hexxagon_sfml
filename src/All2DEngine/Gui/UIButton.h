@@ -1,21 +1,16 @@
 // UIButton.h: Schnittstelle für die Klasse UIButton.
-// UIButton is a simple rectangle invisible button 
+// UIButton is a simple rectangle invisible button
 // which sends a message when the mouse is pressed inside
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_UIBUTTON_H__679F489C_ABA7_4730_8F9B_2860428DBDC0__INCLUDED_)
-#define AFX_UIBUTTON_H__679F489C_ABA7_4730_8F9B_2860428DBDC0__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "../All2D/All2D_Sprites/UIElement.h"
 
 #define HOVER_ON		66666
 #define HOVER_OFF		-66666
 
-class UIButton : public virtual UIElement  
+class UIButton : public virtual UIElement
 {
 public:
 	void fire();
@@ -33,5 +28,3 @@ protected:
 	long sendLong;
 	unsigned int sendWord;
 };
-
-#endif // !defined(AFX_UIBUTTON_H__679F489C_ABA7_4730_8F9B_2860428DBDC0__INCLUDED_)

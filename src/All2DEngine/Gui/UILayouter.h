@@ -11,17 +11,13 @@
 // ist eine Reihe(oder Spalte) voll, wird die naechste genutzt
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_UILAYOUTER_H__7B3C5331_C5DF_47F9_B668_3B299909C87B__INCLUDED_)
-#define AFX_UILAYOUTER_H__7B3C5331_C5DF_47F9_B668_3B299909C87B__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "..\UTILS\Rect.h"	// Hinzugefügt von der Klassenansicht
 #include "..\ALL2D\ALL2D_BASE\xContainer.h"
 #include "..\ALL2D\ALL2D_SPRITES\UISprite.h"
 
+//TODO: create enum here
 #define LAYOUT_LEFT_RIGHT	0x0001
 #define LAYOUT_RIGHT_LEFT	0x0002
 #define LAYOUT_UP_DOWN		0x0003
@@ -50,5 +46,3 @@ private:
 	UISprite sprtBackGround;
 
 };
-
-#endif // !defined(AFX_UILAYOUTER_H__7B3C5331_C5DF_47F9_B668_3B299909C87B__INCLUDED_)

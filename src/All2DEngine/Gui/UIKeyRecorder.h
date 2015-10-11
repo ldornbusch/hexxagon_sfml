@@ -2,12 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_UIKEYRECORDER_H__2733B3A1_1366_11D6_B047_00E098802DF2__INCLUDED_)
-#define AFX_UIKEYRECORDER_H__2733B3A1_1366_11D6_B047_00E098802DF2__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "UIHoverButton.h"
 #include "hasValue.h"
@@ -45,5 +40,3 @@ protected:
 	void writeName();
 	string translateMessage2KeyName(int wData);
 };
-
-#endif // !defined(AFX_UIKEYRECORDER_H__2733B3A1_1366_11D6_B047_00E098802DF2__INCLUDED_)

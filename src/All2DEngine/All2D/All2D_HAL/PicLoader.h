@@ -2,12 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_PICLOADER_H__8A0C6236_5811_4C9A_A132_7CBA6ACA21DB__INCLUDED_)
-#define AFX_PICLOADER_H__8A0C6236_5811_4C9A_A132_7CBA6ACA21DB__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "../../Utils/xzip/xzip.h"	//Das ist nicht Cool!!!
 
@@ -48,5 +43,3 @@ class PicLoader
 //		static	xZip xz;
 		//static	xZip xzs;
 };
-
-#endif // !defined(AFX_PICLOADER_H__8A0C6236_5811_4C9A_A132_7CBA6ACA21DB__INCLUDED_)

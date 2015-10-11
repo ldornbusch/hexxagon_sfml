@@ -1,19 +1,13 @@
 // HexxagonMouseMover.h: Schnittstelle für die Klasse HexxagonMouseMover.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_HEXXAGONMOUSEMOVER_H__28C47C50_6313_4946_8B09_069B74E5E5AD__INCLUDED_)
-#define AFX_HEXXAGONMOUSEMOVER_H__28C47C50_6313_4946_8B09_069B74E5E5AD__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "..\ALL2DENGINE\GUI\MouseMover.h"
 #include "..\game\GameImageCloner.h"
 #include "ControllerAdapter.h"
 
-class HexxagonMouseMover : public MouseMover , GameImageCloner 
+class HexxagonMouseMover : public MouseMover , GameImageCloner
 {
 public:
 	virtual bool paint(Image& imgBackBuffer);
@@ -28,5 +22,3 @@ private:
 	int actPlayer;
 	bool blnPause;
 };
-
-#endif // !defined(AFX_HEXXAGONMOUSEMOVER_H__28C47C50_6313_4946_8B09_069B74E5E5AD__INCLUDED_)

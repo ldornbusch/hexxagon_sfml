@@ -1,10 +1,7 @@
-//#define INITGUID
-
 #include "hexxagon/HexxagonGameController.h"
 #include "All2DEngine/All2D/All2D_System.h"
 #include "All2DEngine/All2D/All2D_HAL/All2DWin.h"
 
-LRESULT CALLBACK MainWndProc (HWND ,UINT,WPARAM ,LPARAM);
 All2D_WinInterface *myWin=NULL;					// Die Window-Klasse für DirectDraw Window
 //
 // initialize static system object

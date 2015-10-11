@@ -2,12 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GAMEHIGHSCORE_H__24287676_E2D4_47C6_9EF5_31D4DCB80D42__INCLUDED_)
-#define AFX_GAMEHIGHSCORE_H__24287676_E2D4_47C6_9EF5_31D4DCB80D42__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "../All2DEngine/All2D/All2D_Sprites/UIElement.h"
 #include "GameImageCloner.h"
@@ -37,5 +32,3 @@ private:
 	string strNames[HIGH_SCORE_ENTRIES];
 	long int		iPoints[HIGH_SCORE_ENTRIES];
 };
-
-#endif // !defined(AFX_GAMEHIGHSCORE_H__24287676_E2D4_47C6_9EF5_31D4DCB80D42__INCLUDED_)

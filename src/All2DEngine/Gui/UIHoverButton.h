@@ -1,22 +1,17 @@
 // UIHoverButton.h: Schnittstelle für die Klasse UIHoverButton.
-// UIHoverButton zeigt eines von zwei Bildern, je nachdem, ob die Mouse 
+// UIHoverButton zeigt eines von zwei Bildern, je nachdem, ob die Mouse
 // den Button beruehrt, oder nicht
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_UIHOVERBUTTON_H__D72C0C95_2627_49BD_831C_51F52A643C18__INCLUDED_)
-#define AFX_UIHOVERBUTTON_H__D72C0C95_2627_49BD_831C_51F52A643C18__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "UIButton.h"
 #include "../All2D/All2D_Sprites/UISprite.h"	// Hinzugefügt von der Klassenansicht
 
-class UIHoverButton : 
+class UIHoverButton :
 		public virtual UIButton,
 		public virtual UISprite
-  
+
 {
 public:
 	virtual void setPosition(Rect rctPos);
@@ -45,5 +40,3 @@ protected:
 	bool isHover;		// steht die Mouse über dem Button, oder nicht..
 	int iHoverBltMode;
 };
-
-#endif // !defined(AFX_UIHOVERBUTTON_H__D72C0C95_2627_49BD_831C_51F52A643C18__INCLUDED_)

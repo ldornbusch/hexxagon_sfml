@@ -1,13 +1,7 @@
 // HexxagonStone.h: Schnittstelle für die Klasse HexxagonStone.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_HEXXAGONSTONE_H__2318438B_E0F1_43A2_978F_DA4719BBFBBF__INCLUDED_)
-#define AFX_HEXXAGONSTONE_H__2318438B_E0F1_43A2_978F_DA4719BBFBBF__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "..\ALL2DENGINE\GUI\UIHoverButton.h"
 #include "..\game\GameImageCloner.h"
@@ -41,5 +35,3 @@ private:
 	int	iButtonState;
 
 };
-
-#endif // !defined(AFX_HEXXAGONSTONE_H__2318438B_E0F1_43A2_978F_DA4719BBFBBF__INCLUDED_)

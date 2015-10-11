@@ -1,18 +1,13 @@
 // GridAlign.h: Schnittstelle für die Klasse GridAlign.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_GRIDALIGN_H__16DD38D7_3718_457D_A0D3_638C207F9E9A__INCLUDED_)
-#define AFX_GRIDALIGN_H__16DD38D7_3718_457D_A0D3_638C207F9E9A__INCLUDED_
+#pragma once
 
 #include "POINT.H"	// Hinzugefügt von der Klassenansicht
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
 
 #include "Grid.h"
 
-class GridAlign : public Grid  
+class GridAlign : public Grid
 {
 public:
 	void setRightBorder(int iB);
@@ -36,6 +31,3 @@ private:
 	vector<Point*> vecCoords;	// hier werden die Coords gespeichert
 	vector<int> vecLengths;		// hier die zugehörigen length..
 };
-
-#endif // !defined(AFX_GRIDALIGN_H__16DD38D7_3718_457D_A0D3_638C207F9E9A__INCLUDED_)
- 

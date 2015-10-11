@@ -1,15 +1,7 @@
 // Anim.h: Schnittstelle für die Klasse Anim.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_ANIM_H__D613F2E2_218B_11D5_B046_00E098802DF2__INCLUDED_)
-#define AFX_ANIM_H__D613F2E2_218B_11D5_B046_00E098802DF2__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
-
-
 
 #include <String>
 #include <Vector>
@@ -88,5 +80,3 @@ protected:
 	vector<AnimFrame*> vecFrames;
 	vector<int> vecIndexes;					// this one holds the Indexes in vecFrames, so that it play a flip-flop loop.. so we just go 1 step in this array forward, without doing anything like counters, or directions
 };
-
-#endif // !defined(AFX_ANIM_H__D613F2E2_218B_11D5_B046_00E098802DF2__INCLUDED_)

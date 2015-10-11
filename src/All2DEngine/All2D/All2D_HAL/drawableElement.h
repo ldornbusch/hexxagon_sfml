@@ -12,12 +12,7 @@
 #define PI 3.1428
 #endif
 
-#if !defined(AFX_DEMO_H__843D4131_84C1_11D3_B8B2_0000E8699C86__INCLUDED_)
-#define AFX_DEMO_H__843D4131_84C1_11D3_B8B2_0000E8699C86__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "../All2D_Events/Event.h"
 #include "Bitmap.h"
@@ -37,6 +32,3 @@ private:
 protected:
 	bool isInitialized;
 };
-
-
-#endif // !defined(AFX_DEMO_H__843D4131_84C1_11D3_B8B2_0000E8699C86__INCLUDED_)

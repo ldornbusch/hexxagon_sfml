@@ -1,29 +1,22 @@
 // ScrollMap.h: Schnittstelle für die Klasse ScrollMap.
 // A Scrollmap is just a tilebased Screen which is scrollable.
-// The Scrolling will be set in the 
-// setScrollOffset(int x, int y) Method 
-// in the 
+// The Scrolling will be set in the
+// setScrollOffset(int x, int y) Method
+// in the
 // initTiles(int w, int h, int no) method it gives some Infos
 // about the Tiles
 // loadTiles(string strFileName) will load the tiles
 // loadMap(string strFileName) will load the MapData
 // paint(Image *backBuffer) will paint with actual scrolloffset
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_SCROLLMAP_H__DFF47721_C5C4_11D5_B046_00E098802DF2__INCLUDED_)
-#define AFX_SCROLLMAP_H__DFF47721_C5C4_11D5_B046_00E098802DF2__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
-
 #include "ImageText.h"
 #include "../All2D_Base/xElement.h"
 #include "../../UTILS/Point.h"	// Hinzugefügt von der Klassenansicht
 
-class ScrollMap : 
+class ScrollMap :
 								private virtual ImageText,
-								public virtual xElement 
+								public virtual xElement
 {
 public:
 	int getBlitMode(){	return iBlitMode;};
@@ -44,5 +37,3 @@ private:
 	int iBlitMode;
 	int* ptrMapData;
 };
-
-#endif // !defined(AFX_SCROLLMAP_H__DFF47721_C5C4_11D5_B046_00E098802DF2__INCLUDED_)

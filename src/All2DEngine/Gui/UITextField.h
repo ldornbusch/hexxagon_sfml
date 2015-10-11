@@ -1,14 +1,10 @@
 // UITextField.h: Schnittstelle für die Klasse UITextField.
 // 07.03.2003: Support for BackgroundColor, CursorColor,
 //			   BlinkFrequence
+// TODO: CLIPBOARD SUPPORT
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_UITEXTFIELD_H__11ECF891_9F5D_4777_86E0_119FEF4FB571__INCLUDED_)
-#define AFX_UITEXTFIELD_H__11ECF891_9F5D_4777_86E0_119FEF4FB571__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include "../All2D/All2D_Sprites/UISprite.h"
 #include "../All2D/All2D_Sprites/UIElement.h"
@@ -53,5 +49,3 @@ private:
 	void initTextBuffer();
 	UISprite* TextBuffer;
 };
-
-#endif // !defined(AFX_UITEXTFIELD_H__11ECF891_9F5D_4777_86E0_119FEF4FB571__INCLUDED_)

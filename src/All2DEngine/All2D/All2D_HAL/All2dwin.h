@@ -1,14 +1,7 @@
 // All2DWin.h: Schnittstelle für die Klasse All2DWin.
 //
 //////////////////////////////////////////////////////////////////////
-#define INITGUID
-
-#if !defined(AFX_All2DWin_H__07C97742_8027_11D3_A6F8_0080AD40DBC7__INCLUDED_)
-#define AFX_All2DWin_H__07C97742_8027_11D3_A6F8_0080AD40DBC7__INCLUDED_
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
 
 #include <SFML/Graphics.hpp>
 
@@ -49,5 +42,3 @@ private:
 	string strTitle;
     sf::RenderWindow sfml_window;
 };
-
-#endif // !defined(AFX_All2DWin_H__07C97742_8027_11D3_A6F8_0080AD40DBC7__INCLUDED_)
