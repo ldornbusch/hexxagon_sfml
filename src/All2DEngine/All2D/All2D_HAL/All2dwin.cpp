@@ -94,6 +94,10 @@ int All2DWin::MessageLoop()	//drawableElement.UpdateFrame () wird von Hier aufge
                 HAL_Event->Type=MM_LBUTTONDOWN;
                 HAL_Event->lData = event.mouseButton.y << 16 | event.mouseButton.x;
             }
+            if(event.type == sf::Event::MouseButtonReleased){
+                HAL_Event->Type=MM_LBUTTONUP;
+                HAL_Event->lData = event.mouseButton.y << 16 | event.mouseButton.x;
+            }
 
             if(event.type == sf::Event::KeyPressed){
                 HAL_Event->Type=MM_KEYDOWN;

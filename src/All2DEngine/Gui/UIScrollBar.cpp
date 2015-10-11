@@ -26,7 +26,7 @@ UIScrollBar::UIScrollBar(int iMode)
 	btnUp.setSendFlag(MM_SCROLL_UP,getID());
 	btnDown.setSendFlag(MM_SCROLL_DOWN,getID());
 
-	setScrollBarMode(2);
+	setScrollBarMode(iMode);
 
 	Image tmp;
 	tmp.cloneImage(All2D_System::UIElements,Rect(16,16,48,16));
@@ -117,7 +117,7 @@ bool UIScrollBar::handleEvent(Event *evt)
 }
 
 bool UIScrollBar::paint(Image &backBuffer)
-{	
+{
 	positionElements();
 	UIHoverButton::paint(backBuffer);
 	btnUp.paint(backBuffer);
@@ -154,7 +154,7 @@ void UIScrollBar::setHoverImage(Image &imgHover)
 
 // Hier werden die Elemente positioniert.
 // Dabei werden die seitlichen Buttons(btnUp/btnDown)
-// genauso breit gemacht, wie hoch, aber als Maximum 
+// genauso breit gemacht, wie hoch, aber als Maximum
 // wird mit SCROLLBAR_MAX_SIZE eingesetzt.
 // Natuerlich abhaengig von iScrollBarMode auch um 90 Grad gedreht...
 void UIScrollBar::positionElements()
@@ -188,7 +188,6 @@ void UIScrollBar::positionElements()
 		rctClipSlide.x2=0;
 		rctClipSlide.y2-=2*iButtonHeight+sprtSlider.getPosition().y2;
 		sprtSlider.setClipRect(rctClipSlide);
-
 
 	}else{
 		iButtonHeight=getPosition().y2;
@@ -253,7 +252,7 @@ void UIScrollBar::updateValue()
 		iActualValue=iMaxValue-(step*pixVal);
 	else
 		iActualValue=iMinValue+(step*pixVal);
-		
+
 }
 
 void UIScrollBar::setBlitMode(int bltMode)
