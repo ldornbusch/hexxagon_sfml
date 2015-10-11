@@ -35,7 +35,7 @@ bool UIButton::handleEvent(Event *evt)
 		switch (evt->Type) {
 			case MM_MOUSEMOVE:
 				// set mouseIn according to focus, check if it is relative, or absolute positioned
-				p=All2D_System::getMouseCoords(evt);
+				p=All2D_System::extractMouseCoords(evt);
 				if ( isInside(p.x,p.y) )
 				{
 					mouseIn=true;
@@ -46,7 +46,7 @@ bool UIButton::handleEvent(Event *evt)
 				break;
 
 			case MM_LBUTTONDOWN:
-				p=All2D_System::getMouseCoords(evt);
+				p=All2D_System::extractMouseCoords(evt);
 				if( isInside(p.x, p.y) ) {
 					isClicked=true;
 					fire();
@@ -56,7 +56,7 @@ bool UIButton::handleEvent(Event *evt)
 				break;
 
 			case MM_RBUTTONDOWN:
-				p=All2D_System::getMouseCoords(evt);
+				p=All2D_System::extractMouseCoords(evt);
 				if( isInside(p.x, p.y) ) {
 					isClicked=true;
 					fire();

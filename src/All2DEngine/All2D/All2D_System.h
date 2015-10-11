@@ -24,7 +24,7 @@ public:
 	static void setRenderMode(RENDERMODES iMode);
 	static RENDERMODES getRenderMode();
 	static int getTime();
-	static Point getMouseCoords(Event* evt);
+	static Point extractMouseCoords(Event* evt);
 
 	static float skipFactor;		// Bestimmt wieviele Bilder einer Animation uebersprungen werden sollen
 	static int fixedBits;			// Bittiefe(16 / 32 Bit)

@@ -61,7 +61,7 @@ bool UIKeyRecorder::handleEvent(Event *evt)
 		{
 		case MM_LBUTTONDOWN:
 			{
-				Point p=All2D_System::getMouseCoords(evt);
+				Point p=All2D_System::extractMouseCoords(evt);
 				if (!isInside(p.x,p.y) )
 				{
 					setActive(false);

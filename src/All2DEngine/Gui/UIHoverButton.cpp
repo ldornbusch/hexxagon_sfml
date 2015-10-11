@@ -30,7 +30,7 @@ bool UIHoverButton::handleEvent(Event *evt)
 		{
 				case MM_MOUSEMOVE:
 					// set mouseIn according to focus, check if it is relative, or absolute positioned
-					p=All2D_System::getMouseCoords(evt);
+					p=All2D_System::extractMouseCoords(evt);
 					if ( isInside(p.x,p.y) )
 					{
 	//					needUpdate=true;

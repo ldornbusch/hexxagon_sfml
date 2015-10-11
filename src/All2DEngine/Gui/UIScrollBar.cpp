@@ -74,7 +74,7 @@ bool UIScrollBar::handleEvent(Event *evt)
 
 	if (evt->Type==MM_LBUTTONDOWN)
 	{
-		Point pt=All2D_System::getMouseCoords(evt);
+		Point pt=All2D_System::extractMouseCoords(evt);
 		if( isInside(pt.x,pt.y)&&
 			!btnUp.isInside(pt.x,pt.y)&&
 			!btnDown.isInside(pt.x,pt.y)&&

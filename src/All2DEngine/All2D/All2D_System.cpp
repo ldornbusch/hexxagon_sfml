@@ -37,13 +37,13 @@ SoundEngine* All2D_System::sound = SoundFactory::getInstance(3);
 //CDebug All2D_System::Debug;
 
 
-// returns MouseCoords
-Point All2D_System::getMouseCoords(Event *evt)
+// returns MouseCoords from backed event variables
+Point All2D_System::extractMouseCoords(Event *evt)
 {
-	Point back;
-	back.x=evt->lData & 0x0000ffff;
-	back.y=(evt->lData & 0xffff0000)>>16;
-	return back;
+	Point retVal;
+	retVal.x=evt->lData & 0x0000ffff;
+	retVal.y=(evt->lData & 0xffff0000)>>16;
+	return retVal;
 }
 int All2D_System::getTime()
 {

@@ -29,7 +29,7 @@ void UIElement::setPosition(int x, int y, int w, int h)
 
 void UIElement::setPosition(Rect p)
 {
-	Position.setPosition(p.x1,p.y1,p.x2,p.y2);	
+	Position.setPosition(p.x1,p.y1,p.x2,p.y2);
 }
 
 Rect UIElement::getPosition()
@@ -51,7 +51,7 @@ bool UIElement::handleEvent(Event *evt)
 		// toggle inside depending on mousemove
 		if (evt->Type == MM_MOUSEMOVE) {
 			// set mouseIn according to focus, check if it is relative, or absolute positioned
-			Point p = All2D_System::getMouseCoords(evt);
+			Point p = All2D_System::extractMouseCoords(evt);
 			mouseIn = isInside(p.x,p.y);
 		}
 	}

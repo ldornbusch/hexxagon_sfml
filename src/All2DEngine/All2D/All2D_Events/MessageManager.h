@@ -23,7 +23,6 @@ class MessageManager
 public:
 	static bool paint(CBitMap* backBuffer);		//This paint() makes Conversion CBitMap->Image
 	static void setInterface(All2D_WinInterface* ptrWindow);
-	static bool handleOSMessages(Event*evt);
 	static void processEvents();
 	static bool paint(Image& backBuffer);
 	static void setView(AppGameController* view);

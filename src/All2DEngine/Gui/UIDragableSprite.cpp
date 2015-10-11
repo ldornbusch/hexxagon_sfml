@@ -32,7 +32,7 @@ bool UIDragableSprite::handleEvent(Event *evt)
 	switch (evt->Type)
 	{
 		case MM_LBUTTONDOWN:
-			p=All2D_System::getMouseCoords(evt);
+			p=All2D_System::extractMouseCoords(evt);
 			drag=isInside(p.x,p.y) ;
 			if (drag)
 			{
@@ -42,7 +42,7 @@ bool UIDragableSprite::handleEvent(Event *evt)
 			hasMoved=false;
 		break;
 		case MM_MOUSEMOVE:
-			p=All2D_System::getMouseCoords(evt);
+			p=All2D_System::extractMouseCoords(evt);
 			hasMoved=drag;
 			if (hasMoved)
 				setOffset(dragOffset.x,dragOffset.y);

@@ -22,6 +22,8 @@ class All2DWin : public All2D_WinInterface
 public:
 	void All2D_Exit();
 	void setFullscreen(bool blnFlag);
+	Rect getWindowPosition();
+    void transformMouseCoords(Event *evt);
 	void init();
 	int startApp(AppGameController& dE);
 

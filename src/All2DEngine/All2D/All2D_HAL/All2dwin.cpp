@@ -63,6 +63,30 @@ void All2DWin::ChangeCoopLevel()
     InitWindow();
 }
 
+Rect All2DWin::getWindowPosition()
+{
+    Rect retVal;
+    retVal.x1 = sfml_window.getPosition().x;
+    retVal.y1 = sfml_window.getPosition().y;
+    retVal.x2 = sfml_window.getSize().x;
+    retVal.y2 = sfml_window.getSize().y;
+    return retVal;
+}
+
+// returns MouseCoords transformed to 0-winX/0-winY
+void All2DWin::transformMouseCoords(Event *evt)
+{
+	//Point retVal;
+	double x=(double)(evt->lData & 0x0000ffff);
+    x= x / sfml_window.getSize().x * All2D_System::fixedX;
+
+	double y=((double)((evt->lData & 0xffff0000)>>16));
+    y = y /sfml_window.getSize().y * All2D_System::fixedY;
+
+    evt->lData=((int)y)<<16 | ((int)x);
+}
+
+
 // This is the Mainloop, where the Program (View) runs...
 int All2DWin::MessageLoop()	//drawableElement.UpdateFrame () wird von Hier aufgerufen
 {
@@ -89,14 +113,17 @@ int All2DWin::MessageLoop()	//drawableElement.UpdateFrame () wird von Hier aufge
             if(event.type == sf::Event::MouseMoved){
                 HAL_Event->Type=MM_MOUSEMOVE;
                 HAL_Event->lData = event.mouseMove.y << 16 | event.mouseMove.x;
+                transformMouseCoords(HAL_Event);
             }
             if(event.type == sf::Event::MouseButtonPressed){
                 HAL_Event->Type=MM_LBUTTONDOWN;
                 HAL_Event->lData = event.mouseButton.y << 16 | event.mouseButton.x;
+                transformMouseCoords(HAL_Event);
             }
             if(event.type == sf::Event::MouseButtonReleased){
                 HAL_Event->Type=MM_LBUTTONUP;
                 HAL_Event->lData = event.mouseButton.y << 16 | event.mouseButton.x;
+                transformMouseCoords(HAL_Event);
             }
 
             if(event.type == sf::Event::KeyPressed){
@@ -108,7 +135,7 @@ int All2DWin::MessageLoop()	//drawableElement.UpdateFrame () wird von Hier aufge
                 HAL_Event->wData=event.key.code;
             }
 
-            MessageManager::handleOSMessages(HAL_Event);
+            MessageManager::handleEvent(HAL_Event);
         }
         MessageManager::processEvents();
         bool isExit=MessageManager::paint(surface);

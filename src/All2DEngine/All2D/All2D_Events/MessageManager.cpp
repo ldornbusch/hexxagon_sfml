@@ -20,13 +20,6 @@ MessageManager::~MessageManager()
 {
 }
 
-// this Message handles the Messages, which come from the OS-Windows System...
-// This Messages will be recorded, and stored, for Help-System
-bool MessageManager::handleOSMessages(Event *evt)
-{
-	return handleEvent(evt);
-}
-
 // adds an Event into the stack
 bool MessageManager::handleEvent(Event *evt)
 {

@@ -119,7 +119,7 @@ bool UITextField::handleEvent(Event* evt)
 	p.y=0;
 	switch (evt->Type) {
 		case MM_LBUTTONDOWN:
-			p=All2D_System::getMouseCoords(evt);
+			p=All2D_System::extractMouseCoords(evt);
 			setActive(isInside(p.x,p.y));
 			if (isActive!=wasActive) {
 				if (isActive)
@@ -129,7 +129,7 @@ bool UITextField::handleEvent(Event* evt)
 			}
 			break;
 		case MM_MOUSEMOVE:
-			p=All2D_System::getMouseCoords(evt);
+			p=All2D_System::extractMouseCoords (evt);
 			break;
 		case MM_CHAR:
 		case MM_KEYDOWN:
