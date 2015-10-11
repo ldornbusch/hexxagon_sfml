@@ -5,9 +5,6 @@
 #ifndef ALL2D_MSG_CONSTANT
 #define ALL2D_MSG_CONSTANT
 
-// MUST BE REMOVED TO BE PLATFORM NEUTRAL!!
-//#include <windows.h> // for standard WindowsMessages..
-
 
 #define		MM_NO_EVENT				0000			// Damit kann der Event-Type auf einen Standartwert gesetzt werden
 #define		MM_MOUSEACTIVE			8001			// wData ist entweder true, oder false

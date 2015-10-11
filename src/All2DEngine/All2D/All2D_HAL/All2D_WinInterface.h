@@ -20,7 +20,7 @@ public:
 	virtual int startApp(AppGameController& dE)=0;
 	virtual void setFullscreen(bool blnFlag)=0;
 	virtual void All2D_Exit()=0;
-//	virtual ~All2D_WinInterface()=0;
+	virtual ~All2D_WinInterface(){} ;
 };
 
 #endif // !defined(AFX_ALL2D_WININTERFACE_H__4E387681_1199_11D6_B047_00E098802DF2__INCLUDED_)

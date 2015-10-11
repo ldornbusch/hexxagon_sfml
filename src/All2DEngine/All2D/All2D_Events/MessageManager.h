@@ -1,6 +1,6 @@
 // MessageManager.h: Schnittstelle für die Klasse MessageManager.
-// Enthält ein static drawable Element, das ein Container für alle anderen 
-// GUI Elements ist.. Windows Messages werden über den Manager verschickt 
+// Enthält ein static drawable Element, das ein Container für alle anderen
+// GUI Elements ist.. Windows Messages werden über den Manager verschickt
 // und können durch seine static Functions auch von anderen Instanzen
 // (z.B UIElement verschickt werden). Der Message Manager wird benutzt, um
 // Die Einzelnen Komponenten miteinander kommunizieren zu lassen..
@@ -20,10 +20,10 @@ using namespace std;
 #include "../All2D_HAL/All2D_WinInterface.h"
 #include "Event.h"
 
-// pre-declaration 
+// pre-declaration
 class AppGameController;
 
-class MessageManager  
+class MessageManager
 {
 public:
 	static bool paint(CBitMap* backBuffer);		//This paint() makes Conversion CBitMap->Image
@@ -40,7 +40,6 @@ private:
 	static All2D_WinInterface* ptrWinInterface;
 	static AppGameController* MainView;
 	static vector<Event*>	vecEvents;
-	static bool keys[256];
 	static Image backBufferImage;	// This Image will only hold the BitMap structure for the All2D-Engine
 
 protected:

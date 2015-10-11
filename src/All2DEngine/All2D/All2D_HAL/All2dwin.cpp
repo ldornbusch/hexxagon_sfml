@@ -5,69 +5,25 @@
 #include "All2DWin.h"
 #include "../All2D_System.h"
 
-
-
-
-// -------------------------------------------------------------------------
-
 //////////////////////////////////////////////////////////////////////
 // Konstruktion/Destruktion
 //////////////////////////////////////////////////////////////////////
-
-/*All2DWin::All2DWin(HINSTANCE hInst, HINSTANCE hPrevInst, WNDPROC MainWndProc)//, bool Fullscr ,int winWidth, int winHeight)
-{
-
-	bHermes=false;		// We do not use Hermes at the moment..
-	WindowX = All2D_System::fixedX;		// Window is WindowX px wide
-	WindowY = All2D_System::fixedY;		// Window is WindowY px large
-	bFullScreen=All2D_System::fullScreen;
-	bDebugWinLook = !bFullScreen; // we will have a frame and such things...
-	strTitle=All2D_System::WinTitle;
-	DisplayDepht = WINPLANES;	// We want to have WINPLANES Bits per Pixel
-//	HermesBuffer=NULL;	// We do not have a HermesBuffer
-//	BackBuffer=NULL;	// No BackBuffer
-//	Primary=NULL;		// No PrimaryBuffer (which is alltimes visible)
-//	dd=NULL;			// No DirectDrawObject
-//	hInstance=hInst;		// The Windows Instance
-//	hPrevInstance=hPrevInst;
-	bReady=false;
-//	All2D_System::hWnd = InitWindow(MainWndProc);	// Make the Window
-	MessageManager::setInterface(this);
-}
-*/
 All2DWin::All2DWin()//, bool Fullscr ,int winWidth, int winHeight)
 {
-
-	bHermes=false;		// We do not use Hermes at the moment..
 	WindowX = All2D_System::fixedX;		// Window is WindowX px wide
 	WindowY = All2D_System::fixedY;		// Window is WindowY px large
 	bFullScreen=All2D_System::fullScreen;
 	bDebugWinLook = !bFullScreen; // we will have a frame and such things...
 	strTitle=All2D_System::WinTitle;
 	DisplayDepht = WINPLANES;	// We want to have WINPLANES Bits per Pixel
-//	HermesBuffer=NULL;	// We do not have a HermesBuffer
-//	BackBuffer=NULL;	// No BackBuffer
-//	Primary=NULL;		// No PrimaryBuffer (which is alltimes visible)
-//	dd=NULL;			// No DirectDrawObject
 	bReady=false;
 	InitWindow();	// Make the Window
 	MessageManager::setInterface(this);
-
 }
 
 
 void All2DWin::init()
 {
-/*	if (InitSurfaces()!=DD_OK)
-	{
-		MessageBox(hWnd,"Fehler bei Surface Initialisierung!!","All3D-DirectX-Error", MB_OK);
-		exit(0);
-	}
-	bReady=true;
-	bActive=true;
-	if (Hermes_Init()==0) ShowError (HERMES_INITFAIL);
-	HermesConverter = Hermes_ConverterInstance(0) ;
-*/
 }
 
 
@@ -88,7 +44,6 @@ void All2DWin::setFullscreen(bool blnFlag)
 
 void All2DWin::All2D_Exit()
 {
-	//PostMessage(hWnd, WM_CLOSE, 0, 0);
 	sfml_window.close();
 }
 
@@ -100,7 +55,6 @@ void All2DWin::InitWindow()
     sfml_window.setFramerateLimit(60);
 }
 
-
 // This Method changes between Fullscreen and windowed mode..
 void All2DWin::ChangeCoopLevel()
 {
@@ -109,77 +63,19 @@ void All2DWin::ChangeCoopLevel()
     InitWindow();
 }
 
-
 // This is the Mainloop, where the Program (View) runs...
 int All2DWin::MessageLoop()	//drawableElement.UpdateFrame () wird von Hier aufgerufen
 {
-/*	MSG		msg;
-	static bool isExit=true;
-	int newtime, lasttime;
-	while (TRUE)
-	{
-		if (PeekMessage(&msg, NULL, 0, 0, PM_NOREMOVE))
-		{
-			if (!GetMessage(&msg, NULL, 0, 0 ))
-			  break;
-			// Translate and dispatch the message
-			if (0 == TranslateAccelerator(hWnd,hAccel, &msg))
-			{
-				TranslateMessage(&msg);
-				DispatchMessage(&msg);
-			}
-		}
-		else
-			if (bActive && bReady)
-			{ //                    Idle processing
-				lasttime =GetTickCount();
-
-				MessageManager::processEvents();
-
-				isExit=MessageManager::paint(MakeBitMap()); 	//Creates a CBitmap of the Backbuffer, or the HermesBuffer
-				CopyHermesToBackBuffer();										//Actualize the BackBuffer (if needed)
-				Flip();
-
-				if (!bFullScreen)
-				{
-					newtime =GetTickCount();
-					float FPS;
-					char	dummy[60];
-					string newDummy;
-					if (newtime==lasttime) {
-						wsprintf(dummy,"Too fast for me!!;-)");
-					}else{
-						newtime=newtime-lasttime;
-						FPS=(float)1000/(newtime);
-						wsprintf(dummy,"Max Time: %d FpS" ,(int)(FPS));
-						newDummy=dummy;
-					}
-
-					SetWindowText(hWnd, newDummy.c_str());
-				}
-				if (!isExit)
-					PostMessage(hWnd, WM_CLOSE, 0, 0);
-			}
-			else
-			{   WaitMessage();   }
-		}
-	return msg.wParam;
-*/
     sf::Texture txt;
 
     CBitMap* surface=new CBitMap(640,480);
-    surface->Clear(0xffff00ff);
+    surface->Clear(0);
     sf::Image img;
     surface->returnImage(img);
     txt.loadFromImage(img);
     sf::Sprite sp(txt);
     sp.setPosition(0,0);
     sp.setScale(1.0f,1.0f);
-    int i=0xff000000;
-
-    sf::CircleShape shape(20.f);
-    shape.setFillColor(sf::Color::Cyan);
-
 
     while (sfml_window.isOpen()){
         sf::Event event;

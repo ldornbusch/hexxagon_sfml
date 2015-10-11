@@ -8,15 +8,12 @@ All2D_WinInterface* MessageManager::ptrWinInterface = NULL;
 AppGameController* MessageManager::MainView=NULL;
 Image MessageManager::backBufferImage;
 vector<Event*> MessageManager::vecEvents;
-bool	MessageManager::keys[256];
 //////////////////////////////////////////////////////////////////////
 // Konstruktion/Destruktion
 //////////////////////////////////////////////////////////////////////
 
 MessageManager::MessageManager()
 {
-	for (int x=0;x<256;x++)
-		keys[x]=false;
 }
 
 MessageManager::~MessageManager()
@@ -27,12 +24,6 @@ MessageManager::~MessageManager()
 // This Messages will be recorded, and stored, for Help-System
 bool MessageManager::handleOSMessages(Event *evt)
 {
-/* 	if (evt->Type==MM_KEYDOWN)
- * 		keys[(char)evt->wData]=true;
- * 	if (evt->Type==MM_KEYUP)
- * 		keys[(char)evt->wData]=false;
- */
-
 	return handleEvent(evt);
 }
 

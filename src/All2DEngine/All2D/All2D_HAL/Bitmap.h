@@ -101,7 +101,6 @@ public:
     void createFromImage(sf::Image& img);
 
 	bool Load(string fileName);
-    bool Open(FILE* infile,int imageType,int size=-1,int offset=-1);
 	void LineAdd(int x1, int y1, int x2, int y2, int col1, int col2);
 	void Line(int x1, int y1, int x2, int y2, int Col);
 	void Line(int x1, int y1, int x2, int y2, int col1, int col2);
@@ -153,7 +152,7 @@ public:
 	void XorPattern();
 
 	CBitMap(unsigned int Width, unsigned int Height);
-	CBitMap(char* PCXFile);
+	CBitMap(const char* imgFile);
 	CBitMap();
 	virtual ~CBitMap();
 
@@ -178,24 +177,19 @@ private:
 	char	Palette[1024];	//aarrggbb for Hermes compatibility
 
 protected:
-	bool LoadBMP(const char* fileName);
-    bool LoadJPG(FILE* infile);
-    bool LoadPCX(FILE* PicFile);
-    bool LoadPNG(FILE* fp);
-
     float Left_dXdY;
     float Right_dXdY;
     float LeftX;
     float RightX;
 
-		float LeftU;
-		float LeftV;
-		float Left_dUdY;
-		float Left_dVdY;
-		float dUdY;
-		float dVdY;
-		float dVdX;
-		float dUdX;
+    float LeftU;
+    float LeftV;
+    float Left_dUdY;
+    float Left_dVdY;
+    float dUdY;
+    float dVdY;
+    float dVdX;
+    float dUdX;
 
     unsigned int * pPolyDest;
 };
