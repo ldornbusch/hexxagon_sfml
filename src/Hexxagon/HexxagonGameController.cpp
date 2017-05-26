@@ -95,6 +95,10 @@ void HexxagonGameController::setSettings()
 	value val=myMenu.getValue("chkfullscreen");
 	MessageManager::handleEvent(new Event(MM_SETFULLSCREEN,val.second,0));
 
+// set/unSet Smooth...
+	val=myMenu.getValue("chksmooth");
+	MessageManager::handleEvent(new Event(MM_SETSMOOTH,val.second,0));
+
 // set/unSet Beginner...
 	hexGame.setBeginner((myMenu.getValue("rdoblue").second==1)?HEX_BLUE_PLAYER:HEX_RED_PLAYER);
 
