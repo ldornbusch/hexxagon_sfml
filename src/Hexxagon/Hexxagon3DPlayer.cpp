@@ -96,8 +96,8 @@ void Hexxagon3DPlayer::init3D()
 
 bool Hexxagon3DPlayer::paint(Image &backBuffer)
 {
-	if (hexBoard!=NULL && All2D_System::getRenderMode()==OPENGL ) {
-/*)
+/*	if (hexBoard!=NULL && All2D_System::getRenderMode()==OPENGL ) {
+)
 		if (!bInitialized) init3D();
 
 		/*
@@ -246,6 +246,6 @@ bool Hexxagon3DPlayer::paint(Image &backBuffer)
 
 	//				glEnable(GL_TEXTURE_2D);							// Enable Texture Mapping ( NEW )
 
-	}
+//	}
 	return true;
 }

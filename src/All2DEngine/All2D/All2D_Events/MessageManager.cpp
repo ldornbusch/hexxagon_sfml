@@ -5,7 +5,7 @@
 #include "MessageManager.h"
 #include "../All2D_System.h"
 All2D_WinInterface* MessageManager::ptrWinInterface = NULL;
-AppGameController* MessageManager::MainView=NULL;
+All2D_Controller* MessageManager::MainView=NULL;
 Image MessageManager::backBufferImage;
 vector<Event*> MessageManager::vecEvents;
 //////////////////////////////////////////////////////////////////////
@@ -27,7 +27,7 @@ bool MessageManager::handleEvent(Event *evt)
 	return true;
 }
 
-void MessageManager::setView(AppGameController *view)
+void MessageManager::setView(All2D_Controller *view)
 {
 	MainView=view;
 }

@@ -10,30 +10,12 @@
 // Konstruktion/Destruktion
 //////////////////////////////////////////////////////////////////////
 
-AppGameController::AppGameController() :	xContainer("GameController") 
+AppGameController::AppGameController() : All2D_Controller("GameController")
 {
 	activeElement=0;
 	newActiveElement=0;
 	blnLoadScreen=false;
 	iLoadReadyFlag=0;
-	imgFrameBuffer.resize(All2D_System::fixedX,All2D_System::fixedY);
-	AppGameController::requestLoad();	
-}
-
-AppGameController::~AppGameController()
-{
-	imgFrameBuffer.finish();
-}
-
-void AppGameController::requestLoad()
-{
-}
-
-void AppGameController::init()
-{
-		// init sound engine instance
-	All2D_System::sound->init();
-
 }
 
 void AppGameController::setActiveElement()
@@ -49,28 +31,6 @@ void AppGameController::setActiveElement()
 		(x)->init();
 		blnLoadScreen=true;
 	}
-}
-
-bool AppGameController::masterHandleEvent(Event *evt)
-{
-	return handleEvent(evt);
-}
-
-
-bool AppGameController::masterPaint(Image& backBuffer)
-{
-	bool retVal=false;
-	if (All2D_System::doubleBuffering && All2D_System::fullScreen){
-		retVal=paint(imgFrameBuffer);
-		All2D_System::spriteManager.paint(imgFrameBuffer);
-		All2D_System::spriteManager.clear();
-		imgFrameBuffer.show(backBuffer,0,0,IMAGE_BLTMODE_FAST);
-	}else{
-		retVal=paint(backBuffer);
-		All2D_System::spriteManager.paint(backBuffer);
-		All2D_System::spriteManager.clear();
-	}
-	return retVal;
 }
 
 bool AppGameController::handleEvent(Event *evt)

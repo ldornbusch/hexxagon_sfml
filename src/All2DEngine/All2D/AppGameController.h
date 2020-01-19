@@ -9,30 +9,23 @@
 
 #pragma once
 
-#include "All2D_Base/xContainer.h"
+#include "All2D_Controller.h"
 #include "All2D_Events/MessageManager.h"
 #include <string>
 #include <vector>
 
 using namespace std;
 
-class AppGameController : public xContainer
+class AppGameController: public All2D_Controller
 {
 public:
 	// consruct / deconstruct
 	AppGameController();
-	virtual ~AppGameController();
 
   // container functions
-	virtual void  requestLoad();
 	virtual bool  handleEvent(Event* evt);
 	virtual bool  paint(Image& backBuffer);
-	virtual void          init();
 private:
-	bool  masterHandleEvent(Event* evt);
-	bool  masterPaint(Image& backBuffer);
-	Image imgFrameBuffer;
-
 // eigentlich wollte ich nur die beiden Functionen paint und handleEvent des MessageManagers
 // zu friends machen gab aber immer einen No NameSpace Error.. deswegen die ganze class als friend :-(
 	friend class MessageManager;//::paint(Image& backBuffer);

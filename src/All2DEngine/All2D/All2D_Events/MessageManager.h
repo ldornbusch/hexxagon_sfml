@@ -11,12 +11,12 @@
 #include <vector>
 using namespace std;
 
-#include "../AppGameController.h"
+#include "../All2D_Controller.h"
 #include "../All2D_HAL/All2D_WinInterface.h"
 #include "Event.h"
 
 // pre-declaration
-class AppGameController;
+class All2D_Controller;
 
 class MessageManager
 {
@@ -25,14 +25,14 @@ public:
 	static void setInterface(All2D_WinInterface* ptrWindow);
 	static void processEvents();
 	static bool paint(Image& backBuffer);
-	static void setView(AppGameController* view);
+	static void setView(All2D_Controller* view);
 	static bool handleEvent(Event* evt);
 	MessageManager();
 	virtual ~MessageManager();
 
 private:
 	static All2D_WinInterface* ptrWinInterface;
-	static AppGameController* MainView;
+	static All2D_Controller* MainView;
 	static vector<Event*>	vecEvents;
 	static Image backBufferImage;	// This Image will only hold the BitMap structure for the All2D-Engine
 

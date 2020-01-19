@@ -12,16 +12,13 @@ All2DWin::All2DWin()//, bool Fullscr ,int winWidth, int winHeight)
 {
 	WindowX = All2D_System::fixedX;		// Window is WindowX px wide
 	WindowY = All2D_System::fixedY;		// Window is WindowY px large
-	bFullScreen=All2D_System::fullScreen;
-	bDebugWinLook = !bFullScreen; // we will have a frame and such things...
 	strTitle=All2D_System::WinTitle;
 	DisplayDepht = WINPLANES;	// We want to have WINPLANES Bits per Pixel
 	bReady=false;
-	bSmooth=false;
+	bSmooth=true;
 	InitWindow();	// Make the Window
 	MessageManager::setInterface(this);
 }
-
 
 void All2DWin::init()
 {
@@ -29,7 +26,7 @@ void All2DWin::init()
 
 
 // This Routine sets the View which controls the program
-int All2DWin::startApp(AppGameController& dE)
+int All2DWin::startApp(All2D_Controller& dE)
 {
 	MessageManager::setView(&dE);
 	return MessageLoop();
@@ -38,7 +35,7 @@ int All2DWin::startApp(AppGameController& dE)
 
 void All2DWin::setFullscreen(bool blnFlag)
 {
-	if (bFullScreen!=blnFlag) {
+	if (All2D_System::fullScreen!=blnFlag) {
 		ChangeCoopLevel();
 	}
 }
@@ -56,14 +53,14 @@ void All2DWin::All2D_Exit()
 // private Method to initialize the Window...
 void All2DWin::InitWindow()
 {
-    sfml_window.create(sf::VideoMode(WindowX,WindowY),strTitle,bFullScreen?sf::Style::Fullscreen : sf::Style::Default);
+    sfml_window.create(sf::VideoMode(WindowX,WindowY),strTitle,All2D_System::fullScreen?sf::Style::Fullscreen : sf::Style::Default);
     sfml_window.setFramerateLimit(60);
 }
 
 // This Method changes between Fullscreen and windowed mode..
 void All2DWin::ChangeCoopLevel()
 {
-    bFullScreen=!bFullScreen;
+    All2D_System::fullScreen=!All2D_System::fullScreen;
     sfml_window.close();
     InitWindow();
 }
@@ -97,7 +94,7 @@ int All2DWin::MessageLoop()	//drawableElement.UpdateFrame () wird von Hier aufge
 {
     sf::Texture txt;
 
-    CBitMap* surface=new CBitMap(640,480);
+    CBitMap* surface=new CBitMap(All2D_System::fixedX,All2D_System::fixedY);
     surface->Clear(0);
     sf::Image img;
     surface->returnImage(img);

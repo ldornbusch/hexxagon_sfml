@@ -33,6 +33,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-DSFML_STATIC" />
+			<Add directory="../SFML/include" />
+			<Add directory="../_dependencies/include" />
 		</Compiler>
 		<Linker>
 			<Add library="libsfml-network-s.a" />
@@ -42,10 +44,16 @@
 			<Add library="libsfml-system-s.a" />
 			<Add library="libfreetype.a" />
 			<Add library="libopenal32.a" />
+			<Add library="libFLAC.a" />
+			<Add library="libvorbisenc.a" />
+			<Add library="libvorbisfile.a" />
+			<Add library="libvorbis.a" />
+			<Add library="libogg.a" />
 			<Add library="libjpeg.a" />
 			<Add library="libopengl32.a" />
 			<Add library="libwinmm.a" />
-			<Add directory="../SFML-2.2/lib" />
+			<Add directory="../SFML/build/lib" />
+			<Add directory="../_dependencies/lib" />
 		</Linker>
 		<Unit filename="data/All2D_UI.png" />
 		<Unit filename="data/dialog.xml" />
@@ -60,6 +68,8 @@
 		<Unit filename="src/All2DEngine/All2D/All2D_Base/xContainer.h" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Base/xElement.cpp" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Base/xElement.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Controller.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Controller.h" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Events/Event.cpp" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Events/Event.h" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Events/MessageManager.cpp" />
@@ -86,6 +96,10 @@
 		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/null/NullSample.h" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/null/NullSoundEngine.cpp" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/null/NullSoundEngine.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/sfml/SFMLSample.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/sfml/SFMLSample.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/sfml/SFMLSoundEngine.cpp" />
+		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/sfml/SFMLSoundEngine.h" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/std/StandardSample.cpp" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/std/StandardSample.h" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Sound/drivers/std/StandardSoundEngine.cpp" />
@@ -123,6 +137,7 @@
 		<Unit filename="src/All2DEngine/All2D/includes/gameMessages.h" />
 		<Unit filename="src/All2DEngine/All2D/includes/resource.h" />
 		<Unit filename="src/All2DEngine/All2D/resources/resource.h" />
+		<Unit filename="src/All2DEngine/All2D_main.cpp" />
 		<Unit filename="src/All2DEngine/Gui/MouseMover.cpp" />
 		<Unit filename="src/All2DEngine/Gui/MouseMover.h" />
 		<Unit filename="src/All2DEngine/Gui/UIButton.cpp" />

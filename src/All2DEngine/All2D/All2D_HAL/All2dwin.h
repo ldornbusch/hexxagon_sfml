@@ -26,11 +26,10 @@ public:
 	Rect getWindowPosition();
     void transformMouseCoords(Event *evt);
 	void init();
-	int startApp(AppGameController& dE);
+	int startApp(All2D_Controller& dE);
 
     All2DWin();
 private:
-	bool bDebugWinLook;
 	int MessageLoop();
 	void InitWindow();
 	void ChangeCoopLevel();
@@ -39,7 +38,6 @@ private:
 	int WindowX;
 	int WindowY;
 	int DisplayDepht;
-	bool bFullScreen;
 	bool bSmooth;
 	bool bReady;
 	bool bActive;

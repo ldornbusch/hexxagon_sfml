@@ -22,15 +22,13 @@ class All2D_System
 {
 public:
 	static void setRenderMode(RENDERMODES iMode);
-	static RENDERMODES getRenderMode();
-	static int getTime();
+	static unsigned int getTime();
 	static Point extractMouseCoords(Event* evt);
 
 	static float skipFactor;		// Bestimmt wieviele Bilder einer Animation uebersprungen werden sollen
 	static int fixedBits;			// Bittiefe(16 / 32 Bit)
 	static int fixedX;				// Auflösung in X-Richtung
 	static int fixedY;				// Auflösung in Y-Richtung
-	static bool doubleBuffering;	// doubleBuffering
 	static bool fullScreen;			// fullscreen oder windowed mode
 	static CDebug Debug;			// DebugObject fuer DebugAusgaben
 
@@ -47,12 +45,7 @@ public:
 	static Image UIElements;
 	static ImageText SystemFont;
 
-	static RENDERMODES iRendermode;
-
-	static string appPath;
 	static string loadPath;
-	static string gamePath;
-	static string tempPath;
 
 private:
 };

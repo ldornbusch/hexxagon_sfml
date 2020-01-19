@@ -8,13 +8,13 @@
 #include "../../utils/Point.h"
 #include "../All2D_Events/Event.h"
 // pre-declaration
-class AppGameController;
+class All2D_Controller;
 
 class  All2D_WinInterface
 {
 public:
 	virtual	void init()=0;
-	virtual int startApp(AppGameController& dE)=0;
+	virtual int startApp(All2D_Controller& dE)=0;
 	virtual void setFullscreen(bool blnFlag)=0;
 	virtual void setSmooth(bool blnSmooth)=0;
     virtual Rect getWindowPosition()=0;

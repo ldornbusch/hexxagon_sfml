@@ -40,10 +40,10 @@ protected:
 	void updatePositionFixTime();
 private:
 	bool blnPause;
-	int iSleepTime;
 	bool blnHasReached;
-	int startTime;			// Time when Movement started..
-	int time2ReachTarget;	// Time to reach Target ( only in FixTime Mode valid)
+	unsigned int iSleepTime;
+	unsigned int startTime;			// Time when Movement started..
+	unsigned int time2ReachTarget;	// Time to reach Target ( only in FixTime Mode valid)
 	int moveType;			// Type of Movement(either FixTime, or FixSpeed)
 	Point ptSpeed;			// Speed of Movement(only in FixSpeed valid)
 	Point ptTarget;			// the TargetPoint to reach..
