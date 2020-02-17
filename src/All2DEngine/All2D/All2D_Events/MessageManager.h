@@ -9,7 +9,7 @@
 #pragma once
 
 #include <vector>
-using namespace std;
+using std::vector;
 
 #include "../All2D_Controller.h"
 #include "../All2D_HAL/All2D_WinInterface.h"

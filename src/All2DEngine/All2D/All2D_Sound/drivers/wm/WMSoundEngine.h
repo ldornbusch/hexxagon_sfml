@@ -6,7 +6,7 @@
 #include "..\..\SoundEngine.h"
 #include <Vector>
 
-using namespace std;
+using std::vector;
 
 class WMSoundEngine : public SoundEngine
 {

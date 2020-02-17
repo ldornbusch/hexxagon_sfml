@@ -10,7 +10,7 @@
 #include <String>
 #include "../All2DEngine/All2D/All2D_Base/ImageText.h"	// Hinzugefügt von der Klassenansicht
 
-using namespace std;
+using std::string;
 
 #define HIGH_SCORE_ENTRIES		10
 

@@ -86,7 +86,7 @@ typedef enum tagIMAGETYPES {
 #include <SFML/Graphics.hpp>
 
 #include <string>
-using namespace std;
+using std::string;
 
 class CBitMap
 {

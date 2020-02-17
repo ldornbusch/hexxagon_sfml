@@ -153,7 +153,7 @@ Point Image::getOffset()
 
 int Image::getWidth()
 {
-	if (BitMap)
+if (BitMap)
 		return BitMap->getWidth();
 	else
 		return RECT_INVALID;

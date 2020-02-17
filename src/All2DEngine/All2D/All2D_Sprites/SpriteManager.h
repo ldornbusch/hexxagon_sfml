@@ -5,7 +5,7 @@
 #pragma once
 
 #include <vector>
-using namespace std;
+using std::vector;
 
 #include "UISprite.h"
 #include "SpriteEntry.h"

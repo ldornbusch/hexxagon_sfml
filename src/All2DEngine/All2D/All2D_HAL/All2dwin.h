@@ -6,7 +6,7 @@
 #include <SFML/Graphics.hpp>
 
 #include <string>
-using namespace std;
+using std::string;
 
 #include "Bitmap.h"
 #include "All2D_WinInterface.h"

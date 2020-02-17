@@ -14,7 +14,8 @@
 #include <string>
 #include <vector>
 
-using namespace std;
+using std::string;
+using std::vector;
 
 class AppGameController: public All2D_Controller
 {

@@ -12,7 +12,7 @@
 #include "Image.h"
 #include <String>
 // For Standard TemplateLibrary Support...
-using namespace std;
+using std::string;
 
 class xElement : public drawableElement
 {

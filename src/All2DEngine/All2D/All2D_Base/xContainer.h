@@ -8,7 +8,7 @@
 #include <String>
 #include <Vector>
 // For Standard TemplateLibrary Support...
-using namespace std;
+using std::string;
 
 /*
 	xContainer enthaelt einfach nur eine Menge xElements und kann diese per Name oder ID einfach Löschen

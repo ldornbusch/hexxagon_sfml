@@ -7,7 +7,8 @@
 #include<string>
 #include "HexxagonStone.h"
 typedef unsigned char BYTE;
-using namespace std;
+
+using std::string;
 
 class HexxagonState
 {

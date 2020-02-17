@@ -9,7 +9,7 @@
 #include "..\ALL2DENGINE\ALL2D\ALL2D_BASE\ImageText.h"	// Added by ClassView
 #include <string>
 
-using namespace std;
+using std::string;
 
 class GameTextScreen :
 	public xContainer,

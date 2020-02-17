@@ -6,7 +6,7 @@
 #include "Image.h" // Hinzugefügt von der Klassenansicht
 
 #include <string>
-using namespace std;
+using std::string;
 
 class ImageText :  public Image
 {

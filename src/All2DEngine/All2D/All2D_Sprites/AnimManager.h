@@ -9,7 +9,9 @@
 #include <map>
 
 #include "../../utils/RECT.h"
-using namespace std;
+
+using std::string;
+using std::map;
 
 class AnimManager :public xElement
 {

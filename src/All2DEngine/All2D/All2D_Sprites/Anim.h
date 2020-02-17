@@ -9,7 +9,8 @@
 #include "AnimFrame.h"
 #include "../../UTILS/POINT.H"	// Hinzugefügt von der Klassenansicht
 // For Standard TemplateLibrary Support...
-using namespace std;
+using std::string;
+using std::vector;
 
 #define	ANIM_FORW				0x0001	//Forwaerts
 #define	ANIM_BACK				0x0002	//rueckwaerts

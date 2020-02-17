@@ -5,7 +5,8 @@
 
 #include "Hexxagon_messages.h"
 #include <string>
-using namespace std;
+using std::string;
+
 class HexxagonScore
 {
 public:
