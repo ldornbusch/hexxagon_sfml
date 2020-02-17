@@ -237,6 +237,64 @@ UICheckBox* XMLDialogSystem::createCheckBox(TiXmlElement* UINode)
 	return retVal;
 }
 
+UISprite* XMLDialogSystem::createScrollArea(TiXmlElement* UINode)
+{
+    // TODO: need to build a GUICLass for (optional) scroll a bitmap (horizontally / vertically)
+	UISprite* retVal=new UISprite();
+	retVal->setPriority(20);
+	Rect tmpPosition = ConvertXML2Rect(UINode,"position");
+    retVal->resize(tmpPosition.getWidth(), tmpPosition.getHeight());
+	retVal->setPriority(20);
+	retVal->setBlitMode(ConvertXML2Blit(UINode,"blitmode"));
+    using std::pair;
+    auto allText = vector<pair<string,string>>();
+    int internalHeight=0;
+    TiXmlNode* child=UINode->FirstChild();
+	while(child!=NULL){
+        pair<string, string> entry;
+        switch(child->Type()){
+            case TiXmlNode::NodeType::ELEMENT:{
+                string nodename = child->Value();
+                if (nodename=="headline"){
+                    string title = child->FirstChild()->ToText()->Value();
+                    entry = std::make_pair("headline", title);
+                }
+                break;
+            }
+            case TiXmlNode::NodeType::TEXT:{
+                string text = child->ToText()->Value();
+                entry = std::make_pair("text", text);
+                break;
+            }
+            default:{
+                string error = "Not Found:";
+                error.append(child->Value());
+                entry = std::make_pair("text",error);
+                break;
+            }
+        }
+        int msgHeight = UILayouter::formatText(entry.second, retVal->getWidth(), fntDialogFont).size();
+        internalHeight += msgHeight * fntDialogFont.getFontHeight();
+
+        allText.push_back(entry);
+	    child=child->NextSibling();
+	}
+	retVal->resize(tmpPosition.getWidth(), internalHeight);
+	retVal->setPosition(tmpPosition);
+	retVal->setSrcRect(Rect(0,0, tmpPosition.getWidth(), tmpPosition.getHeight()));
+	int yco = 0;
+	for(pair<string, string> paragraph : allText){
+        string lineType = paragraph.first;
+        string lineText = paragraph.second;
+        for(auto line:UILayouter::formatText(lineText, retVal->getWidth(), fntDialogFont)){
+            fntDialogFont.PrintAt(*retVal,0,yco+0,line.c_str(), IMAGE_BLTMODE_FAST);
+            fntDialogFont.PrintAt(*retVal,1,yco+1,line.c_str(), IMAGE_BLTMODE_HALF);
+            yco += fntDialogFont.getFontHeight();
+        }
+	}
+    return retVal;
+}
+
 UIScrollBar* XMLDialogSystem::createScrollBar(TiXmlElement* UINode)
 {
 	UIScrollBar* retVal;

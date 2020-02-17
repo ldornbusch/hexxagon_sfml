@@ -10,7 +10,7 @@ class WMSample : public Sample
 {
 public:
 	WMSample();
-	WMSample( int id, char *filename );
+	WMSample( int id, const char *filename );
 	virtual ~WMSample();
 
 	// sound
@@ -31,7 +31,7 @@ public:
 
 private:
 	int		iID;
-	char *szFilename;
+	const char *szFilename;
 	float fVolume;
 	float fPan;
 

@@ -100,9 +100,7 @@ bool Hexxagon3DPlayer::paint(Image &backBuffer)
 )
 		if (!bInitialized) init3D();
 
-		/*
-		 * DEMO rotation effekt
-		 * /
+//		 * DEMO rotation effekt
 		rotateX+=0.5f;
 		rotateY+=0.5f;
 

@@ -41,6 +41,7 @@ private:
 	// These UIElements will be additional hold in the vecValueObjs Vector, the values of them will be loaded/saved to disk
 	UITextField* createTextfield(TiXmlElement* UINode);
 	UICheckBox* createCheckBox(TiXmlElement* UINode);
+    UISprite* createScrollArea(TiXmlElement* UINode);
 	UIScrollBar* createScrollBar(TiXmlElement* UINode);
 	UIRadioButton* createRadioButton(TiXmlElement* UINode);
 	UIKeyRecorder* createKeyRecorder(TiXmlElement* UINode);

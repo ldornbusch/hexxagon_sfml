@@ -12,10 +12,10 @@ public:
 	SFMLSoundEngine();
 	virtual ~SFMLSoundEngine();
 
-	void setDataSource(char* szPath);
+	void setDataSource(const char* szPath);
 
-	Sample* loadSample(char* filename);
-	Music* loadMusic(char* filename);
+	Sample* loadSample(const char* filename);
+	Music* loadMusic(const char* filename);
 
 	void playSample(unsigned int id);
 	void playMusic(unsigned int id);
@@ -27,7 +27,7 @@ public:
 	void free();
 	void updateStatus();
 
-	char* getDriverInfo();
+	virtual const char* getDriverInfo();
 
 	std::vector<Sample*> samples;
 	std::vector<Music*> tracks;

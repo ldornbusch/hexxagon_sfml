@@ -23,7 +23,7 @@ public:
    *@see loadMusic(char*)
    *@param szPath The full path to the directory that contains the audio data
    */
-  virtual void setDataSource( char* szPath )=0;
+  virtual void setDataSource( const char* szPath )=0;
 
   /**
    * Loads a sample and returns the control object for the sample.
@@ -35,7 +35,7 @@ public:
    *@param fileName The name of the file to be loaded (without the file extension)
    *@return An unique Sample object that represents the loaded sample
    */
-  virtual Sample* loadSample( char* fileName )=0;
+  virtual Sample* loadSample( const char* fileName )=0;
 
   /**
    * Plays a sample by id that was previously loaded.
@@ -59,7 +59,7 @@ public:
    *@param fileName The name of the file to be loaded (without the file extension)
    *@return An unique Sample object that represents the loaded sample
    */
-  virtual Music* loadMusic( char* fileName )=0;
+  virtual Music* loadMusic( const char* fileName )=0;
 
   /**
    * Plays a track by id that was previously loaded.

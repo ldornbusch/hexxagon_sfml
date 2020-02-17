@@ -193,7 +193,7 @@ vector<HexxagonMove> HexxagonBoard::getPossibleMoves(int iColor)
 						actMove.moveType=HEX_MOVE_DOUBLE;
 // check if the move exist already:
 						bool blnMoveExist=false;
-						for (int a=0;a<retVal.size();a++)
+						for (unsigned int a=0;a<retVal.size();a++)
 						{
 							HexxagonMove tmp=retVal[a];
 							if (tmp.to==iIndex && tmp.moveType==HEX_MOVE_DOUBLE)
@@ -222,7 +222,7 @@ vector<HexxagonMove> HexxagonBoard::getPossibleMoves(int iColor)
 
 // check if the move exist already:
 						bool blnMoveExist=false;
-						for (int a=0;a<retVal.size();a++)
+						for (unsigned int a=0;a<retVal.size();a++)
 						{
 							HexxagonMove tmp=retVal[a];
 							if (tmp.to==iIndex && tmp.moveType==HEX_MOVE_DOUBLE)

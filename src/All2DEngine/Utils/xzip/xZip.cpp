@@ -120,7 +120,6 @@ bool xZip::select(int iModule)
 	 */
 
 	TiXmlNode*		node;
-	TiXmlElement*	elem;
 
 	int iModuleCount = 0;
 

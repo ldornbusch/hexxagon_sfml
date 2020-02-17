@@ -71,7 +71,7 @@ METHODDEF(void) my_error_exit (j_common_ptr cinfo)
 	/* Always display the message. */
 	//MessageBox(NULL,buffer,"JPEG Fatal Error",MB_ICONSTOP);
 
-	fprintf(stderr,"%s",buffer,"<JPEG Fatal Error>");
+	fprintf(stderr,"%s %s",buffer,"<JPEG Fatal Error>");
 
 
 	/* Return control to the setjmp point */
@@ -469,7 +469,8 @@ BOOL JpegFile::RGBToJpegFile(const char *fileName,
 	struct jpeg_compress_struct cinfo;
 	/* More stuff */
 	FILE * outfile=NULL;			/* target file */
-	int row_stride;			/* physical row widthPix in image buffer */
+    // commented to avoid unused variable warning
+	//int row_stride;			/* physical row widthPix in image buffer */
 
 	struct my_error_mgr jerr;
 
@@ -553,7 +554,8 @@ BOOL JpegFile::RGBToJpegFile(const char *fileName,
    * To keep things simple, we pass one scanline per call; you can pass
    * more if you wish, though.
    */
-  row_stride = widthPix * 3;	/* JSAMPLEs per row in image_buffer */
+  // avoid unused variable warning
+  //row_stride = widthPix * 3;	/* JSAMPLEs per row in image_buffer */
 
   while (cinfo.next_scanline < cinfo.image_height) {
     /* jpeg_write_scanlines expects an array of pointers to scanlines.
@@ -767,9 +769,12 @@ BOOL JpegFile::BGRFromRGB(BYTE *buf, UINT widthPix, UINT height)
 	UINT col, row;
 	for (row=0;row<height;row++) {
 		for (col=0;col<widthPix;col++) {
-			LPBYTE pRed, pGrn, pBlu;
+			// to avoid unused variable warning
+//			LPBYTE pRed, pGrn, pBlu;
+			LPBYTE pRed, pBlu;
 			pRed = buf + row * widthPix * 3 + col * 3;
-			pGrn = buf + row * widthPix * 3 + col * 3 + 1;
+			// to avoid unused variable warning
+			// pGrn = buf + row * widthPix * 3 + col * 3 + 1;
 			pBlu = buf + row * widthPix * 3 + col * 3 + 2;
 
 			// swap red and blue

@@ -9,7 +9,7 @@ class StandardSample : public Sample
 {
 public:
   StandardSample();
-  StandardSample( int id, char *filename );
+  StandardSample( int id, const char  *filename );
   virtual ~StandardSample();
 
 	// sound
@@ -19,7 +19,7 @@ public:
 	bool isPlaying();
 	void free();
 	int getID();
-	char* getSource();
+	virtual const char* getSource();
 
 	// sample
   void setVolume(float volume);
@@ -30,7 +30,7 @@ public:
 
 private:
 	int		iID;
-	char *szFilename;
+	char const *szFilename;
 	float fVolume;
 	float fPan;
 

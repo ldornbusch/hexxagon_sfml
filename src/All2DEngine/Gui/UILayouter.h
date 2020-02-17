@@ -16,6 +16,7 @@
 #include "..\UTILS\Rect.h"	// Hinzugefügt von der Klassenansicht
 #include "..\ALL2D\ALL2D_BASE\xContainer.h"
 #include "..\ALL2D\ALL2D_SPRITES\UISprite.h"
+#include "..\ALL2D\ALL2D_Base\ImageText.h"
 
 //TODO: create enum here
 #define LAYOUT_LEFT_RIGHT	0x0001
@@ -37,6 +38,8 @@ public:
 	void setLayoutMode(int Primary, int Secondary=-1);
 	void setBorders(int horizontal=0, int vertical=0);
 	void setPosition(Rect rctPos);
+	static vector<string> formatText(const string text, const unsigned int display_width, const ImageText& font, const char separator=' '); // returns the number of lines which are needed to fit text into the display_width
+	static vector<string> splitString(const string text, const char separator=' ');
 	UILayouter();
 	virtual ~UILayouter();
 private:

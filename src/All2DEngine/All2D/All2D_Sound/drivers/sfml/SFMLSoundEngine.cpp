@@ -15,11 +15,11 @@
 SFMLSoundEngine::SFMLSoundEngine() { bInitialized=false; }
 SFMLSoundEngine::~SFMLSoundEngine(){ free(); }
 
-void SFMLSoundEngine::setDataSource(char* szPath)
+void SFMLSoundEngine::setDataSource(const char* szPath)
 {
 }
 
-Sample* SFMLSoundEngine::loadSample(char* filename)
+Sample* SFMLSoundEngine::loadSample(const char* filename)
 {
 	if (!bInitialized) return new NullSample();
 
@@ -29,7 +29,7 @@ Sample* SFMLSoundEngine::loadSample(char* filename)
 	return smp;
 }
 
-Music* SFMLSoundEngine::loadMusic(char* filename)
+Music* SFMLSoundEngine::loadMusic(const char* filename)
 {
 	return new NullMusic();
 }
@@ -68,7 +68,7 @@ void SFMLSoundEngine::free()
 	tracks.clear();
 }
 
-char* SFMLSoundEngine::getDriverInfo() {
+const char* SFMLSoundEngine::getDriverInfo() {
   return "SFML Sounddriver";
 }
 
@@ -82,7 +82,7 @@ void SFMLSoundEngine::init()
 void SFMLSoundEngine::updateStatus()
 {
 	if (!bInitialized) return;
-	for (int i=0; i<samples.size(); i++) {
+	for (unsigned int i=0; i<samples.size(); i++) {
 		((SFMLSample*)samples[i])->updateStatus();
 	}
 }

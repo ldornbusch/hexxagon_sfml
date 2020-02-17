@@ -13,18 +13,18 @@
 StandardSoundEngine::StandardSoundEngine() {}
 StandardSoundEngine::~StandardSoundEngine() {	free(); }
 
-void StandardSoundEngine::setDataSource(char* szPath)
+void StandardSoundEngine::setDataSource(const char* szPath)
 {
 }
 
-Sample* StandardSoundEngine::loadSample(char* filename)
+Sample* StandardSoundEngine::loadSample(const char* filename)
 {
 	StandardSample* smp = new StandardSample(samples.size(),filename);
 	samples.insert(samples.end(),smp);
 	return smp;
 }
 
-Music* StandardSoundEngine::loadMusic(char* filename)
+Music* StandardSoundEngine::loadMusic(const char* filename)
 {
 	return new NullMusic();
 }
@@ -58,12 +58,12 @@ int StandardSoundEngine::loadedMusic()
 	}
 	return smp.getID();
 }
-
-	/**
-	 * Frees all the resources that are used by the sound representation.
-	 * This method is quite slow to execute and should preferrably be called upon
-	 * exiting the game or between level changes etc.
-	 */
+*/
+/**
+ * Frees all the resources that are used by the sound representation.
+ * This method is quite slow to execute and should preferrably be called upon
+ * exiting the game or between level changes etc.
+ */
 void StandardSoundEngine::free()
 {
   sndPlaySound( NULL, 0 );

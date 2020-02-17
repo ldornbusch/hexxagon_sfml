@@ -23,12 +23,12 @@ public:
 	void cloneFont(ImageText& srcImage);
 
 //Inline Interface GET/SET - Routinen
-	int getPixPerCharRow()			{ return PixPerCharRow;			}
-	int getCharPerRow()				{ return CharPerRow;				}
+	unsigned int getPixPerCharRow()			{ return PixPerCharRow;			}
+	unsigned int getCharPerRow()				{ return CharPerRow;				}
 	const char* getTranslationTable()	{ return TranslationTable;	}
-	int getFontHeight()				{ return FontHeight;				}
-	int getFontWidth()					{ return FontWidth;					}
-	int getTextMode()					{ return TextMode;					}
+	unsigned int getFontHeight()	const   	{ return FontHeight;				}
+	unsigned int getFontWidth()	const 		{ return FontWidth;					}
+	int getTextMode()	const		{ return TextMode;					}
 	void setPixPerCharRow(int iParam)		{ PixPerCharRow=iParam;		}
 	void setCharPerRow(int iParam)			{ CharPerRow=iParam;			}
 	void setTranslationTable(const char* iParam){ TranslationTable=iParam;}

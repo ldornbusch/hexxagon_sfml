@@ -18,7 +18,7 @@ WMSample::WMSample()
 	fPan				= 0.0f;
 }
 
-WMSample::WMSample( int id, char *filename )
+WMSample::WMSample( int id, const char *filename )
 {
   iID         = id;
   szFilename  = filename;

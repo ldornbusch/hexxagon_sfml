@@ -27,6 +27,6 @@ private:
 	void pushKey(int iKeyID);
 	void releaseKey(int iKeyID);
 	keyStroke myKeys[4];
-	int iUp, iDown, iLeft, iRight, iFire;	// The KeyIDs, which are received in HandleEventFunction
+	unsigned int iUp, iDown, iLeft, iRight, iFire;	// The KeyIDs, which are received in HandleEventFunction
 	int iMouseX, iMouseY;
 };

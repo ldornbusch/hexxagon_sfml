@@ -233,7 +233,7 @@ int WaveReadFile(
 
 	nError = 0;
 
-	if (nError = mmioGetInfo(hmmioIn, &mmioinfoIn, 0) != 0)
+	if ((nError = mmioGetInfo(hmmioIn, &mmioinfoIn, 0)) != 0)
 		{
 		goto ERROR_CANNOT_READ;
 		}
@@ -699,9 +699,11 @@ int WaveCopyUselessChunks(
 
 ERROR_IN_PROC:
 	{
-	int nErrorT;
+	//int nErrorT;
 	// Seek back to riff header
-	nErrorT = mmioSeek(*phmmioIn, pckInRiff->dwDataOffset + sizeof(FOURCC), SEEK_SET);
+	//nErrorT = mmioSeek(*phmmioIn, pckInRiff->dwDataOffset + sizeof(FOURCC), SEEK_SET);
+	// changed to avoid unused variable warning
+	mmioSeek(*phmmioIn, pckInRiff->dwDataOffset + sizeof(FOURCC), SEEK_SET);
 	}
 
 	return(nError);

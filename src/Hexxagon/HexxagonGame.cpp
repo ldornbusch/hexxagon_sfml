@@ -57,7 +57,7 @@ bool HexxagonGame::handleEvent(Event *evt)
 			}
 			break;
 		case HEX_WAIT_FOR_CLICK_2:
-			if (evt->wData==-1){
+			if ((int)evt->wData==-1){
 				hexBoard.hiLight(actualMove.from,false);
 				actualMove.from=-1;
 				iGameStatus=HEX_WAIT_FOR_CLICK_1;
@@ -66,8 +66,8 @@ bool HexxagonGame::handleEvent(Event *evt)
 				actualMove.Color=iPlayer;
 				vec2Flip=hexBoard.processMove(actualMove);
 				hexBoard.hiLight(actualMove.from,false);
-				if (actualMove.moveType==HEX_NO_NEIGHBOUR) 
-				{	
+				if (actualMove.moveType==HEX_NO_NEIGHBOUR)
+				{
 					// Ungueltiger Zug, nochmal clicken
 					iGameStatus=HEX_WAIT_FOR_CLICK_1;
 				} else {
@@ -109,7 +109,7 @@ void HexxagonGame::setBeginner(int beginner)
 }
 void HexxagonGame::reset()
 {
-	for (int x=0;x<vecMoves.size();x++)
+	for (unsigned int x=0;x<vecMoves.size();x++)
 	{
 		delete vecMoves[x];
 	}
@@ -317,7 +317,7 @@ void HexxagonGame::unSuggest()
 bool HexxagonGame::isRunning()
 {
 	bool retVal=true;
-	if (getState()==HEX_RED_WIN || 
+	if (getState()==HEX_RED_WIN ||
 		getState()==HEX_BLUE_WIN||
 		getState()==HEX_NO_WIN)
 		retVal=false;

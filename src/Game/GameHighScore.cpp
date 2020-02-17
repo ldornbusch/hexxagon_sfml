@@ -50,7 +50,7 @@ bool GameHighScore::paint(Image& backBuffer)
 		char tmp[100];
 		TextFont.PrintAt(backBuffer,shadow+xco+304-16*strNames[x].length(),shadow+xOff+xco2+100+34*x,strNames[x].c_str(),IMAGE_BLTMODE_HALF);
 		TextFont.PrintAt(backBuffer,xco+304-16*strNames[x].length(),xOff+xco2+100+34*x,strNames[x].c_str(),IMAGE_BLTMODE_TRANS);
-		sprintf(tmp," %d",iPoints[x]);
+		sprintf(tmp," %lu",iPoints[x]);
 		TextFont.PrintAt(backBuffer,shadow+xco+320,shadow+xOff+xco2+100+34*x,tmp,IMAGE_BLTMODE_HALF);
 		TextFont.PrintAt(backBuffer,xco+320,xOff+xco2+100+34*x,tmp,IMAGE_BLTMODE_TRANS);
 	}

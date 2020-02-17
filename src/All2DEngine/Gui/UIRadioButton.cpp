@@ -55,6 +55,6 @@ bool UIRadioButton::handleEvent(Event *evt)
 {
 	if (evt->Type==MM_RADIO_SET_VALUE &&
 		evt->wData==getRadioGroup())
-		UICheckBox::setValue(value("",(evt->lData==getRadioID()?1:0)));
+		UICheckBox::setValue(value("",(evt->lData == (long)getRadioID()?1:0)));
 	return UICheckBox::handleEvent(evt);
 }

@@ -196,7 +196,7 @@ AnimFrame* Anim::getFrame()
 			actualIndex = actTime % actAnimDuration;		// ANZahl der ms leit letzter wdh..
 			actualIndex /= frameDuration;									// geteilt durch ms pro Frame ->Index des Frames
 
-			int actNumOfRepeats=actTime / actAnimDuration;	// wurde das Ende erreicht/ueberschritten?
+			unsigned int actNumOfRepeats=actTime / actAnimDuration;	// wurde das Ende erreicht/ueberschritten?
 			atEnd=(actNumOfRepeats!=numOfRepeats);
 
 			if (atEnd && actualPlayMode & ANIM_ONCE)

@@ -18,7 +18,7 @@ SFMLSample::SFMLSample()
     init();
 }
 
-SFMLSample::SFMLSample( int id, char *filename )
+SFMLSample::SFMLSample( int id, const char *filename )
 {
     iID         = id;
     szFilename	= filename;
@@ -29,7 +29,7 @@ SFMLSample::~SFMLSample() {}
 
 
 // sound
-int SFMLSample::load( int id, char *filename)
+int SFMLSample::load( int id, const char *filename)
 {
 	szFilename	= filename;
     if (!buffer.loadFromFile(szFilename)){
@@ -72,7 +72,7 @@ bool SFMLSample::isPlaying(){
 }
 
 int SFMLSample::getID(){ return iID; }
-char* SFMLSample::getSource(){ return szFilename; }
+char const * SFMLSample::getSource(){ return szFilename; }
 void SFMLSample::setVolume(float volume){ fVolume=volume; }
 void SFMLSample::setPan(float pan){ fPan=pan; }
 float SFMLSample::getVolume(){ return fVolume; }

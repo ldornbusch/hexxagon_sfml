@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "UILayouter.h"
-
+#include <sstream>
 //////////////////////////////////////////////////////////////////////
 // Konstruktion/Destruktion
 //////////////////////////////////////////////////////////////////////
@@ -152,4 +152,34 @@ bool UILayouter::paint(Image &imgBackBuffer)
 void UILayouter::setBackground(UISprite &addi)
 {
 	sprtBackGround=addi;
+}
+
+vector<string> UILayouter::formatText(const string text, const unsigned int display_width, const ImageText& font, const char separator)
+{
+    auto retVal = vector<string>();
+    string current_line="";
+    vector<string> words = splitString(text, separator);
+    for (string single_word:words){
+        unsigned int word_width=single_word.length() * font.getFontWidth();
+        // TODO: break longword if it does not fit into a line
+        if (current_line.length() * font.getFontWidth() + word_width < display_width){  // add word to current line
+            current_line.append(" ");
+        }else{  // break line and start another
+            retVal.push_back(current_line);
+            current_line="";
+        }
+        current_line.append(single_word);
+    }
+    retVal.push_back(current_line);
+    return retVal;
+}
+vector<string> UILayouter::splitString(const string text, const char delim)
+{
+    auto retVal = vector<string>();
+    std::stringstream ss(text);
+    string token;
+    while (std::getline(ss, token, delim)) {
+        retVal.push_back(token);
+    }
+    return retVal;
 }

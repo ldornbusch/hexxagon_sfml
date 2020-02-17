@@ -66,7 +66,7 @@ std::string xRegistry::get(std::string name, std::string defaultValue, bool crea
 		NULL,										// NULL since we only want buffer size
 		&iKeyValSize						// address of data buffer size
 	);
- 
+
 	unsigned char* tmpVal = new unsigned char[iKeyValSize];
 
 	// retreive value for given name
@@ -78,7 +78,7 @@ std::string xRegistry::get(std::string name, std::string defaultValue, bool crea
 		tmpVal,									// address of data buffer
 		&iKeyValSize						// address of data buffer size
 	);
- 
+
 	// return default if value couldn't be retreived
 	if ( lRet != ERROR_SUCCESS ) {
 		lRet = RegCloseKey(hKey);
@@ -96,7 +96,7 @@ std::string xRegistry::get(std::string name, std::string defaultValue, bool crea
 	// free resources
 	delete tmpVal;
 	lRet = RegCloseKey(hKey);
- 
+
 	// return value
 	return value;
 }
@@ -145,7 +145,7 @@ DWORD xRegistry::get(std::string name, DWORD defaultValue, bool create)
 		(BYTE *) &tmpVal,				// address of data buffer
 		&iKeyValSize						// address of data buffer size
 	);
- 
+
 	// return default if value couldn't be retreived
 	if ( lRet != ERROR_SUCCESS ) {
 		lRet = RegCloseKey(hKey);
@@ -155,7 +155,7 @@ DWORD xRegistry::get(std::string name, DWORD defaultValue, bool create)
 	}
 
 	DWORD value = defaultValue;	// the value we want
-	
+
 	// only get if we have an unsigned long
 	if (lpType==REG_DWORD)
 			value = tmpVal;
@@ -163,7 +163,7 @@ DWORD xRegistry::get(std::string name, DWORD defaultValue, bool create)
 	// free resources
 	//delete tmpVal;
 	lRet = RegCloseKey(hKey);
- 
+
 	// return value
 	return value;
 }
@@ -178,7 +178,7 @@ DWORD xRegistry::get(std::string name, DWORD defaultValue, bool create)
 bool xRegistry::set(std::string name, std::string value)
 {
 	HKEY								hKey;	// handle to found key
-	DWORD								hDepth; 
+	DWORD								hDepth;
 
 	// create security attributes
 	SECURITY_ATTRIBUTES sa;
@@ -186,19 +186,20 @@ bool xRegistry::set(std::string name, std::string value)
 	sa.lpSecurityDescriptor = 0;
 	sa.bInheritHandle = true;
 
+    char str_class[] = "REG_SZ";
 	// open/create registry key
 	LONG lRet = RegCreateKeyEx(
 		hRoot,									// handle to an open key
 		strKey.c_str(),         // address of subkey name
 		0,											// reserved
-		"REG_SZ",								// address of class string
+		str_class,								// address of class string
 		REG_OPTION_NON_VOLATILE,// special options flag
 		KEY_ALL_ACCESS,					// desired security access
 		&sa,										// address of key security structure
 		&hKey,									// address of buffer for opened handle
 		(LPDWORD)&hDepth				// address of disposition value buffer
 	);
- 
+
 	// return empty string if key couldn't be opened
 	if ( lRet != ERROR_SUCCESS ) {
 		if (hKey) lRet = RegCloseKey(hKey);
@@ -235,7 +236,7 @@ bool xRegistry::set(std::string name, std::string value)
 bool xRegistry::set(std::string name, DWORD value)
 {
 	HKEY								hKey;	// handle to found key
-	DWORD								hDepth; 
+	DWORD								hDepth;
 
 	// create security attributes
 	SECURITY_ATTRIBUTES sa;
@@ -243,19 +244,20 @@ bool xRegistry::set(std::string name, DWORD value)
 	sa.lpSecurityDescriptor = 0;
 	sa.bInheritHandle = true;
 
+    char str_class[] = "REG_DWORD";
 	// open/create registry key
 	LONG lRet = RegCreateKeyEx(
 		hRoot,									// handle to an open key
 		strKey.c_str(),         // address of subkey name
 		0,											// reserved
-		"REG_DWORD",						// address of class string
+		str_class,						// address of class string
 		REG_OPTION_NON_VOLATILE,// special options flag
 		KEY_ALL_ACCESS,					// desired security access
 		&sa,										// address of key security structure
 		&hKey,									// address of buffer for opened handle
 		(LPDWORD)&hDepth				// address of disposition value buffer
 	);
- 
+
 	// return empty string if key couldn't be opened
 	if ( lRet != ERROR_SUCCESS ) {
 		if (hKey)

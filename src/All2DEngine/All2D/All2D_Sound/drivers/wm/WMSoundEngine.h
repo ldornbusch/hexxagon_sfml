@@ -13,9 +13,9 @@ class WMSoundEngine : public SoundEngine
 public:
 	WMSoundEngine();
 	virtual ~WMSoundEngine();
-	void setDataSource(char* szPath);
-	Sample* loadSample(char* filename);
-	Music* loadMusic(char* filename);
+	void setDataSource(const char* szPath);
+	Sample* loadSample(const char* filename);
+	Music* loadMusic(const char* filename);
 	void playSample(unsigned int id);
 	void playMusic(unsigned int id);
 	int loadedSamples();

@@ -140,7 +140,6 @@ void PicLoader::requestLoad(string strFileName)
 		mapReferenceCounter[strTemp]++;
 	else
 		mapReferenceCounter[strTemp]=1;
-	int a=mapReferenceCounter[strTemp];
 }
 
 void PicLoader::requestLoad(string FileName, int start, int end, float step)

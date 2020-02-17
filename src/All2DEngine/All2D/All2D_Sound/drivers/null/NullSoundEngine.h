@@ -13,9 +13,9 @@ public:
 	NullSoundEngine(){}
 	virtual ~NullSoundEngine(){}
 
-	void setDataSource(char* szPath){}
-	Sample* loadSample(char* filename){ return new NullSample(); }
-	Music* loadMusic(char* filename){ return new NullMusic(); }
+	void setDataSource(const char* szPath){}
+	Sample* loadSample(const char* filename){ return new NullSample(); }
+	Music* loadMusic(const char* filename){ return new NullMusic(); }
 	void playSample(unsigned int id){};
 	void playMusic(unsigned int id){};
 	int loadedSamples(){return 0;};

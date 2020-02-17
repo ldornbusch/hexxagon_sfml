@@ -17,7 +17,7 @@ StandardSample::StandardSample()
   fPan        = 0.0f;
 }
 
-StandardSample::StandardSample( int id, char *filename )
+StandardSample::StandardSample( int id, char const *filename )
 {
   iID         = id;
   szFilename  = filename;
@@ -50,13 +50,13 @@ void StandardSample::stop()
 // sample
 Sample* StandardSample::getCopy()
 {
-  return new StandardSample(iID,szFilename);
+  return new StandardSample(iID, szFilename);
 }
 
 bool StandardSample::isPlaying(){ return false; }
 
 int StandardSample::getID(){ return iID; }
-char* StandardSample::getSource(){ return szFilename; }
+char const * StandardSample::getSource(){ return szFilename; }
 void StandardSample::setVolume(float volume){ fVolume=volume; }
 void StandardSample::setPan(float pan){ fPan=pan; }
 float StandardSample::getVolume(){ return fVolume; }

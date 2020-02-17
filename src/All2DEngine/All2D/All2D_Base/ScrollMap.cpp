@@ -41,15 +41,15 @@ bool ScrollMap::loadMap(string strFileName)
 	FILE *fp;
 
 	fp = fopen(strFileName.c_str(), "rb");
-	if(fp == NULL) 
+	if(fp == NULL)
 		return false;
 
 	fread(&iMapWidth, sizeof(int), 1, fp);
 	fread(&iMapHeight, sizeof(int), 1, fp);
-	
+
 	initMap(iMapWidth, iMapHeight);
 
-	for(int i=0; i<iMapWidth*iMapHeight; i++) 
+	for(int i=0; i<iMapWidth*iMapHeight; i++)
 	{
 		int readInt=0;
 		fread(&readInt,sizeof(int),1,fp);
@@ -73,14 +73,14 @@ bool ScrollMap::paint(Image& backBuffer)
 
 	// Calculating the tileArea of Backbuffer..for checking ScrollOffset
 
-	if (ptScrollOffset.x>iMapWidth*ImageText::getFontWidth()-backBuffer.getWidth())
-		ptScrollOffset.x=iMapWidth*ImageText::getFontWidth()-backBuffer.getWidth();
+	if (ptScrollOffset.x>iMapWidth*(int)ImageText::getFontWidth()-backBuffer.getWidth())
+		ptScrollOffset.x=iMapWidth*(int)ImageText::getFontWidth()-backBuffer.getWidth();
 
 	if (ptScrollOffset.x<0)
 		ptScrollOffset.x=0;
 
-	if (ptScrollOffset.y>iMapHeight*ImageText::getFontHeight()-backBuffer.getHeight())
-		ptScrollOffset.y=iMapHeight*ImageText::getFontHeight()-backBuffer.getHeight();
+	if (ptScrollOffset.y>iMapHeight*(int)ImageText::getFontHeight()-backBuffer.getHeight())
+		ptScrollOffset.y=iMapHeight*(int)ImageText::getFontHeight()-backBuffer.getHeight();
 
 	if (ptScrollOffset.y<0)
 		ptScrollOffset.y=0;
@@ -96,7 +96,7 @@ bool ScrollMap::paint(Image& backBuffer)
 			char cTileNumber=(char)ptrMapData[x+ptMapOffset.x+(y+ptMapOffset.y)*iMapWidth];
 			if (cTileNumber!=32)
 				ImageText::WriteChar(backBuffer,x*tileWidth-ptScrOffset.x,y*tileHeight-ptScrOffset.y,cTileNumber,iBlitMode);
-		}	
+		}
 	return true;
 }
 
@@ -109,10 +109,10 @@ void ScrollMap::initMap(int mapWidth, int mapHeight, int mapFill)
 {
 	if (ptrMapData!=NULL)
 		delete[] ptrMapData;
-	
+
 	iMapWidth=mapWidth;
 	iMapHeight=mapHeight;
-	
+
 	ptrMapData=new int[iMapWidth*iMapHeight];
 	for (int x=0;x<iMapWidth*iMapHeight;x++)
 		ptrMapData[x]=mapFill;

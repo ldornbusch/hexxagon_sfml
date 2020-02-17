@@ -13,10 +13,10 @@ class SFMLSample : public Sample
 {
 public:
 	SFMLSample();
-    SFMLSample(int id, char *filename);
+    SFMLSample(int id, const char *filename);
 	virtual ~SFMLSample();
 
-    int load(int id, char *filename);
+    int load(int id, const char *filename);
 
 	// sound
 	void play();
@@ -29,7 +29,7 @@ public:
 	void updateStatus();
 
 	int getID();
-	char* getSource();
+	virtual const char* getSource();
 
     // sample
     void setVolume(float volume);
@@ -43,7 +43,7 @@ private:
 	int init();
 
 	int		iID;
-	char *szFilename;
+	const char  *szFilename;
 	float fVolume;
 	float fPan;
     sf::SoundBuffer buffer;

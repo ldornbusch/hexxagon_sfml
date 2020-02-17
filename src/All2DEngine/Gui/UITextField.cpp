@@ -86,7 +86,7 @@ bool UITextField::paint(Image& img)
 			((Image*)TextBuffer)->clear(ActiveBackground);
 			if (actualString.length()<iSize)
 			{
-				static int blinkTimer=0;
+				static unsigned int blinkTimer=0;
 				if (All2D_System::getTime()-blinkTimer>BlinkFreq)
 				{
 					TextBuffer->box(2+actualString.length()*All2D_System::SystemFont.getFontWidth(), 2,

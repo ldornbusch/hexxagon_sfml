@@ -20,11 +20,11 @@ WMSoundEngine::~WMSoundEngine()
 
 }
 
-void WMSoundEngine::setDataSource(char* szPath)
+void WMSoundEngine::setDataSource(const char* szPath)
 {
 }
 
-Sample* WMSoundEngine::loadSample(char* filename)
+Sample* WMSoundEngine::loadSample(const char* filename)
 {
 	WMSample* smp = new WMSample(samples.size(),filename);
 	samples.insert(samples.end(),smp);
@@ -36,7 +36,7 @@ void WMSoundEngine::playSample(unsigned int id)
 	if (id<samples.size()) samples[id]->play();
 }
 
-Music* WMSoundEngine::loadMusic(char* filename)
+Music* WMSoundEngine::loadMusic(const char* filename)
 {
 	return new NullMusic();
 }

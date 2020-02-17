@@ -60,7 +60,7 @@ bool CBitMap::Load(string fileName)
 }
 
 void CBitMap::returnImage(sf::Image& img){
-    if (img.getSize().x!=this->getWidth() || img.getSize().y!=this->getHeight()){
+    if ((int)img.getSize().x != this->getWidth() || (int)img.getSize().y!=this->getHeight()){
         img.create(this->getWidth(), this->getHeight());
     }
     sf::Uint8* tmp = (sf::Uint8*) img.getPixelsPtr();
@@ -337,8 +337,8 @@ void CBitMap::InitPhong(int Phong, PIXEL Col, int Size )  // WORKS ONLY IN 32 BI
 		ColorMap[i]=Col;
 	}
 
-	for (int y=0;y<Height;y++)
-		for (int x=0;x<Width;x++)
+	for (unsigned int y=0;y<Height;y++)
+		for (unsigned int x=0;x<Width;x++)
 		{
 			intensity=1-(((float)x/(Size-1))*((float)x/(Size-1))+((float)y/(Size-1))*((float)y/(Size-1)));
 			if (intensity<0) intensity=0;
@@ -366,9 +366,9 @@ void CBitMap::Fluid(CBitMap *Source, CBitMap *FluidMap)	// WORKS ONLY IN 32 BIT!
 	srcPixelW=Source->getWidth()+Source->getPitch();
 	srcW=Source->getWidth();
 	srcH=Source->getHeight();
-	for (int y=0;y<Height	; y++)
+	for (unsigned int y=0;y<Height	; y++)
 	{
-		for(int x=0;x<Width;x++)
+		for(unsigned int x=0;x<Width;x++)
 		{
 				dummy=(Offset1+scroll);
 				if(dummy>=FluSize)
@@ -379,7 +379,7 @@ void CBitMap::Fluid(CBitMap *Source, CBitMap *FluidMap)	// WORKS ONLY IN 32 BIT!
 				if ((dx)>=srcW) dx-=srcW;
 				if ((dy)>=srcH) dy-=srcH;
 				Offset2=dy*srcPixelW+dx;			//PerformanceKiller!!
-				BMap[Offset1++] = Src[Offset2];
+				Dest[Offset1++] = Src[Offset2];
 		}
 		Offset1+=Pitch;
 		Offset2+=Source->getPitch();
@@ -400,9 +400,9 @@ void CBitMap::Bump(CBitMap *Bump, CBitMap * Phong, int LX, int LY)	// WORKS ONLY
 	ptrDest=BMap;
 	Offset1=0;
 	PixPerRow=Bump->getWidth()+Bump->getPitch();
-	for (int y=0;y<Height; y++)
+	for (unsigned int y=0;y<Height; y++)
 	{
-		for(int x=0;x<Width;x++)
+		for(unsigned int x=0;x<Width;x++)
 		{
 			dx=ABS(ptrBump[(x+y*PixPerRow)*2]  -x+LX);
 			dy=ABS(ptrBump[(x+y*PixPerRow)*2+1]-y+LY);
@@ -1343,13 +1343,13 @@ inline void CBitMap::DrawSolidSegment(int y1, int y2,int RGB)
         x1 =(int) ceil (LeftX);   // Subpixel Accuracy fr Poly-Aussenseiten links  !
         x2 =(int) ceil (RightX);  // Subpixel Accuarcy fr Poly-Aussenseiten rechts !
 
-        unsigned int * pTriangle = pPolyDest + x1;
+//        unsigned int * pTriangle = pPolyDest + x1;
 
-        int width;
+//        int width;
 
         if (x1<x2)
         {
-            width = x2-x1;
+//            width = x2-x1;
 
 //            _asm mov edi, pTriangle // ist cool, weil vc++ das uebernehmen hat
 //            _asm mov ecx, width
@@ -1437,9 +1437,9 @@ void CBitMap::Blend(CBitMap *Source, CBitMap *Dest, int Alpha)	//Alpha 0..127 So
 	pSrc=(PIXEL*)Source->getBitmap();
 	pDest=(PIXEL*)Dest->getBitmap();
 	result=(PIXEL*) BMap;
-	for (unsigned int y=0;y<Source->getHeight();y++)
+	for (int y=0;y<Source->getHeight();y++)
 	{
-		for (unsigned int x=0;x<Source->getWidth();x++)
+		for (int x=0;x<Source->getWidth();x++)
 		{
 			tempPix=0;
 			tempSrc=*pSrc;
@@ -1471,9 +1471,9 @@ void CBitMap::BlendPixel(CBitMap *Source, CBitMap *Dest,CBitMap* Mask, unsigned 
 	pDest=Dest->getBitmap();
 	pMask=Mask->getBitmap();
 	pResult= BMap;
-	for (unsigned int y=0;y<Source->getHeight();y++)
+	for (int y=0;y<Source->getHeight();y++)
 	{
-		for (unsigned int x=0;x<Source->getWidth();x++)
+		for (int x=0;x<Source->getWidth();x++)
 		{
 			if ((*pMask&0xff)<Alpha)
 				*pResult = *pSrc;
@@ -1892,7 +1892,7 @@ void CBitMap::LineTxt(int x1,int y1,int Wid, CBitMap* Source,int xt1,int yt1,int
 	int SrcWidth, SrcOffset;
 
 	int Offset=y1*(Width+Pitch) + x1;
-	int SrcPixel,dx,dy,xOff,yOff;
+	int dx,dy,xOff,yOff;
 	int ix,iy,xl,yl;
 
 	SrcPointer=Source->getBitmap();

@@ -37,7 +37,7 @@ public:
 	int ActiveBackground;
 	int inActiveBackground;
 	int CursorColor;
-	int BlinkFreq;
+	unsigned int BlinkFreq;
 protected:
 	void addChar(char a);
 	unsigned int	iSize;
