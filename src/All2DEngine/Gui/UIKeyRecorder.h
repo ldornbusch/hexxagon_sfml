@@ -38,5 +38,5 @@ private:
 	ImageText fntFont;
 protected:
 	void writeName();
-	string translateMessage2KeyName(int wData);
+	string translateMessage2KeyName(unsigned int wData);
 };

@@ -115,7 +115,7 @@ value UIKeyRecorder::getValue()
 
 void UIKeyRecorder::setValue(value val)
 {
-    Event tmp(MM_KEYDOWN,val.second,0);
+    Event tmp(MM_KEYDOWN,(unsigned int)val.second,0);
 	setRecordedKey(&tmp);
 
 }
@@ -133,7 +133,11 @@ void UIKeyRecorder::setRecordedKey(Event* evt)
 }
 void UIKeyRecorder::writeName()
 {
-	int wid=fntFont.getFontWidth()*KeyName.length();
+    int minSize = KeyName.length(); // if key was not found the width would be zero.. not possible to click..
+    if (minSize < 1){
+        minSize = 4;
+    }
+	int wid=fntFont.getFontWidth() * minSize;
 	int hei=fntFont.getFontHeight();
 	this->resize(wid, hei);
 	fntFont.PrintAt(*this,0,0,KeyName.c_str());
@@ -169,7 +173,7 @@ void UIKeyRecorder::leftClick()
 }
 
 // translate specialKeys to descriptive Strings..
-string UIKeyRecorder::translateMessage2KeyName(int wData)
+string UIKeyRecorder::translateMessage2KeyName(unsigned int wData)
 {
 	string retVal="";
 	if (wData>=sf::Keyboard::A && wData<=sf::Keyboard::Z){
