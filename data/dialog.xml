@@ -22,8 +22,8 @@
 		<button name="btnundo"        								srcrect="384, 64,192,32" />
 		<button name="btnsuggest"    									srcrect="384, 96,192,32" />
 		<button name="btnnew"    	      							srcrect="384,128,192,32" />
-		<button name="btnload" 		target="dlgload"    srcrect="384,160,192,32" />
-		<button name="btnsave"    target="dlgsave"    srcrect="384,192,192,32" />
+		<!--button name="btnload" target="dlgload"  srcrect="384,160,192,32" />
+		<button name="btnsave" target="dlgsave"  srcrect="384,192,192,32" /-->
 		<button name="btnback"    function="escape" 	srcrect="352,32,96,32" />
 	</dialog>
 
@@ -78,7 +78,7 @@
 		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
 
 		<label text="FIRE :" blitmode="half"/>
-		<keyrecorder value=" " name="key_1_fire" position="0,0,16,16"/>
+		<keyrecorder value="X" name="key_1_fire" position="0,0,16,16"/>
 		<label name="space" srcrect="0,0,0,0" position="0,0,130,16"/>
 		<button name="btnok"     function="escape" srcrect="352,0,96,32" />
 	</dialog>
@@ -94,23 +94,23 @@
 		<label name="Keys2" srcrect="416,288,184,32" position="0,0,92,16" blitmode="add"/>
 
 		<label text="LEFT :" blitmode="half"/>
-		<keyrecorder value="d" name="key_2_left" position="0,0,16,16"/>
+		<keyrecorder value="j" name="key_2_left" position="0,0,16,16"/>
 		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
 
 		<label text="RIGHT:" blitmode="half"/>
-		<keyrecorder value="f" name="key_2_right" position="0,0,16,16"/>
+		<keyrecorder value="l" name="key_2_right" position="0,0,16,16"/>
 		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
 
 		<label text="UP   :" blitmode="half"/>
-		<keyrecorder value="h" name="key_2_up" position="0,0,16,16"/>
+		<keyrecorder value="i" name="key_2_up" position="0,0,16,16"/>
 		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
 
 		<label text="DOWN :" blitmode="half"/>
-		<keyrecorder value="b" name="key_2_down" position="0,0,16,16"/>
+		<keyrecorder value="k" name="key_2_down" position="0,0,16,16"/>
 		<label name="space" srcrect="0,0,0,0" position="0,0,130,26"/>
 
 		<label text="FIRE :" blitmode="half"/>
-		<keyrecorder value="`" name="key_2_fire" position="0,0,16,16"/>
+		<keyrecorder value="m" name="key_2_fire" position="0,0,16,16"/>
 		<label name="space" srcrect="0,0,0,0" position="0,0,130,16"/>
 
 		<button name="btnok"     function="escape" srcrect="352,0,96,32" />
@@ -140,11 +140,11 @@
 		<radio  group="2" name="computer_a" position="0,0,16,16" offset="0,8"/>
 		<label name="AI_A" srcrect="416,320,224,32"/>
 		<label name="space" srcrect="0,0,0,0" position="0,0,96,16"/>
-		<scrollbar name="difficult_a" type="horizontal" min="1" max="5" value="3" position="0,0,150,16"/>
+		<!--scrollbar name="difficult_a" type="horizontal" min="1" max="5" value="3" position="0,0,150,16"/>
 
 		<radio  group="2" name="network_a" position="0,0,16,16" offset="0,8"/>
 		<label name="network" srcrect="416,384,198,32"/>
-		<button name="btnconfignet_a"  srcrect="416,416,128,32" />
+		<button name="btnconfignet_a"  srcrect="416,416,128,32" /-->
 		<button name="btnok"     function="escape" srcrect="352,0,96,32" />
 	</dialog>
 
@@ -171,12 +171,11 @@
 		<radio  group="3" name="computer_b" position="0,0,16,16" offset="0,8"/>
 		<label name="AI_B" srcrect="416,320,224,32"/>
 		<label name="space" srcrect="0,0,0,0" position="0,0,96,16"/>
-		<scrollbar name="difficult_b" type="horizontal" min="1" max="5" value="3" position="0,0,150,16"/>
+		<!--scrollbar name="difficult_b" type="horizontal" min="1" max="5" value="3" position="0,0,150,16"/>
 
 		<radio  group="3" name="network_b" position="0,0,16,16" offset="0,8"/>
 		<label name="network" srcrect="416,384,198,32"/>
-		<button name="btnconfignet_b "  srcrect="416,416,128,32" />
-
+		<button name="btnconfignet_b "  srcrect="416,416,128,32" /-->
 		<button name="btnok"     function="escape" srcrect="352,0,96,32" />
 	</dialog>
 
