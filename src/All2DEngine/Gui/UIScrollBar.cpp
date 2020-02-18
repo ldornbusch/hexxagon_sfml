@@ -16,7 +16,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-UIScrollBar::UIScrollBar(int iMode)
+UIScrollBar::UIScrollBar(ScrollBar_Mode eMode)
 {
 
 	Image::cloneImage(All2D_System::UIElements,Rect(16,0,48,16));
@@ -26,7 +26,7 @@ UIScrollBar::UIScrollBar(int iMode)
 	btnUp.setSendFlag(MM_SCROLL_UP,getID());
 	btnDown.setSendFlag(MM_SCROLL_DOWN,getID());
 
-	setScrollBarMode(iMode);
+	setScrollBarMode(eMode);
 
 	Image tmp;
 	tmp.cloneImage(All2D_System::UIElements,Rect(16,16,48,16));
@@ -52,18 +52,18 @@ void UIScrollBar::setButtonProperties(int Max, int Min, int ButtonSpeed, int Pag
 	iPageSpeed=PageSpeed;
 	iSliderSize=SliderSize;
 }
-void UIScrollBar::setScrollBarMode(int iMode)
+void UIScrollBar::setScrollBarMode(ScrollBar_Mode eMode)
 {
-	iScrollBarMode=iMode;
-	if (getScrollBarMode()==ALL2D_VERTICAL)
+	this->eMode=eMode;
+	if (getScrollBarMode()==VERTICAL)
 		setSrcRect(Rect(0,0,8,8),Rect(0,8,8,8),Rect(32,0,8,8),Rect(40,0,8,8));
 	else
 		setSrcRect(Rect(16,0,8,8),Rect(16,8,8,8),Rect(32,0,8,8),Rect(40,0,8,8));
 
 }
 
-int UIScrollBar::getScrollBarMode()
-{	return iScrollBarMode;}
+UIScrollBar::ScrollBar_Mode UIScrollBar::getScrollBarMode()
+{	return this->eMode;}
 
 bool UIScrollBar::handleEvent(Event *evt)
 {
@@ -80,7 +80,7 @@ bool UIScrollBar::handleEvent(Event *evt)
 			!btnDown.isInside(pt.x,pt.y)&&
 			!sprtSlider.isInside(pt.x,pt.y))
 		{
-			if (getScrollBarMode()==ALL2D_VERTICAL)
+			if (getScrollBarMode()==VERTICAL)
 			{
 				if (sprtSlider.getPosition().y1>pt.y)
 				{
@@ -161,7 +161,7 @@ void UIScrollBar::positionElements()
 {
 	int iButtonHeight;
 	int iButtonWidth;
-	if (iScrollBarMode==ALL2D_VERTICAL)
+	if (eMode==VERTICAL)
 	{
 		iButtonWidth=getPosition().x2;
 		iButtonHeight=iButtonWidth;
@@ -236,7 +236,7 @@ void UIScrollBar::updateValue()
 	double pixelRange, valueRange, step;
 	int pixVal;
 
-	if (getScrollBarMode()==ALL2D_VERTICAL)
+	if (getScrollBarMode()==VERTICAL)
 	{
 		pixVal=sprtSlider.getPosition().y1-sprtSlider.getOffset().y-getPosition().y1-btnUp.getPosition().y2;
 		pixelRange=double(getPosition().y2-2*btnUp.getPosition().y2);
@@ -248,7 +248,7 @@ void UIScrollBar::updateValue()
 		valueRange=(iMaxValue-iMinValue+iSliderSize);
 		step=valueRange/pixelRange;
 
-	if (getScrollBarMode()==ALL2D_VERTICAL)
+	if (getScrollBarMode()==VERTICAL)
 		iActualValue=iMaxValue-(step*pixVal);
 	else
 		iActualValue=iMinValue+(step*pixVal);

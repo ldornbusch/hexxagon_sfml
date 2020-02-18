@@ -49,10 +49,13 @@ void HexxagonGameController::init()
 	imgGFXElements.loadImage("data/elements.png");
 	hexGame.getGFX(imgGFXElements);
 	mouse.getGFX(imgGFXElements);
-	myMenu.init(imgGFXElements);
+
 
 	myFont.cloneImage(imgGFXElements,Rect(192,0,160,80));
 	myFont.FontInit(16,16,10,"ABCDEFGHIJKLMNOPQRSTUVWXYZ ,.-0123456789");
+
+	myMenu.setTitleFont(myFont);
+    myMenu.init(imgGFXElements);
 
     myMsgBox.setFont(myFont);
 	myMsgBox.init();

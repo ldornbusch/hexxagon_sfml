@@ -189,49 +189,45 @@
 	</dialog>
 
 
-	<dialog name="help1" parent="standard">
-	<label name="tubeckOL" srcrect="0,336,16,16" position="14,318,8,8"/>
-	<label name="tubeRohrO" srcrect="16,336,16,16" position="22,318,598,8"/>
-	<label name="tubeckOR" srcrect="32,336,16,16" position="620,318,8,8"/>
-	<label name="tubeRohrL" srcrect="0,352,16,16" position="14,326,8,144"/>
-	<label name="tubeRohrR" srcrect="32,352,16,16" position="620,326,8,144"/>
-	<label name="tubeckUL" srcrect="0,368,16,16" position="14,470,8,8"/>
-	<label name="tubeRohrU" srcrect="16,368,16,16" position="22,470,598,8"/>
-	<label name="tubeckUR" srcrect="32,368,16,16" position="620,470,8,8"/>
-	<label name="halfbrite" srcrect="0,615,16,16" position="22,326,598,144" blitmode="half"/>
-	<scrollarea>
-	<headline>1. GOAL</headline>
-	The goal of Hexxagon is to own more fields than your opponent.
-	You reach your goal by moving your stones by jumping or morphing
-	and conquering your opponents fields.
-	</scrollarea>
-	</dialog>
+	<dialog name="help1" parent="standard" position="0,190,640,290">
+        <label name="logo" srcrect="0,450,595,165" position="22,0,595,165"/>
+        <label name="Help" srcrect="192,160,192,32" position="224,190,192,32" blitmode="add"/>
+        <label name="Helpback" srcrect="0,615,16,16" position="224,190,192,32" blitmode="half"/>
+        <button name="btnback" srcrect="352,32,96,32" position="272,448,96,32" function="escape" />
+        <label name="backback" srcrect="0,615,16,16" position="272,448,96,32" blitmode="half"/>
+        <label name="halfbrite" srcrect="0,615,16,16" position="22,226,598,212" blitmode="half"/>
+        <label name="tubeckOL" srcrect="0,336,16,16" position="14,218,8,8"/>
+        <label name="tubeRohrO" srcrect="16,336,16,16" position="22,218,598,8"/>
+        <label name="tubeckOR" srcrect="32,336,16,16" position="620,218,8,8"/>
+        <label name="tubeRohrL" srcrect="0,352,16,16" position="14,226,8,212"/>
+        <label name="tubeRohrR" srcrect="32,352,16,16" position="620,226,8,212"/>
+        <label name="tubeckUL" srcrect="0,368,16,16" position="14,438,8,8"/>
+        <label name="tubeRohrU" srcrect="16,368,16,16" position="22,438,598,8"/>
+        <label name="tubeckUR" srcrect="32,368,16,16" position="620,438,8,8"/>
+        <scrollarea position="22,226,598,212">
+            <headline>1. GOAL</headline>
+            The goal of Hexxagon is to own more fields than your opponent.
+            You reach your goal by moving your stones by jumping or morphing
+            and conquering your opponents fields.
 
-	<dialog name="help2" parent="standard">
-	<headline>2. JUMPING</headline>
-	Your stone can jump over 1 field to reach a far adjacent field.
-	Fields which are available for jumping are colored blue.
-	</dialog>
+            <headline>2. JUMPING</headline>
+            Your stone can jump over 1 field to reach a far adjacent field.
+            Fields which are available for jumping are colored blue.
 
-	<dialog name="help3" parent="standard">
-	<headline>3. MORPHING</headline>
-	If you move your stone into an adjacent field, it will morph,
-	which means your stone will double itself and occupy both
-	fields, source and target. Fields which are available for
-	morphing are colored yellow.
-	</dialog>
+            <headline>3. MORPHING</headline>
+            If you move your stone into an adjacent field, it will morph,
+            which means your stone will double itself and occupy both
+            fields, source and target. Fields which are available for
+            morphing are colored yellow.
 
-	<dialog name="help4" parent="standard">
-	<headline>4. CONQUER</headline>
-	When your stone moves to a field adjacent to an opponents field,
-	you will conquer this field, means the opponents field changes its
-	color to your color.
-	</dialog>
+            <headline>4. CONQUER</headline>
+            When your stone moves to a field adjacent to an opponents field,
+            you will conquer this field, means the opponents field changes its
+            color to your color.
 
-	<dialog name="help5" parent="standard">
-	<headline>5. STRATEGIC HINT</headline>
-	Try to bring your opponent into a situation where he cannot move anymore.
-	You will get all remaining fields and the game ends.
-	</dialog>
-
+            <headline>5. STRATEGIC HINT</headline>
+            Try to bring your opponent into a situation where he cannot move anymore.
+            You will get all remaining fields and the game ends.
+        </scrollarea>
+    </dialog>
 </xml>

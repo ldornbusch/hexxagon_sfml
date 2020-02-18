@@ -32,7 +32,7 @@ HexxagonMove& HexxagonMove::operator=(HexxagonMove move)
 	to			= move.to;
 	rate		= move.rate;
 	moveType= move.moveType;
-	return *this;
+    return *this;
 }
 
 HexxagonMove::~HexxagonMove()

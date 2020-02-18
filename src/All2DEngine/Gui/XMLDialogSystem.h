@@ -9,6 +9,7 @@
 #include "UIScrollBar.h"
 #include "UITextfield.h"
 #include "UIKeyRecorder.h"
+#include "UIScrollArea.h"
 #include "hasValue.h"
 #include "../All2D/All2D_Base/ImageText.h"
 
@@ -24,7 +25,8 @@ public:
 	void load();
 	value getValue(std::string strName);
 	void setValue(std::string strName, value val);
-	void setFont(ImageText& newFont);
+	void setTextFont(ImageText& newFont);
+	void setTitleFont(ImageText& newFont);
 	bool paint(Image& backBuffer);
 	bool handleEvent(Event* evt);
 	void displayDialog(std::string strName);
@@ -52,6 +54,8 @@ private:
 	int  ConvertXML2Blit(TiXmlElement* Node,string strAttr);
 	int  ConvertXML2Int(TiXmlElement* Node,string strAttr, int iDefault=0);
 	int  ConvertXML2Color(TiXmlElement* Node,string strAttr, int iDefault=0);
+	std::vector<std::string> split(const std::string& s, char delimiter);
+
 	static int iIDMessageCounter;
 	TiXmlDocument	xmlDoc;
 	bool blnInitialized;
@@ -64,7 +68,8 @@ private:
 	std::map<int,string>	mapIndex2Parent;	// To find the Parent of an Index
 	std::map<string, value>	mapKeyValue;	// for every UIElement except buttons and labels it saves the value..in a string(?)
 	Image imgUIImage;	//Bild mit den Buttons
-	ImageText fntDialogFont;
+	ImageText fntTextFont;
+	ImageText fntTitleFont;
 protected:
 	bool readValue(FILE *stream);
 	void writeValue(string strName, value val, FILE* stream);

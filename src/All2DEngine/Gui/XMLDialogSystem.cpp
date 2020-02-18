@@ -2,6 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 #include <stdio.h>
+#include <sstream>
 
 #include "XMLDialogSystem.h"
 #include "../All2D/All2D_System.h"
@@ -30,7 +31,7 @@ XMLDialogSystem::~XMLDialogSystem()
 
 void XMLDialogSystem::init(Image& imgElements)
 {
-	setFont(All2D_System::SystemFont);
+	setTextFont(All2D_System::SystemFont);
 	int iDialogIndex=0;
 
 	iActiveDialog=-1;	// No active Dialog as init
@@ -102,6 +103,8 @@ UIElement* XMLDialogSystem::initUIElement(TiXmlElement* UINode, UILayouter* Dial
 			retVal=createScrollBar(UINode);
 		if (strType=="keyrecorder")
 			retVal=createKeyRecorder(UINode);
+		if (strType=="scrollarea")
+			retVal=createScrollArea(UINode);
 		if (strType=="background")
 		{
 			UISprite* bckgrnd=createLabel(UINode);
@@ -119,7 +122,9 @@ UIElement* XMLDialogSystem::initUIElement(TiXmlElement* UINode, UILayouter* Dial
 UIHoverButton* XMLDialogSystem::createButton(TiXmlElement* UINode)	// ToDo put this as a Constructor in UIHoverbutton...
 {
 	UIHoverButton* retVal=new UIHoverButton();
-
+    if (UINode->Attribute("name")!=NULL){
+        retVal->setName(UINode->Attribute("name"));
+    }
 	retVal->setPriority(20);
 
 	retVal->cloneImage(imgUIImage);
@@ -167,9 +172,23 @@ UIHoverButton* XMLDialogSystem::createButton(TiXmlElement* UINode)	// ToDo put t
 UIKeyRecorder* XMLDialogSystem::createKeyRecorder(TiXmlElement* UINode)
 {
 	UIKeyRecorder* retVal=new UIKeyRecorder();
+    if (UINode->Attribute("name")!=NULL){
+        retVal->setName(UINode->Attribute("name"));
+    }
 	retVal->setPriority(20);
 	retVal->setPosition(ConvertXML2Rect(UINode,"position"));
-	Event tmp (MM_KEYDOWN,(int)*UINode->Attribute("value"),0);
+	unsigned char key = *UINode->Attribute("value");
+	if (key>='A' && key<='Z'){
+        key-='A';
+	}
+	if (key>='a' && key<='z'){
+        key-='a';
+	}
+	if (key>='0' && key<='9'){
+        key-='0';
+        key+=sf::Keyboard::Num0;
+	}
+	Event tmp (MM_KEYDOWN,(int)key,0);
 	retVal->setRecordedKey(&tmp);
 	if (UINode->Attribute("hoverblitmode"))
 		retVal->setHoverBlitMode(ConvertXML2Blit(UINode,"hoverblitmode"));
@@ -183,6 +202,9 @@ UIKeyRecorder* XMLDialogSystem::createKeyRecorder(TiXmlElement* UINode)
 UISprite* XMLDialogSystem::createLabel(TiXmlElement* UINode)
 {
 	UISprite* retVal=new UISprite();
+    if (UINode->Attribute("name")!=NULL){
+        retVal->setName(UINode->Attribute("name"));
+    }
 	retVal->setPriority(20);
 	retVal->cloneImage(imgUIImage);
 	if (UINode->Attribute("srcrect"))
@@ -191,10 +213,10 @@ UISprite* XMLDialogSystem::createLabel(TiXmlElement* UINode)
 	}else{
 		if (UINode->Attribute("text")){
 			string strLabel=UINode->Attribute("text");
-			int wid=strLabel.length()*fntDialogFont.getFontWidth();
-			int hei=fntDialogFont.getFontHeight();
+			int wid=strLabel.length()*fntTextFont.getFontWidth();
+			int hei=fntTextFont.getFontHeight();
 			retVal->resize(wid, hei);
-			fntDialogFont.PrintAt(*retVal,0,0,strLabel.c_str());
+			fntTextFont.PrintAt(*retVal,0,0,strLabel.c_str());
 		}else{	// Fals weder text noch srcrect Attribut vorhanden ist, initialisiere leeres Object
 			retVal->resize(0,0);// geht hier (0,0)?
 			retVal->setSrcRect(Rect(0,0,0,0));
@@ -210,6 +232,9 @@ UISprite* XMLDialogSystem::createLabel(TiXmlElement* UINode)
 UITextField* XMLDialogSystem::createTextfield(TiXmlElement* UINode)
 {
 	UITextField* retVal=new UITextField();
+    if (UINode->Attribute("name")!=NULL){
+        retVal->setName(UINode->Attribute("name"));
+    }
 	retVal->setPriority(20);
 	retVal->setSize(ConvertXML2Int(UINode,"maxlength",10));
 	retVal->setPosition(ConvertXML2Rect(UINode,"position"));
@@ -227,6 +252,9 @@ UITextField* XMLDialogSystem::createTextfield(TiXmlElement* UINode)
 UICheckBox* XMLDialogSystem::createCheckBox(TiXmlElement* UINode)
 {
 	UICheckBox* retVal=new UICheckBox();
+    if (UINode->Attribute("name")!=NULL){
+        retVal->setName(UINode->Attribute("name"));
+    }
 	retVal->setPriority(20);
 	retVal->setBlitMode(ConvertXML2Blit(UINode,"blitmode"));
 	retVal->setValue(value("",(int)ConvertXML2Bool(UINode,"checked")));
@@ -240,7 +268,11 @@ UICheckBox* XMLDialogSystem::createCheckBox(TiXmlElement* UINode)
 UISprite* XMLDialogSystem::createScrollArea(TiXmlElement* UINode)
 {
     // TODO: need to build a GUICLass for (optional) scroll a bitmap (horizontally / vertically)
-	UISprite* retVal=new UISprite();
+	UIScrollArea* retVal=new UIScrollArea();
+	Image content;
+    if (UINode->Attribute("name")!=NULL){
+        retVal->setName(UINode->Attribute("name"));
+    }
 	retVal->setPriority(20);
 	Rect tmpPosition = ConvertXML2Rect(UINode,"position");
     retVal->resize(tmpPosition.getWidth(), tmpPosition.getHeight());
@@ -249,6 +281,7 @@ UISprite* XMLDialogSystem::createScrollArea(TiXmlElement* UINode)
     using std::pair;
     auto allText = vector<pair<string,string>>();
     int internalHeight=0;
+    ImageText* currentFont = &fntTextFont;;
     TiXmlNode* child=UINode->FirstChild();
 	while(child!=NULL){
         pair<string, string> entry;
@@ -258,6 +291,7 @@ UISprite* XMLDialogSystem::createScrollArea(TiXmlElement* UINode)
                 if (nodename=="headline"){
                     string title = child->FirstChild()->ToText()->Value();
                     entry = std::make_pair("headline", title);
+                    currentFont = &fntTitleFont;
                 }
                 break;
             }
@@ -273,25 +307,30 @@ UISprite* XMLDialogSystem::createScrollArea(TiXmlElement* UINode)
                 break;
             }
         }
-        int msgHeight = UILayouter::formatText(entry.second, retVal->getWidth(), fntDialogFont).size();
-        internalHeight += msgHeight * fntDialogFont.getFontHeight();
+        int msgHeight = UILayouter::formatText(entry.second, retVal->getWidth(), *currentFont).size();
+        internalHeight += msgHeight * (currentFont->getFontHeight()+2);
 
         allText.push_back(entry);
 	    child=child->NextSibling();
 	}
-	retVal->resize(tmpPosition.getWidth(), internalHeight);
+	content.resize(tmpPosition.getWidth(), internalHeight);
 	retVal->setPosition(tmpPosition);
-	retVal->setSrcRect(Rect(0,0, tmpPosition.getWidth(), tmpPosition.getHeight()));
+	//content.setSrcRect(Rect(0,0, tmpPosition.getWidth(), tmpPosition.getHeight()));
 	int yco = 0;
 	for(pair<string, string> paragraph : allText){
         string lineType = paragraph.first;
         string lineText = paragraph.second;
-        for(auto line:UILayouter::formatText(lineText, retVal->getWidth(), fntDialogFont)){
-            fntDialogFont.PrintAt(*retVal,0,yco+0,line.c_str(), IMAGE_BLTMODE_FAST);
-            fntDialogFont.PrintAt(*retVal,1,yco+1,line.c_str(), IMAGE_BLTMODE_HALF);
-            yco += fntDialogFont.getFontHeight();
+        currentFont = &fntTextFont;
+        if (lineType=="headline"){
+            currentFont = &fntTitleFont;
+        }
+        for(auto line:UILayouter::formatText(lineText, retVal->getWidth(), *currentFont)){
+            currentFont->PrintAt(content,1,yco+1,line.c_str(), IMAGE_BLTMODE_SUB);
+            currentFont->PrintAt(content,0,yco+0,line.c_str(), IMAGE_BLTMODE_TRANS);
+            yco += currentFont->getFontHeight()+2;
         }
 	}
+	retVal->setImage(content);
     return retVal;
 }
 
@@ -302,12 +341,15 @@ UIScrollBar* XMLDialogSystem::createScrollBar(TiXmlElement* UINode)
 	{
 		string strType=UINode->Attribute("type");
 		if (strType=="vertical")
-			retVal=new UIScrollBar(ALL2D_VERTICAL);
+			retVal=new UIScrollBar(UIScrollBar::VERTICAL);
 		else
-			retVal=new UIScrollBar(ALL2D_HORIZONTAL);
-	}else
-		retVal=new UIScrollBar(ALL2D_HORIZONTAL);
-
+			retVal=new UIScrollBar(UIScrollBar::HORIZONTAL);
+	}else{
+		retVal=new UIScrollBar(UIScrollBar::HORIZONTAL);
+	}
+    if (UINode->Attribute("name")!=NULL){
+        retVal->setName(UINode->Attribute("name"));
+    }
 	retVal->setPriority(20);
 	if (UINode->Attribute("position")!=NULL)
 	{
@@ -333,6 +375,9 @@ UIRadioButton* XMLDialogSystem::createRadioButton(TiXmlElement* UINode)
 {
 	static int iRadioID=1;
 	UIRadioButton* retVal=new UIRadioButton();
+    if (UINode->Attribute("name")!=NULL){
+        retVal->setName(UINode->Attribute("name"));
+    }
 	retVal->setPriority(20);
 	retVal->setRadioGroup(ConvertXML2Int(UINode,"group"));
 	retVal->setValue(value("",(int)(ConvertXML2Bool(UINode,"checked"))));
@@ -425,9 +470,14 @@ void XMLDialogSystem::displayDialog(std::string strName)
 	}
 }
 
-void XMLDialogSystem::setFont(ImageText &newFont)
+void XMLDialogSystem::setTextFont(ImageText &newFont)
 {
-	fntDialogFont.cloneFont(newFont);
+	fntTextFont.cloneFont(newFont);
+}
+
+void XMLDialogSystem::setTitleFont(ImageText &newFont)
+{
+	fntTitleFont.cloneFont(newFont);
 }
 
 UIElement* XMLDialogSystem::getElement(std::string strName)
@@ -638,4 +688,16 @@ bool XMLDialogSystem::readValue(FILE *stream)
 
 
 	return retVal;
+}
+
+std::vector<std::string> XMLDialogSystem::split(const std::string& s, char delimiter)
+{
+   std::vector<std::string> tokens;
+   std::string token;
+   std::istringstream tokenStream(s);
+   while (std::getline(tokenStream, token, delimiter))
+   {
+      tokens.push_back(token);
+   }
+   return tokens;
 }
