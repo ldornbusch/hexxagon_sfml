@@ -32,19 +32,19 @@ StandardSample::~StandardSample()
 // sound
 void StandardSample::play()
 {
-  if (szFilename!=NULL)
+  if (szFilename!=0)
     sndPlaySound( szFilename, SND_ASYNC | SND_NODEFAULT );
 }
 
 void StandardSample::loop()
 {
-  if (szFilename!=NULL)
+  if (szFilename!=0)
     sndPlaySound( szFilename, SND_ASYNC | SND_NODEFAULT | SND_LOOP );
 }
 
 void StandardSample::stop()
 {
-  sndPlaySound( NULL, 0 );
+  sndPlaySound( 0, 0 );
 }
 
 // sample

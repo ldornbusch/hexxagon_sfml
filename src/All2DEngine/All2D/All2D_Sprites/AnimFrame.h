@@ -4,7 +4,7 @@
 #pragma once
 
 #include "../All2D_Base/Image.h"
-#include "../../UTILS/POINT.H"	// Hinzugefügt von der Klassenansicht
+#include "../../Utils/Point.h"
 
 class AnimFrame : public Image
 {

@@ -5,8 +5,8 @@
 
 #include "xElement.h"
 #include "Image.h"
-#include <String>
-#include <Vector>
+#include <string>
+#include <vector>
 // For Standard TemplateLibrary Support...
 using std::string;
 

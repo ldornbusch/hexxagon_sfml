@@ -3,10 +3,10 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "KeyController.h"
-#include "../All2DEngine/all2D/All2D_System.h"
-#include "../All2DEngine/all2D/All2D_Events/MessageManager.h"
+#include "../All2DEngine/All2D/All2D_System.h"
+#include "../All2DEngine/All2D/All2D_Events/MessageManager.h"
 
-#include "Hexxagon_messages.h"
+#include "hexxagon_messages.h"
 
 
 #define ACC_TIME_MS 10

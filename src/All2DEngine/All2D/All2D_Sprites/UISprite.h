@@ -9,7 +9,7 @@
 
 #include "UIElement.h"
 #include "../All2D_Base/Image.h"
-#include "../../UTILS/Rect.h"	// Hinzugefügt von der Klassenansicht
+#include "../../Utils/Rect.h"	// Hinzugefügt von der Klassenansicht
 
 
 class UISprite :

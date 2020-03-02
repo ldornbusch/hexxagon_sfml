@@ -12,7 +12,7 @@
 #pragma once
 #include "ImageText.h"
 #include "../All2D_Base/xElement.h"
-#include "../../UTILS/Point.h"	// Hinzugefügt von der Klassenansicht
+#include "../../Utils/Point.h"	// Hinzugefügt von der Klassenansicht
 
 class ScrollMap :
 								private virtual ImageText,

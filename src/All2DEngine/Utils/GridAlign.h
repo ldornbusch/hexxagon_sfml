@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "POINT.H"	// Hinzugefügt von der Klassenansicht
+#include "Point.h"	// Hinzugefügt von der Klassenansicht
 
 #include "Grid.h"
 

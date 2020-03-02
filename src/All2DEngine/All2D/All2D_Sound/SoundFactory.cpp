@@ -5,8 +5,6 @@
 #include "SoundFactory.h"
 
 #include "drivers/null/NullSoundEngine.h"
-#include "drivers/std/StandardSoundEngine.h"
-#include "drivers/wm/WMSoundEngine.h"
 #include "drivers/sfml/SFMLSoundEngine.h"
 
 
@@ -36,12 +34,6 @@ SoundEngine* SoundFactory::getInstance(int driverID)
 		switch (driverID) {
 		case 3:
 			singletonInstance = new SFMLSoundEngine();
-			break;
-		case 2:
-			singletonInstance = new WMSoundEngine();
-			break;
-		case 1:
-			singletonInstance = new StandardSoundEngine();
 			break;
 		default:
 			singletonInstance = new NullSoundEngine();

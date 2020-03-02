@@ -1,11 +1,10 @@
 // MouseController.h: Schnittstelle für die Klasse MouseController.
 //
 //////////////////////////////////////////////////////////////////////
-#include "..\ALL2DENGINE\UTILS\Rect.h"	// Hinzugefügt von der Klassenansicht
 #pragma once
-
+#include "../All2DEngine/Gui/MouseMover.h"
+#include "../All2DEngine/Utils/Rect.h"	// Hinzugefügt von der Klassenansicht
 #include "ControllerAdapter.h"
-#include "../All2Dengine/GUI/MouseMover.h"
 
 
 class MouseController : public ControllerAdapter

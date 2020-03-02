@@ -8,9 +8,9 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "../ALL2D_HAL/drawableElement.h"
+#include "../All2D_HAL/drawableElement.h"
 #include "Image.h"
-#include <String>
+#include <string>
 // For Standard TemplateLibrary Support...
 using std::string;
 

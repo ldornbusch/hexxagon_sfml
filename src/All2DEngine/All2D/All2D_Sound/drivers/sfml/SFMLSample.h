@@ -4,7 +4,7 @@
 #pragma once
 
 #include<SFML/Audio.hpp>
-#include "..\..\Sample.h"
+#include "../../Sample.h"
 
 
 

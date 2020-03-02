@@ -14,8 +14,8 @@
 //////////////////////////////////////////////////////////////////////
 // Konstruktion/Destruktion
 //////////////////////////////////////////////////////////////////////
-#include "..\ALL2DENGINE\ALL2D\ALL2D_System.h"
-#include "Hexxagon_messages.h"
+#include "../All2DEngine/All2D/All2D_System.h"
+#include "hexxagon_messages.h"
 
 #define STONE_DISTANCE_X 48//72-->Fullscreen
 #define STONE_DISTANCE_Y 16//28-->Fullscreen

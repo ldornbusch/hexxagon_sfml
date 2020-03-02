@@ -2,7 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 //#include <ddraw.h>
-#include "All2DWin.h"
+#include "All2Dwin.h"
 #include "../All2D_System.h"
 
 //////////////////////////////////////////////////////////////////////
@@ -53,7 +53,8 @@ void All2DWin::All2D_Exit()
 // private Method to initialize the Window...
 void All2DWin::InitWindow()
 {
-    sfml_window.create(sf::VideoMode(WindowX,WindowY),strTitle,All2D_System::fullScreen?sf::Style::Fullscreen : sf::Style::Default);
+    unsigned int fullscreen = All2D_System::fullScreen? 0: sf::Style::Default;
+    sfml_window.create(sf::VideoMode(WindowX,WindowY),strTitle,fullscreen);
     sfml_window.setFramerateLimit(60);
 }
 

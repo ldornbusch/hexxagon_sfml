@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "..\ALL2DENGINE\ALL2D\ALL2D_SPRITES\UIElement.h"
+#include "../All2DEngine/All2D/All2D_Sprites/UIElement.h"
 #include "GameImageCloner.h"
 
 class GameBossScreen :	public UIElement,

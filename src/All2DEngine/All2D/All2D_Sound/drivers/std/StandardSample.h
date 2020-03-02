@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "..\..\Sample.h"
+#include "../../Sample.h"
 
 class StandardSample : public Sample
 {

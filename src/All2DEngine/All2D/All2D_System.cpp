@@ -8,7 +8,7 @@
 // Konstruktion/Destruktion
 //////////////////////////////////////////////////////////////////////
 
-xRegistry All2D_System::Registry("SOFTWARE\\hexerei software creations\\games\\columns");
+//xRegistry All2D_System::Registry("SOFTWARE\\hexerei software creations\\games\\columns");
 
 bool	All2D_System::fullScreen = false;
 float All2D_System::skipFactor=1.0f;	// keine AnimationsFrames skippen
@@ -17,6 +17,7 @@ int All2D_System::fixedBits = 0;
 int All2D_System::fixedX = 0;
 int All2D_System::fixedY = 0;
 
+sf::Clock  All2D_System::Timer =sf::Clock();
 
 string All2D_System::WinTitle	=	"";
 string All2D_System::loadPath	=	"";
@@ -42,7 +43,7 @@ Point All2D_System::extractMouseCoords(Event *evt)
 }
 unsigned int All2D_System::getTime()
 {
-	return timeGetTime();
+	return All2D_System::Timer.getElapsedTime().asMilliseconds();//TODO: replace timeGetTime();
 }
 
 // return the full path to the image file depending on the current resolution

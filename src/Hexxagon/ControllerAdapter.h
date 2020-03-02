@@ -33,8 +33,8 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "..\ALL2DENGINE\ALL2D\ALL2D_Events\Event.h"
-#include "..\ALL2DENGINE\UTILS\Rect.h"	// Hinzugefügt von der Klassenansicht
+#include "../All2DEngine/All2D/All2D_Events/Event.h"
+#include "../All2DEngine/Utils/Rect.h"	// Hinzugefügt von der Klassenansicht
 
 
 class ControllerAdapter

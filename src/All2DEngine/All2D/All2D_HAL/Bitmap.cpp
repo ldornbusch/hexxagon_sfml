@@ -1,7 +1,7 @@
 // BitMap.cpp: Implementierung der Klasse CBitMap.
 //
 //////////////////////////////////////////////////////////////////////
-#include <conio.h>
+//#include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
@@ -9,11 +9,11 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "BitMap.h"
+#include "Bitmap.h"
 
 #include "../All2D_System.h"
 
-
+typedef unsigned char BYTE;
 //////////////////////////////////////////////////////////////////////
 // Konstruktion/Destruktion
 //////////////////////////////////////////////////////////////////////
@@ -155,7 +155,7 @@ int inline CBitMap::ABS(int arg)
 
 BYTE CBitMap::GetC(FILE* stream)
 {
-	static INT64 Offset;
+	static __int64_t Offset;
 	Offset++;
 	return getc(stream);
 }
@@ -337,7 +337,7 @@ void CBitMap::InitPhong(int Phong, PIXEL Col, int Size )  // WORKS ONLY IN 32 BI
 		ColorMap[i]=Col;
 	}
 
-	for (unsigned int y=0;y<Height;y++)
+	for (unsigned int y=0;y<Height;y++){
 		for (unsigned int x=0;x<Width;x++)
 		{
 			intensity=1-(((float)x/(Size-1))*((float)x/(Size-1))+((float)y/(Size-1))*((float)y/(Size-1)));
@@ -345,7 +345,8 @@ void CBitMap::InitPhong(int Phong, PIXEL Col, int Size )  // WORKS ONLY IN 32 BI
 			ColorWert=(int)(intensity*255);
 			BMap[y*Width+x]=ColorMap[ColorWert];
 		}
-		delete ColorMap;
+	}
+	delete ColorMap;
 }
 
 void CBitMap::Fluid(CBitMap *Source, CBitMap *FluidMap)	// WORKS ONLY IN 32 BIT!!

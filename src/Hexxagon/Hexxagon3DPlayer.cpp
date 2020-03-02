@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "Hexxagon3DPlayer.h"
-#include "..\All2DEngine\All2D\All2D_System.h"
+#include "../All2DEngine/All2D/All2D_System.h"
 //#include <crtdbg.h>
 
     /*
@@ -30,8 +30,8 @@ Hexxagon3DPlayer::Hexxagon3DPlayer()
 {
 	//rotateX = 45.0f;
 	//rotateY = 45.0f;
-	rotateX = 0.0f;
-	rotateY = 0.0f;
+//	rotateX = 0.0f;
+//	rotateY = 0.0f;
 	hexBoard = 0;
 	bInitialized = false;
 }

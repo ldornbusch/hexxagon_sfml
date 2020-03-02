@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "..\..\ALL2DENGINE\GUI\UIHoverButton.h"
-#include "hasvalue.h"
+#include "UIHoverButton.h"
+#include "hasValue.h"
 
 class UICheckBox : public UIHoverButton, public hasValue
 {

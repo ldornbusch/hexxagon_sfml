@@ -13,10 +13,10 @@
 
 #pragma once
 
-#include "..\UTILS\Rect.h"	// Hinzugefügt von der Klassenansicht
-#include "..\ALL2D\ALL2D_BASE\xContainer.h"
-#include "..\ALL2D\ALL2D_SPRITES\UISprite.h"
-#include "..\ALL2D\ALL2D_Base\ImageText.h"
+#include "../Utils/Rect.h"	// Hinzugefügt von der Klassenansicht
+#include "../All2D/All2D_Base/xContainer.h"
+#include "../All2D/All2D_Sprites/UISprite.h"
+#include "../All2D/All2D_Base/ImageText.h"
 
 //TODO: create enum here
 #define LAYOUT_LEFT_RIGHT	0x0001

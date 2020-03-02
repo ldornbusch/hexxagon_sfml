@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "../../utils/Rect.h"
-#include "../../utils/Point.h"
+#include "../../Utils/Rect.h"
+#include "../../Utils/Point.h"
 #include "../All2D_Events/Event.h"
 // pre-declaration
 class All2D_Controller;

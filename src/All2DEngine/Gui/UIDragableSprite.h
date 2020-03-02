@@ -5,8 +5,8 @@
 #pragma once
 
 #include "../All2D/All2D_Sprites/UISprite.h"
-#include "..\UTILS\POINT.H"	// Added by ClassView
-#include "..\UTILS\Rect.h"	// Added by ClassView
+#include "../Utils/Point.h"
+#include "../Utils/Rect.h"
 
 class UIDragableSprite : virtual public UISprite
 {

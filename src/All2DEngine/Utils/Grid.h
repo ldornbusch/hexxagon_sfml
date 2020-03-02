@@ -4,8 +4,8 @@
 #pragma once
 
 #include "Rect.h"
-#include "POINT.H"	// Hinzugefügt von der Klassenansicht
-#include "../All2D/All2D_Base/IMAGE.h"
+#include "Point.h"	// Hinzugefügt von der Klassenansicht
+#include "../All2D/All2D_Base/Image.h"
 
 class Grid : public Rect
 {

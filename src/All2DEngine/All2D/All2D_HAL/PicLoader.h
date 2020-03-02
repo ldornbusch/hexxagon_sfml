@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "../../Utils/xzip/xzip.h"	//Das ist nicht Cool!!!
+#include "../../Utils/xzip/xZip.h"	//Das ist nicht Cool!!!
 
 #include <map>
 #include <vector>

@@ -10,8 +10,8 @@
 #pragma once
 
 #include "UISprite.h"
-#include "../../UTILS/POINT.H"	// Hinzugefügt von der Klassenansicht
-#include "../../UTILS/Vector.h"	// Hinzugefügt von der Klassenansicht
+#include "../../Utils/Point.h"	// Hinzugefügt von der Klassenansicht
+#include "../../Utils/Vector.h"	// Hinzugefügt von der Klassenansicht
 
 #define MOVETYPE_FIX_SPEED 0x0001	// der Sprite bewegt sich _immer_ mit der selben Geschwindigkeit
 #define MOVETYPE_FIX_TIME  0x0002	// Der Sprite bewegt sich _immer_ in der selben Zeit zu einem gegebenen Punkt

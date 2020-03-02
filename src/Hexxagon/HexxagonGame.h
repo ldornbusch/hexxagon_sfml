@@ -4,14 +4,14 @@
 
 #pragma once
 
-#include "..\GAME\GameImageCloner.h"
-#include "..\ALL2DENGINE\ALL2D\ALL2D_BASE\xContainer.h"
+#include "../All2DEngine/All2D/All2D_Base/xContainer.h"
+#include "../All2DEngine/All2D/All2D_Base/ImageText.h"	// Added by ClassView
+#include "../Game/GameImageCloner.h"
 #include "HexxagonBoard.h"	// Added by ClassView
 #include "HexxagonMove.h"	// Hinzugefügt von der Klassenansicht
-#include "Hexxagon_messages.h"
+#include "hexxagon_messages.h"
 #include "hexxagonScore.h"	// Added by ClassView
-#include "hexxagonState.h"	// Added by ClassView
-#include "..\ALL2DENGINE\ALL2D\ALL2D_BASE\ImageText.h"	// Added by ClassView
+#include "HexxagonState.h"	// Added by ClassView
 #include "HexxagonAIPlayer.h"	// Added by ClassView
 #include "Hexxagon3DPlayer.h"	// Hinzugefügt von der Klassenansicht
 

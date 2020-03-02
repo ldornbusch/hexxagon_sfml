@@ -16,7 +16,7 @@
 #include "../All2D_HAL/PicLoader.h" // Hinzugefügt von der Klassenansicht
 #include "../../Utils/Point.h"	// Hinzugefügt von der Klassenansicht
 #include "../../Utils/Rect.h" // Hinzugefügt von der Klassenansicht
-#include "../includes/blitModes.h"
+#include "../includes/blitmodes.h"
 
 #include <string>
 using std::string;

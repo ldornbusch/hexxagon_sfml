@@ -3,11 +3,11 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <String>
-#include <Vector>
+#include <string>
+#include <vector>
 #include "UISprite.h"
 #include "AnimFrame.h"
-#include "../../UTILS/POINT.H"	// Hinzugefügt von der Klassenansicht
+#include "../../Utils/Point.h"	// Hinzugefügt von der Klassenansicht
 // For Standard TemplateLibrary Support...
 using std::string;
 using std::vector;

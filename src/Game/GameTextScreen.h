@@ -5,8 +5,8 @@
 #pragma once
 
 #include "GameImageCloner.h"
-#include "..\ALL2DENGINE\ALL2D\ALL2D_BASE\xContainer.h"
-#include "..\ALL2DENGINE\ALL2D\ALL2D_BASE\ImageText.h"	// Added by ClassView
+#include "../All2DEngine/All2D/All2D_Base/xContainer.h"
+#include "../All2DEngine/All2D/All2D_Base/ImageText.h"	// Added by ClassView
 #include <string>
 
 using std::string;

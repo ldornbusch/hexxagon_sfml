@@ -148,7 +148,7 @@
 
 #pragma once
 
-#include "../XML/tinyxml.h"
+#include "../xml/tinyxml.h"
 #include <string>
 #include <vector>
 

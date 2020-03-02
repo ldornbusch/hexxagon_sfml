@@ -7,7 +7,7 @@
 #include "../All2DEngine/All2D/All2D_Sprites/UIElement.h"
 #include "GameImageCloner.h"
 
-#include <String>
+#include <string>
 #include "../All2DEngine/All2D/All2D_Base/ImageText.h"	// Hinzugefügt von der Klassenansicht
 
 using std::string;

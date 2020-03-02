@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "..\..\SoundEngine.h"
+#include "../../SoundEngine.h"
 #include<vector>
 
 class SFMLSoundEngine : public SoundEngine

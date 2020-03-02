@@ -4,19 +4,19 @@
 
 #pragma once
 
-#include "..\ALL2DENGINE\ALL2D\ALL2D_SPRITES\UIElement.h"
+#include "../All2DEngine/All2D/All2D_Sprites/UIElement.h"
 #include "HexxagonBoard.h"
 
-#include <gl\gl.h>
-#include <gl\glu.h>
+//#include <gl\gl.h>
+//#include <gl\glu.h>
 
 class Hexxagon3DPlayer : public UIElement
 {
 
 public:
 
-	GLdouble rotateX;
-	GLdouble rotateY;
+//	GLdouble rotateX;
+//	GLdouble rotateY;
 
 	Hexxagon3DPlayer();
 	virtual ~Hexxagon3DPlayer();
@@ -27,7 +27,7 @@ public:
 private:
 	void init3D();
 
-	GLUquadricObj* quadObj;
+//	GLUquadricObj* quadObj;
 	HexxagonBoard* hexBoard;
 	bool bInitialized;
 

@@ -3,8 +3,8 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "HexxagonMouseMover.h"
-#include "Hexxagon_messages.h"
-#include "../All2DEngine/All2D/All2d_Events/MessageManager.h"
+#include "hexxagon_messages.h"
+#include "../All2DEngine/All2D/All2D_Events/MessageManager.h"
 
 //////////////////////////////////////////////////////////////////////
 // Konstruktion/Destruktion
@@ -103,7 +103,7 @@ bool HexxagonMouseMover::handleEvent(Event *evt)
 			break;
 		}
 		actPlayer=evt->wData;
-		
+
 	default:
 		break;
 	}

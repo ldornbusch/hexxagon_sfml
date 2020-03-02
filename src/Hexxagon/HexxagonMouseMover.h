@@ -3,8 +3,8 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "..\ALL2DENGINE\GUI\MouseMover.h"
-#include "..\game\GameImageCloner.h"
+#include "../All2DEngine/Gui/MouseMover.h"
+#include "../Game/GameImageCloner.h"
 #include "ControllerAdapter.h"
 
 class HexxagonMouseMover : public MouseMover , GameImageCloner

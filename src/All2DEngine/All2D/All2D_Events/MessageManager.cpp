@@ -47,7 +47,7 @@ bool MessageManager::paint(Image& backBuffer)
 // DIESE ROUTINE WIRD NUR VON EINER INSTANZ benutzt...(Dem sog. View des All2D Windows)
 bool MessageManager::paint(CBitMap *BackBuffer)
 {
-	bool isExit;
+	bool isExit=false;
 	if ( BackBuffer != NULL) {
 		backBufferImage.setBitMap(BackBuffer);
 		isExit=paint(backBufferImage);

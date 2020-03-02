@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "Hexxagon_messages.h"
+#include "hexxagon_messages.h"
 #include <string>
 using std::string;
 

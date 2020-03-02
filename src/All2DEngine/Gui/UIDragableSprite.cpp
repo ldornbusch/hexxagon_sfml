@@ -90,7 +90,7 @@ void UIDragableSprite::click()
 
 Point UIDragableSprite::clipPosition(Point p)
 {
-	if (!rctClipRect.isInside(p.x,p.y));
+	if (!rctClipRect.isInside(p.x,p.y))
 	{
 		if (p.x-getOffset().x<rctClipRect.x1)
 			p.x=rctClipRect.x1+getOffset().x;

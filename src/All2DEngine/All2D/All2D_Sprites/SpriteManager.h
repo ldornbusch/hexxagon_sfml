@@ -9,8 +9,8 @@ using std::vector;
 
 #include "UISprite.h"
 #include "SpriteEntry.h"
-#include "../../UTILS\POINT.H"	// Hinzugefügt von der Klassenansicht
-#include "../../UTILS\Rect.h"	// Hinzugefügt von der Klassenansicht
+#include "../../Utils/Point.h"	// Hinzugefügt von der Klassenansicht
+#include "../../Utils/Rect.h"	// Hinzugefügt von der Klassenansicht
 
 class SpriteManager
 {

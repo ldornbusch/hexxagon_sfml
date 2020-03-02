@@ -8,7 +8,7 @@
 #include <string>
 #include <map>
 
-#include "../../utils/RECT.h"
+#include "../../Utils/Rect.h"
 
 using std::string;
 using std::map;

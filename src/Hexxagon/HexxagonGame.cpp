@@ -240,13 +240,13 @@ void HexxagonGame::printScore(Image& backBuffer)
 	tmp.cloneImage(backBuffer,Rect(20,20,280,40));
 	tmp.clear(0xcccc00);
 	myFont.PrintCenter(tmp,4,scScore.strRedPlayer.c_str(),IMAGE_BLTMODE_SUB);
-	wsprintf(buffer,"%d",scScore.getPoints(HEX_RED_PLAYER));
+	sprintf(buffer,"%d",scScore.getPoints(HEX_RED_PLAYER));
 	myFont.PrintCenter(tmp,22,buffer,IMAGE_BLTMODE_SUB);
 
 	tmp.cloneImage(backBuffer,Rect(340,20,280,40));
 	tmp.clear(0x000033);
 	myFont.PrintCenter(tmp,4,scScore.strBluePlayer. c_str());
-	wsprintf(buffer,"%d",scScore.getPoints(HEX_BLUE_PLAYER));
+	sprintf(buffer,"%d",scScore.getPoints(HEX_BLUE_PLAYER));
 	myFont.PrintCenter(tmp,22,buffer);
 
 }

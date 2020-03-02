@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "..\ALL2D\All2D_Base\xContainer.h"
-#include "..\ALL2D\All2D_Sprites\UISprite.h"
+#include "../All2D/All2D_Base/xContainer.h"
+#include "../All2D/All2D_Sprites/UISprite.h"
 #include "UIScrollBar.h"
 #include "hasValue.h"
 

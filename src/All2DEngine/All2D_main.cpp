@@ -1,10 +1,10 @@
 #include "All2D/All2D_System.h"
-#include "All2D/All2D_HAL/All2DWin.h"
+#include "All2D/All2D_HAL/All2Dwin.h"
 
 #define NAME    "All3DInterface"
 #define TITLE   "DDraw to All3D Window/Screen"
 
-LRESULT CALLBACK MainWndProc (HWND ,UINT,WPARAM ,LPARAM);
+//LRESULT CALLBACK MainWndProc (HWND ,UINT,WPARAM ,LPARAM);
 bool fullscreen = false;	// app is in fullscreen mode
 All2DWin *myWin;					// Die Window-Klasse für DirectDraw Window
 

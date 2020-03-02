@@ -1,4 +1,4 @@
-#include "hexxagon/HexxagonGameController.h"
+#include "Hexxagon/HexxagonGameController.h"
 #include "All2DEngine/All2D/All2D_System.h"
 
 int main()

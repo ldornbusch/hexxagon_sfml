@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "GameInstructions.h"
-#include "HelpText.h"
+#include "helpText.h"
 #include "CreditsText.h"
 #include <math.h>
 //////////////////////////////////////////////////////////////////////
@@ -42,7 +42,7 @@ bool GameInstructions::paint(Image& backBuffer)
 		xOff=sin(.3*alpha)*5+5;
 		TextFont.PrintCenter(backBuffer,xco+shadow+70+20*x+xOff,textPointer+x*26,IMAGE_BLTMODE_HALF,26,0,0,xco2+shadow);
 		TextFont.PrintCenter(backBuffer,xco+70+20*x+xOff,textPointer+x*26,IMAGE_BLTMODE_TRANS,26,0,0,xco2);
-		
+
 	}
 	alpha=alpha+.08;
 	return true;

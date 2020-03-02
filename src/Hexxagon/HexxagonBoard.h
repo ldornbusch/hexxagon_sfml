@@ -6,8 +6,8 @@
 #include "hexxagonScore.h"	// Added by ClassView
 #include "StonePositioner.h"	// Hinzugefügt von der Klassenansicht
 
-#include "..\GAME\GameImageCloner.h"
-#include "..\ALL2DENGINE\ALL2D\ALL2D_BASE\xContainer.h"
+#include "../Game/GameImageCloner.h"
+#include "../All2DEngine/All2D/All2D_Base/xContainer.h"
 #include "HexxagonStone.h"
 #include "HexxagonMove.h"
 

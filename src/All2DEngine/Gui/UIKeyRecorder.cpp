@@ -193,12 +193,16 @@ string UIKeyRecorder::translateMessage2KeyName(unsigned int wData)
 		case sf::Keyboard::Tab:
 			retVal="[TAB]";
 			break;
-		case VK_SCROLL:
+/*		case VK_SCROLL:
 			retVal="[SCROLL LOCK]";
 			break;
 		case VK_NUMLOCK:
 			retVal="[NUM LOCK]";
 			break;
+		case VK_CAPITAL :
+			retVal="[CAPS LOCK]";
+			break;
+*/
 		case sf::Keyboard::Pause:
 			retVal="[PAUSE]";
 			break;
@@ -247,9 +251,6 @@ string UIKeyRecorder::translateMessage2KeyName(unsigned int wData)
 		case sf::Keyboard::LShift:
 		case sf::Keyboard::RShift:
 			retVal="[SHIFT]";
-			break;
-		case VK_CAPITAL :
-			retVal="[CAPS LOCK]";
 			break;
 		case sf::Keyboard::LControl:
 		case sf::Keyboard::RControl:
