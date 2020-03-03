@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "../All2DEngine/All2D/All2D_Base/xContainer.h"
-#include "../All2DEngine/All2D/All2D_Base/ImageText.h"	// Added by ClassView
+#include <All2D/All2DEngine/All2D/All2D_Base/xContainer.h>
+#include <All2D/All2DEngine/All2D/All2D_Base/ImageText.h>
 #include "../Game/GameImageCloner.h"
 #include "HexxagonBoard.h"	// Added by ClassView
 #include "HexxagonMove.h"	// Hinzugefügt von der Klassenansicht

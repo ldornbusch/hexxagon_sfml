@@ -3,8 +3,8 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <All2D/All2DEngine/All2D/All2D_Sprites/UIMovableSprite.h>
 #include "ControllerAdapter.h"
-#include "../All2DEngine/All2D/All2D_Sprites/UIMovableSprite.h"
 #include "HexxagonMove.h"	// Hinzugefügt von der Klassenansicht
 #include "HexxagonAIPlayer.h"	// Hinzugefügt von der Klassenansicht
 

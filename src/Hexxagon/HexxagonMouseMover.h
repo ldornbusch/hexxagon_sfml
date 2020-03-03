@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "../All2DEngine/Gui/MouseMover.h"
+#include <All2D/All2DEngine/Gui/MouseMover.h>
 #include "../Game/GameImageCloner.h"
 #include "ControllerAdapter.h"
 

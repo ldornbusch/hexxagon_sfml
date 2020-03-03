@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include "../All2DEngine/All2D/All2D_Base/ImageText.h"	// Hinzugefügt von der Klassenansicht
+#include <All2D/All2DEngine/All2D/All2D_Base/ImageText.h>
+#include <All2D/All2DEngine/All2D/All2D_Sprites/UIElement.h>
 #include "GameImageCloner.h"
-#include "../All2DEngine/All2D/All2D_Sprites/UIElement.h"
 
 class GameInstructions : public UIElement,
 						 public GameImageCloner

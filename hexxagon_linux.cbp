@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Hexxagon" />
+		<Option title="Hexxagon_linux" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -44,15 +44,25 @@
 			<Add library="libsfml-window-s.a" />
 			<Add library="libsfml-system-s.a" />
 			<Add library="libfreetype.a" />
-			<Add library="libopenal32.a" />
 			<Add library="libFLAC.a" />
+			<Add library="libopenal.a" />
 			<Add library="libvorbisenc.a" />
 			<Add library="libvorbisfile.a" />
 			<Add library="libvorbis.a" />
 			<Add library="libogg.a" />
 			<Add library="libjpeg.a" />
-			<Add library="libopengl32.a" />
-			<Add library="libwinmm.a" />
+			<Add library="libOpenGL.a" />
+			<Add library="pthread" />
+			<Add library="libdl" />
+			<Add library="X11" />
+			<Add library="GLEW" />
+			<Add library="X11-xcb" />
+			<Add library="udev" />
+			<Add library="xcb" />
+			<Add library="xcb-randr" />
+			<Add library="xcb-icccm" />
+			<Add library="xcb-image" />
+			<Add library="libXrandr" />
 			<Add directory="../SFML/build/lib" />
 			<Add directory="../_dependencies/lib" />
 		</Linker>
@@ -68,6 +78,7 @@
 		<Unit filename="src/All2DEngine/All2D/All2D_Events/Event.h" />
 		<Unit filename="src/All2DEngine/All2D/All2D_Events/MessageManager.h" />
 		<Unit filename="src/All2DEngine/All2D/All2D_HAL/All2D_WinInterface.h" />
+		<Unit filename="src/All2DEngine/All2D/All2D_HAL/All2Dwin.h" />
 		<Unit filename="src/All2DEngine/All2D/All2D_HAL/All2dwin.h" />
 		<Unit filename="src/All2DEngine/All2D/All2D_HAL/Bitmap.h" />
 		<Unit filename="src/All2DEngine/All2D/All2D_HAL/PicLoader.h" />
@@ -118,10 +129,9 @@
 		<Unit filename="src/All2DEngine/Utils/Grid.h" />
 		<Unit filename="src/All2DEngine/Utils/GridAlign.h" />
 		<Unit filename="src/All2DEngine/Utils/Line.h" />
-		<Unit filename="src/All2DEngine/Utils/POINT.H" />
+		<Unit filename="src/All2DEngine/Utils/Point.h" />
 		<Unit filename="src/All2DEngine/Utils/Rect.h" />
 		<Unit filename="src/All2DEngine/Utils/Vector.h" />
-		<Unit filename="src/All2DEngine/Utils/xRegistry.h" />
 		<Unit filename="src/All2DEngine/Utils/xml/tinystr.h" />
 		<Unit filename="src/All2DEngine/Utils/xml/tinyxml.h" />
 		<Unit filename="src/All2DEngine/Utils/xzip/xZip.h" />
@@ -141,7 +151,6 @@
 		<Unit filename="src/Game/KeyboardNavigator.cpp" />
 		<Unit filename="src/Game/KeyboardNavigator.h" />
 		<Unit filename="src/Game/helpText.h" />
-		<Unit filename="src/HexxagonMain.cpp" />
 		<Unit filename="src/Hexxagon/AIController.cpp" />
 		<Unit filename="src/Hexxagon/AIController.h" />
 		<Unit filename="src/Hexxagon/ControllerAdapter.h" />
@@ -173,6 +182,7 @@
 		<Unit filename="src/Hexxagon/hexxagonScore.cpp" />
 		<Unit filename="src/Hexxagon/hexxagonScore.h" />
 		<Unit filename="src/Hexxagon/hexxagon_messages.h" />
+		<Unit filename="src/HexxagonMain.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

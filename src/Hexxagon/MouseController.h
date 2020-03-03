@@ -2,8 +2,8 @@
 //
 //////////////////////////////////////////////////////////////////////
 #pragma once
-#include "../All2DEngine/Gui/MouseMover.h"
-#include "../All2DEngine/Utils/Rect.h"	// Hinzugefügt von der Klassenansicht
+#include <All2D/All2DEngine/Gui/MouseMover.h>
+#include <All2D/All2DEngine/Utils/Rect.h>
 #include "ControllerAdapter.h"
 
 

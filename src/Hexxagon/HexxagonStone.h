@@ -3,9 +3,9 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "../All2DEngine/Gui/UIHoverButton.h"
+#include <All2D/All2DEngine/Gui/UIHoverButton.h>
+#include <All2D/All2DEngine/All2D/All2D_Sprites/UISprite.h>
 #include "../Game/GameImageCloner.h"
-#include "../All2DEngine/All2D/All2D_Sprites/UISprite.h"	// Added by ClassView
 #include "hexxagon_messages.h"
 
 class HexxagonStone : public UIHoverButton , GameImageCloner

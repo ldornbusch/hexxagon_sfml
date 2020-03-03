@@ -3,13 +3,13 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "hexxagonScore.h"	// Added by ClassView
-#include "StonePositioner.h"	// Hinzugefügt von der Klassenansicht
 
+#include <All2D/All2DEngine/All2D/All2D_Base/xContainer.h>
 #include "../Game/GameImageCloner.h"
-#include "../All2DEngine/All2D/All2D_Base/xContainer.h"
 #include "HexxagonStone.h"
 #include "HexxagonMove.h"
+#include "hexxagonScore.h"
+#include "StonePositioner.h"
 
 class HexxagonBoard :
 	public xContainer,

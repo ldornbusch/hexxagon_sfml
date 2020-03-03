@@ -2,9 +2,9 @@
 //
 //////////////////////////////////////////////////////////////////////
 
+#include <All2D/All2DEngine/All2D/All2D_Events/MessageManager.h>
 #include "HexxagonMouseMover.h"
 #include "hexxagon_messages.h"
-#include "../All2DEngine/All2D/All2D_Events/MessageManager.h"
 
 //////////////////////////////////////////////////////////////////////
 // Konstruktion/Destruktion

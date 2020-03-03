@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "../All2DEngine/All2D/All2D_Base/Image.h"	// Hinzugefügt von der Klassenansicht
+#include <All2D/All2DEngine/All2D/All2D_Base/Image.h>
 
 class GameImageCloner
 {

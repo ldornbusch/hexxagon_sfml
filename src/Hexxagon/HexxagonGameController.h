@@ -5,15 +5,15 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "../All2DEngine/All2D/All2D_Base/ImageText.h"
-#include "../All2DEngine/All2D/AppGameController.h"
-#include "../All2DEngine/Gui/UIScrollBar.h"	// Hinzugefügt von der Klassenansicht
-#include "../All2DEngine/Gui/XMLDialogSystem.h"	// Hinzugefügt von der Klassenansicht
+#include <All2D/All2DEngine/All2D/All2D_Base/ImageText.h>
+#include <All2D/All2DEngine/All2D/AppGameController.h>
+#include <All2D/All2DEngine/Gui/UIScrollBar.h>
+#include <All2D/All2DEngine/Gui/XMLDialogSystem.h>
 #include "../Game/GameHighScore.h"
 #include "../Game/GameInstructions.h"
-#include "../Game/GameMessageBox.h"	// Added by ClassView
-#include "HexxagonGame.h"	// Hinzugefügt von der Klassenansicht
-#include "HexxagonMouseMover.h"	// Hinzugefügt von der Klassenansicht
+#include "../Game/GameMessageBox.h"
+#include "HexxagonGame.h"
+#include "HexxagonMouseMover.h"
 
 class HexxagonGameController : public AppGameController
 {

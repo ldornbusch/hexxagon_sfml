@@ -8,7 +8,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include "../All2DEngine/All2D/All2D_Base/xElement.h"
+#include <All2D/All2DEngine/All2D/All2D_Base/xElement.h>
 
 class KeyboardNavigator  : public xElement
 {

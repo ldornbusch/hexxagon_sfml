@@ -20,8 +20,8 @@
 */
 //////////////////////////////////////////////////////////////////////
 
-#include "../All2DEngine/All2D/All2D_System.h"
-#include "../All2DEngine/All2D/All2D_Events/MessageManager.h"
+#include <All2D/All2DEngine/All2D/All2D_System.h>
+#include <All2D/All2DEngine/All2D/All2D_Events/MessageManager.h>
 #include "HexxagonConstants.h"
 #include "HexxagonGameController.h"
 #include "MouseController.h"

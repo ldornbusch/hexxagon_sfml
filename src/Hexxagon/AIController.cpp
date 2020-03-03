@@ -2,9 +2,9 @@
 //
 //////////////////////////////////////////////////////////////////////
 
+#include <All2D/All2DEngine/All2D/All2D_System.h>
+#include <All2D/All2DEngine/All2D/All2D_Events/MessageManager.h>
 #include "AIController.h"
-#include "../All2DEngine/All2D/All2D_System.h"
-#include "../All2DEngine/All2D/All2D_Events/MessageManager.h"
 
 #include "hexxagon_messages.h"
 #define AI_THINKTIME 500
