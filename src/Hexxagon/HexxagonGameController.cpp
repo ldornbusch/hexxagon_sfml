@@ -43,6 +43,10 @@ HexxagonGameController::~HexxagonGameController()
 
 void HexxagonGameController::init()
 {
+    All2D_System::sound->loadMusic("data/background.ogg");
+    All2D_System::sound->loadMusic("data/bright.ogg");
+    All2D_System::sound->loadMusic("data/dark.ogg");
+
 	AppGameController::init();
 	// load the total ressource image
 	imgGFXElements.loadImage("data/elements.png");
@@ -59,7 +63,6 @@ void HexxagonGameController::init()
     myMsgBox.setFont(myFont);
 	myMsgBox.init();
 	myMsgBox.setPriority(39);
-
 
 	add(hexGame);
 	add(myMenu);
@@ -228,9 +231,9 @@ bool HexxagonGameController::handleEvent(Event *evt)
 	}
 
 	if (evt->Type==MM_KEYDOWN && evt->wData==sf::Keyboard::F7)
-		hexGame.save("data\\save1.sav");
+		hexGame.save("data/save1.sav");
 	if (evt->Type==MM_KEYDOWN && evt->wData==sf::Keyboard::F8)
-		hexGame.load("data\\save1.sav");
+		hexGame.load("data/save1.sav");
 
 	if (evt->Type==MM_BUTTON_CLICK && evt->wData==myMenu.getElement("chkfullscreen")->getID())
 		MessageManager::handleEvent(new Event(MM_SETFULLSCREEN,myMenu.getValue("chkfullscreen").second,0));

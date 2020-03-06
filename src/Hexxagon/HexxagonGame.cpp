@@ -109,6 +109,8 @@ void HexxagonGame::setBeginner(int beginner)
 }
 void HexxagonGame::reset()
 {
+    All2D_System::sound->playMusic(0);
+
 	for (unsigned int x=0;x<vecMoves.size();x++)
 	{
 		delete vecMoves[x];
@@ -203,10 +205,14 @@ int HexxagonGame::update()
 		{
 			actualMove=hexAI.getBestMove(iPlayer, hexBoard.getStones());
 			if (actualMove.from==-1 || actualMove.to==-1){
-				if (scScore.getPoints(HEX_RED_PLAYER) > scScore.getPoints(HEX_BLUE_PLAYER))
+				if (scScore.getPoints(HEX_RED_PLAYER) > scScore.getPoints(HEX_BLUE_PLAYER)){
 					iGameStatus=HEX_RED_WIN;
-				if (scScore.getPoints(HEX_RED_PLAYER) < scScore.getPoints(HEX_BLUE_PLAYER))
+                    All2D_System::sound->playMusic(1);
+				}
+				if (scScore.getPoints(HEX_RED_PLAYER) < scScore.getPoints(HEX_BLUE_PLAYER)){
 					iGameStatus=HEX_BLUE_WIN;
+                    All2D_System::sound->playMusic(2);
+				}
 				if (scScore.getPoints(HEX_RED_PLAYER) == scScore.getPoints(HEX_BLUE_PLAYER))
 					iGameStatus=HEX_NO_WIN;
 				MessageManager::handleEvent(new Event(HEX_MOUSE_CHANGE,2,0));
