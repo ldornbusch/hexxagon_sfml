@@ -37,6 +37,7 @@
 			<Add directory="../_dependencies/include" />
 		</Compiler>
 		<Linker>
+			<Add option="-static -static-libgcc -static-libstdc++" />
 			<Add library="libAll2D.a" />
 			<Add library="libsfml-network-s.a" />
 			<Add library="libsfml-graphics-s.a" />
@@ -173,10 +174,9 @@
 		<Unit filename="src/Hexxagon/hexxagonScore.cpp" />
 		<Unit filename="src/Hexxagon/hexxagonScore.h" />
 		<Unit filename="src/Hexxagon/hexxagon_messages.h" />
-		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
-		</Extensions>
+		<Unit filename="src/res/icon.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

@@ -8,8 +8,9 @@ int main()
 	All2D_System::SystemFont.FontInit(16,16,10,"0123456789.,+-*/!?$&()§ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz:[]");
 
 	HexxagonGameController Hexxagon;
-
-	All2D_init(640,480,"Hexxagon by Hexerei, (c) 2002");
+    Image icon;
+    icon.loadImage("data/icon.png");
+	All2D_init(640,480,"Hexxagon by Hexerei, (c) 2002", &icon);
 
     All2D_main(Hexxagon);
 
